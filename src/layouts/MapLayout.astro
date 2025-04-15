@@ -1,0 +1,32 @@
+---
+import '../styles/global.css';
+
+const { title, date, description } = Astro.props;
+---
+<html lang="fr">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <title>Cartes | {title}</title>
+</head>
+<body class="bg-[#fffaea] font-serif max-w-[1600px] mx-auto pt-6">
+    <div class="flex">
+        <div class="border-b border-r p-4 flex items-center">
+            <a href="/"><h1 class="font-serif-title text-6xl hover:underline">Cartes.</h1></a>
+        </div>
+        <div class="flex-1 border-b p-4">
+            <h2 class="text-3xl text-bold font-[700]">{ title }</h2>
+            <p class="w-10/12">{ description }</p>
+        </div>
+        <div class="border-b flex items-center">
+            <p><span class="bg-black text-white px-1">{ date }</span></p>
+        </div>
+    </div>
+    <div class="flex justify-end"><a href="" class="font-[700] underline">Bastien MARSAUD</a></div>
+    <div class="flex mt-10 border">
+        <slot class="flex-1" />
+    </div>
+</body>
+</html>

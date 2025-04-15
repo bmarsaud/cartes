@@ -1,9 +1,11 @@
 ---
-
+const { title, date, description } = Astro.props;
 ---
-<div class="border p-4">
+<div class="border p-4 flex flex-col gap-2 hover:text-white hover:bg-black group">
     <img src="https://placehold.co/600x400" />
-    <h2 class="font-serif-title text-xl text-bold">Titre</h2>
-    <p>16 Avril 2025</p>
-    <p>Description</p>
+    <div>
+        <h2 class="font-serif text-xl text-bold font-[700]">{ title }</h2>
+        <p><span class="bg-black text-white px-1 group-hover:text-black group-hover:bg-white">{ date }</span></p>
+    </div>
+    <p>{ description }</p>
 </div>

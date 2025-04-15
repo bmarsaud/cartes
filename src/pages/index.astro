@@ -1,9 +1,7 @@
 ---
 import '../styles/global.css';
 import Map from "../components/Map.astro";
-
-// Full Astro Component Syntax:
-// https://docs.astro.build/basics/astro-components/
+import { getCollection } from 'astro:content';
 ---
 
 <html lang="fr">
@@ -42,8 +40,10 @@ import Map from "../components/Map.astro";
 				</div>
 			</div>
 		</div>
-		<div class="max-w-[1800px] mx-auto grid grid-cols-4 gap-4 mt-16">
-			<Map></Map>
+		<div class="max-w-[1800px] mx-auto grid grid-cols-4 gap-4 mt-16 px-4">
+			<a href="/cartes/usa-tarrifs-2025">
+				<Map title="L'évolution des nouveaux droits de douane américains" date="16 avril 2025" description="Le mercredi 2 avril, le président américain Donald Trump annonce la mise en place de droits de douanes considérés comme très lourds, notamment pour l'Asie et l'Europe."></Map>
+			</a>
 		</div>
 	</body>
 </html>
