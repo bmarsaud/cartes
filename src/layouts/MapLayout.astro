@@ -11,7 +11,7 @@ const { title, date, description } = Astro.props;
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <title>Cartes | {title}</title>
 </head>
-<body class="bg-[#fffaea] font-serif max-w-[1600px] mx-auto pt-6">
+<body class="bg-[#fffaea] font-serif max-w-[1600px] mx-auto pt-6 pb-8 flex flex-col h-screen">
     <div class="flex">
         <div class="border-b border-r p-4 flex items-center">
             <a href="/"><h1 class="font-serif-title text-6xl hover:underline">Cartes.</h1></a>
@@ -25,8 +25,8 @@ const { title, date, description } = Astro.props;
         </div>
     </div>
     <div class="flex justify-end"><a href="" class="font-[700] underline">Bastien MARSAUD</a></div>
-    <div class="flex mt-10 border">
-        <slot class="flex-1" />
+    <div class="flex mt-8 border flex-1">
+        <slot />
     </div>
 </body>
 </html>

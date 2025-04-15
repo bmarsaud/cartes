@@ -1,7 +1,41 @@
 ---
 import MapLayout from "../../layouts/MapLayout.astro";
-import Map from "../../components/Map.astro";
 ---
 <MapLayout title="L'évolution des nouveaux droits de douane américains" date="16 avril 2025" description="Le mercredi 2 avril, le président américain Donald Trump annonce la mise en place de droits de douanes considérés comme très lourds, notamment pour l'Asie et l'Europe.">
-    Hello World
+    <div id="map" class="h-full w-full"></div>
 </MapLayout>
+
+<script>
+    import 'ol/ol.css';
+    import Map from 'ol/Map';
+    import View from 'ol/View';
+    import VectorLayer from 'ol/layer/Vector';
+    import VectorSource from 'ol/source/Vector';
+    import GeoJSON from 'ol/format/GeoJSON';
+    import proj4 from 'proj4';
+    import {register} from 'ol/proj/proj4';
+
+    proj4.defs("EPSG:54030","+proj=robin +lon_0=0 +x_0=0 +y_0=0 +datum=WGS84 +units=m +no_defs +type=crs");
+    register(proj4);
+
+    const map = new Map({
+        target: 'map',
+        layers: [
+            new VectorLayer({
+                source: new VectorSource({
+                    url: 'https://raw.githubusercontent.com/johan/world.geo.json/refs/heads/master/countries.geo.json',
+                    format: new GeoJSON()
+                }),
+                style: {
+                    "fill-color": "white",
+                    "stroke-color": "black",
+                }
+            })
+        ],
+        view: new View({
+            projection: 'EPSG:54030',
+            center: [0, 0],
+            zoom: 3,
+        }),
+    });
+</script>
