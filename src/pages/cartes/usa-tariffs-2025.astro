@@ -1,0 +1,87 @@
+---
+import MapLayout from "../../layouts/MapLayout.astro";
+---
+<MapLayout title="L'évolution des nouveaux droits de douane américains" date="16 avril 2025" description="Le mercredi 2 avril, le président américain Donald Trump annonce la mise en place de droits de douanes considérés comme très lourds, notamment pour l'Asie et l'Europe.">
+    <div id="map" class="h-full w-full"></div>
+</MapLayout>
+
+<script>
+    import 'ol/ol.css';
+    import Map from 'ol/Map';
+    import View from 'ol/View';
+    import VectorLayer from 'ol/layer/Vector';
+    import VectorSource from 'ol/source/Vector';
+    import GeoJSON from 'ol/format/GeoJSON';
+    import proj4 from 'proj4';
+    import {register} from 'ol/proj/proj4';
+    import {Fill, Stroke, Style} from "ol/style";
+    import {interpolateRgbBasis} from 'd3-interpolate';
+
+    proj4.defs("EPSG:54030","+proj=robin +lon_0=0 +x_0=0 +y_0=0 +datum=WGS84 +units=m +no_defs +type=crs");
+    register(proj4);
+
+    loadMap();
+    async function loadMap() {
+        let tariffsAtDate = await fetch('/data/usa-tariffs-2025/tariffs.json').then(res => res.json());
+        let europeanUnion = await fetch('/data/usa-tariffs-2025/european-union.json').then(res => res.json());
+
+        console.log(tariffsAtDate);
+
+        // mixing all european union countries
+        for (let elem of tariffsAtDate) {
+            for (let country of europeanUnion) {
+                elem.tariffs[country] = elem.tariffs['EUU'];
+            }
+        }
+
+        // colors
+        const colorPalette = ["#FFE7B7", "#F2B097", "#E26850", "#B41F21", "#631410", "black"];
+        const unknownColor = "#ddd";
+        const usaColor = "#aaa";
+        const minValue = 10;
+        const maxValue = 60;
+
+        let currentTariff = tariffsAtDate[0].tariffs;
+        const countriesSource = new VectorSource({
+            url: 'https://raw.githubusercontent.com/johan/world.geo.json/refs/heads/master/countries.geo.json',
+            format: new GeoJSON(),
+        });
+
+        const map = new Map({
+            target: 'map',
+            layers: [
+                new VectorLayer({
+                    source: countriesSource,
+                    style: function (feature, resolution) {
+                        let country: string = feature.getId() as string;
+                        let color = unknownColor;
+                        if (country == 'USA') {
+                            color = usaColor;
+                        } else {
+                            let tariff = currentTariff[country];
+                            if (tariff) {
+                                color = interpolateRgbBasis(colorPalette)((tariff - minValue) / (maxValue - minValue));
+                            }
+                        }
+
+                        return new Style({
+                            stroke: new Stroke(),
+                            fill: new Fill({
+                                color
+                            })
+                        })
+                    }
+                })
+            ],
+            view: new View({
+                projection: 'EPSG:54030',
+                center: [0, 0],
+                zoom: 0,
+            }),
+        });
+
+        countriesSource.on('featuresloadend', function() {
+            map.getView().fit(countriesSource.getExtent());
+        });
+    }
+</script>

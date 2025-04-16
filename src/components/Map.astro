@@ -1,8 +1,8 @@
 ---
-const { title, date, description } = Astro.props;
+const { id, title, date, description } = Astro.props;
 ---
 <div class="border p-4 flex flex-col gap-2 hover:text-white hover:bg-black group">
-    <img src="https://placehold.co/600x400" />
+    <img src={`/data/${id}/preview.png`} />
     <div>
         <h2 class="font-serif text-xl text-bold font-[700]">{ title }</h2>
         <p><span class="bg-black text-white px-1 group-hover:text-black group-hover:bg-white">{ date }</span></p>
