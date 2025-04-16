@@ -2,7 +2,12 @@
 import MapLayout from "../../layouts/MapLayout.astro";
 ---
 <MapLayout title="L'évolution des nouveaux droits de douane américains" date="16 avril 2025" description="Le mercredi 2 avril, le président américain Donald Trump annonce la mise en place de droits de douanes considérés comme très lourds, notamment pour l'Asie et l'Europe.">
-    <div id="map" class="h-full w-full"></div>
+    <div id="map" class="h-full w-full relative">
+        <div id="tooltip" class="absolute left-0 top-0 z-20 bg-[#fffaea] border p-2 pointer-events-none" style="display: none;">
+            <h3 class="font-[600] border-b mb-1" id="country-name">Country</h3>
+            <p class="text-sm">Les frais de douanes appliqués<br />sont de <span class="font-[700]" id="tariff">20 %</span></p>
+        </div>
+    </div>
 </MapLayout>
 
 <script>
@@ -16,16 +21,20 @@ import MapLayout from "../../layouts/MapLayout.astro";
     import {register} from 'ol/proj/proj4';
     import {Fill, Stroke, Style} from "ol/style";
     import {interpolateRgbBasis} from 'd3-interpolate';
+    import Feature from "ol/Feature";
+
+    import countries from "i18n-iso-countries";
+    import fr from "i18n-iso-countries/langs/fr.json";
+    countries.registerLocale(fr);
 
     proj4.defs("EPSG:54030","+proj=robin +lon_0=0 +x_0=0 +y_0=0 +datum=WGS84 +units=m +no_defs +type=crs");
     register(proj4);
 
     loadMap();
     async function loadMap() {
+        // data
         let tariffsAtDate = await fetch('/data/usa-tariffs-2025/tariffs.json').then(res => res.json());
         let europeanUnion = await fetch('/data/usa-tariffs-2025/european-union.json').then(res => res.json());
-
-        console.log(tariffsAtDate);
 
         // mixing all european union countries
         for (let elem of tariffsAtDate) {
@@ -34,6 +43,12 @@ import MapLayout from "../../layouts/MapLayout.astro";
             }
         }
 
+        let currentTariff = tariffsAtDate[0].tariffs;
+        const countriesSource = new VectorSource({
+            url: 'https://raw.githubusercontent.com/johan/world.geo.json/refs/heads/master/countries.geo.json',
+            format: new GeoJSON(),
+        });
+
         // colors
         const colorPalette = ["#FFE7B7", "#F2B097", "#E26850", "#B41F21", "#631410", "black"];
         const unknownColor = "#ddd";
@@ -41,36 +56,32 @@ import MapLayout from "../../layouts/MapLayout.astro";
         const minValue = 10;
         const maxValue = 60;
 
-        let currentTariff = tariffsAtDate[0].tariffs;
-        const countriesSource = new VectorSource({
-            url: 'https://raw.githubusercontent.com/johan/world.geo.json/refs/heads/master/countries.geo.json',
-            format: new GeoJSON(),
-        });
+        function getFeatureStyle (feature: Feature, resolution?: number) {
+            let country: string = feature.getId() as string;
+            let color = unknownColor;
+            if (country == 'USA') {
+                color = usaColor;
+            } else {
+                let tariff = currentTariff[country];
+                if (tariff) {
+                    color = interpolateRgbBasis(colorPalette)((tariff - minValue) / (maxValue - minValue));
+                }
+            }
+
+            return new Style({
+                stroke: new Stroke(),
+                fill: new Fill({
+                    color
+                })
+            })
+        }
 
         const map = new Map({
             target: 'map',
             layers: [
                 new VectorLayer({
                     source: countriesSource,
-                    style: function (feature, resolution) {
-                        let country: string = feature.getId() as string;
-                        let color = unknownColor;
-                        if (country == 'USA') {
-                            color = usaColor;
-                        } else {
-                            let tariff = currentTariff[country];
-                            if (tariff) {
-                                color = interpolateRgbBasis(colorPalette)((tariff - minValue) / (maxValue - minValue));
-                            }
-                        }
-
-                        return new Style({
-                            stroke: new Stroke(),
-                            fill: new Fill({
-                                color
-                            })
-                        })
-                    }
+                    style: getFeatureStyle
                 })
             ],
             view: new View({
@@ -82,6 +93,42 @@ import MapLayout from "../../layouts/MapLayout.astro";
 
         countriesSource.on('featuresloadend', function() {
             map.getView().fit(countriesSource.getExtent());
+        });
+
+        // hover
+        let tooltipElem = document.getElementById('tooltip');
+        let countryNameElem = document.getElementById('country-name');
+        let tariffElem = document.getElementById('tariff');
+        let selectedCountry: Feature | null = null;
+        map.on('pointermove', function (evt) {
+            if (selectedCountry) {
+                selectedCountry.setStyle(undefined);
+                selectedCountry = null;
+            }
+
+            map.forEachFeatureAtPixel(evt.pixel, function (feature: Feature) {
+                if (currentTariff[feature.getId()]) {
+                    selectedCountry = feature;
+
+                    let featureStyle: Style = getFeatureStyle(feature);
+                    featureStyle.getStroke()?.setWidth(3);
+                    feature.setStyle(featureStyle);
+
+                    return true;
+                }
+                return false;
+            });
+
+            if (selectedCountry) {
+                tooltipElem.style.left = evt.pixel[0] + 10 + 'px';
+                tooltipElem.style.top = evt.pixel[1] + 10 + 'px';
+                tooltipElem.style.display = 'block';
+
+                countryNameElem.innerText = countries.getName(selectedCountry.getId(), 'fr');
+                tariffElem.innerText = currentTariff[selectedCountry.getId()] + ' %'
+            } else {
+                tooltipElem.style.display = 'none';
+            }
         });
     }
 </script>
