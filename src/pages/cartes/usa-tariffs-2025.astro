@@ -7,14 +7,11 @@ import MapLayout from "../../layouts/MapLayout.astro";
             <h3 class="font-[600] border-b mb-1" id="country-name">Country</h3>
             <p class="text-sm">Les frais de douanes appliqués<br />sont de <span class="font-[700]" id="tariff">20 %</span></p>
         </div>
-        <div class="absolute left-4 bottom-4 w-1/4 flex flex-col gap-4">
-            <!--<div class="bg-[#fffaea] border z-20 p-2">-->
-            <!--    <h3 class="font-[600]">Légende</h3>-->
-            <!--</div>-->
-            <div class="bg-[#fffaea] border z-20 p-2">
+        <div class="absolute left-4 bottom-4 w-1/4 flex flex-col gap-4 z-20">
+            <div class="bg-[#fffaea] border p-2">
                 <p id="tariff-description"></p>
             </div>
-            <div class="bg-[#fffaea] border z-20 p-2">
+            <div class="bg-[#fffaea] border p-2">
                 <h3 class="font-[600]">Date</h3>
                 <div class="w-[80%] mx-auto mb-10">
                     <div class="relative mb-6 text-xs">
@@ -27,6 +24,19 @@ import MapLayout from "../../layouts/MapLayout.astro";
                         <div class="absolute start-[83%] -translate-x-1/2 -bottom-6">8 avril</div>
                         <div class="absolute end-0 translate-x-1/2 -bottom-6">9 avril</div>
                     </div>
+                </div>
+            </div>
+        </div>
+        <div class="absolute right-4 bottom-4 z-20">
+            <div class="bg-[#fffaea] border p-2 flex flex-col gap-1">
+                <h3 class="font-[600]">Légende</h3>
+                <div class="text-xs">Droits de douane appliqué aux produits en provance du pays</div>
+                <div class="w-full h-6 border" style="background: linear-gradient(to right,#FFE7B7, #F2B097, #E26850, #B41F21, #631410, #900C3F);"></div>
+                <div class="flex justify-between">
+                    <span>10%</span>
+                    <span>20%</span>
+                    <span>30%</span>
+                    <span>150%</span>
                 </div>
             </div>
         </div>
