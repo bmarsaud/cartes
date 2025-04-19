@@ -1,12 +1,19 @@
 ---
+const map = {
+    "title": "L'évolution des nouveaux droits de douane américains",
+    "abstract": "Le mercredi 2 avril 2025, le président américain Donald Trump annonce la mise en place de droits de douanes « réciproques » particulièrement élevés qui bouleversent l'économie mondiale.",
+    "description": "Le mercredi 2 avril 2025, le président américain Donald Trump annonce la mise en place de droits de douanes « réciproques » particulièrement élevés qui bouleversent l'économie mondiale. Une saga qui commence deux mois plus tôt et qui mène à une escalade, notamment avec la Chine.",
+    "date": "17 avril 2025"
+};
+
 import MapLayout from "../../layouts/MapLayout.astro";
 import Slider from "../../components/Slider.astro";
 ---
-<MapLayout title="L'évolution des nouveaux droits de douane américains" date="17 avril 2025" description="Le mercredi 2 avril 2025, le président américain Donald Trump annonce la mise en place de droits de douanes « réciproques » particulièrement élevés qui bouleversent l'économie mondiale. Une saga qui commence deux mois plus tôt et qui mène à une escalade, notamment avec la Chine.">
+<MapLayout {...map}>
     <div id="map" class="h-full w-full relative">
         <div id="tooltip" class="absolute left-0 top-0 z-20 bg-[#fffaea] border p-2 pointer-events-none" style="display: none;">
             <h3 class="font-[600] border-b mb-1" id="country-name">Country</h3>
-            <p class="text-sm">Les frais de douanes appliqués<br />sont de <span class="font-[700]" id="tariff">20 %</span></p>
+            <p class="text-sm">Les droits de douane appliqués<br />sont de <span class="font-[700]" id="tariff">20 %</span></p>
         </div>
         <div class="absolute left-4 bottom-4 w-1/4 flex flex-col gap-4 z-20">
             <div class="bg-[#fffaea] border p-2">
@@ -20,7 +27,7 @@ import Slider from "../../components/Slider.astro";
         <div class="absolute right-4 bottom-4 z-20">
             <div class="bg-[#fffaea] border p-2 flex flex-col gap-1">
                 <h3 class="font-[600]">Légende</h3>
-                <div class="text-xs">Droits de douane appliqué aux produits en provance du pays</div>
+                <div class="text-xs">Droits de douane appliqués aux produits en provance du pays</div>
                 <div class="w-full h-6 border" style="background: linear-gradient(to right,#FFE7B7, #F2B097, #E26850, #B41F21, #631410, #900C3F);"></div>
                 <div class="flex justify-between">
                     <span>10%</span>
