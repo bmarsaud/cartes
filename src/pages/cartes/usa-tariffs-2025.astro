@@ -169,7 +169,7 @@ import Slider from "../../components/Slider.astro";
         window.loadTariff = function (value: number) {
             currentTariff = tariffsAtDate[value].tariffs;
             tariffDescriptionElem.innerText = tariffsAtDate[value].description;
-            countriesSource.refresh();
+            countriesSource.changed();
         }
     }
 </script>
