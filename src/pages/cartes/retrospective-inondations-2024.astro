@@ -1,0 +1,126 @@
+---
+const map = {
+    "title": "Rétrospectives des inondations en Europe de l'année 2024",
+    "abstract": "",
+    "description": "",
+    "date": "23 avril 2025"
+};
+
+import MapLayout from "../../layouts/MapLayout.astro";
+import events from '../../../public/data/retrospective-inondations-2024/events.json';
+events = events.sort((a, b) => new Date(a.date) - new Date(b.date));
+---
+<MapLayout {...map}>
+    <div class="w-1/4 border-r flex flex-col pl-1 pr-0.5">
+        <h2 class="text-2xl font-bold">Événements</h2>
+        <div class="flex flex-col gap-1 overflow-y-auto custom-scrollbar pr-1" x-data="{}">
+            { events.map((event, index) => (
+                <>
+                    { event.event && (index === 0 || events[index - 1].event !== event.event) && <h3 class="text-lg font-semibold underline">{event.event}</h3> }
+                    <div class="p-2 border cursor-pointer hover:text-white hover:bg-black group" style={ events[index + 1]?.event !== event.event ? 'margin-bottom: 1em' : '' } @click={`window.selectEvent(${index})`}>
+                        <div class="flex justify-between gap-1">
+                            <h3 class="font-semibold">{ event.name }</h3>
+                            <div>
+                                <span class="text-sm px-1 text-white bg-black group-hover:text-black group-hover:bg-white">{ new Date(event.date).toLocaleDateString() }</span><br />
+                            </div>
+                        </div>
+                        <div>
+                            { event.death ? <span class="text-sm">&bull; { event.death } morts</span> : <></> }
+                            { event.evacuated ? <span class="text-sm">&bull; { event.evacuated } évacués</span> : <></> }
+                            { event.homes ? <span class="text-sm">&bull; { event.homes } bâtiments touchés</span> : <></> }
+                        </div>
+                    </div>
+                </>
+            )) }
+        </div>
+    </div>
+    <div id="map" class="h-full w-3/4"></div>
+</MapLayout>
+
+<script>
+    import 'ol/ol.css';
+    import Map from 'ol/Map';
+    import View from 'ol/View';
+    import VectorLayer from 'ol/layer/Vector';
+    import VectorSource from 'ol/source/Vector';
+    import GeoJSON from 'ol/format/GeoJSON';
+    import proj4 from 'proj4';
+    import {register} from 'ol/proj/proj4';
+    import {Fill, Stroke, Style, Circle} from "ol/style";
+    import {interpolateRgbBasis} from 'd3-interpolate';
+    import Feature from "ol/Feature";
+
+    proj4.defs("EPSG:54030","+proj=robin +lon_0=0 +x_0=0 +y_0=0 +datum=WGS84 +units=m +no_defs +type=crs");
+    register(proj4);
+
+
+    loadMap();
+    async function loadMap() {
+        // data
+        const events = await fetch('/data/retrospective-inondations-2024/events.json').then(res => res.json());
+        const eventsSource = new VectorSource({
+            features: new GeoJSON().readFeatures({
+                type: "FeatureCollection",
+                features: events.map((event, index) => ({
+                    type: "Feature",
+                    id: index,
+                    properties: {
+                        name: event.name
+                    },
+                    geometry: event.geometry
+                }))
+            }, {
+                dataProjection: 'EPSG:4326',
+                featureProjection: 'EPSG:54030'
+            }),
+        })
+
+        const countriesSource = new VectorSource({
+            url: 'https://raw.githubusercontent.com/leakyMirror/map-of-europe/refs/heads/master/GeoJSON/europe.geojson',
+            format: new GeoJSON(),
+        });
+
+        const map = new Map({
+            target: 'map',
+            layers: [
+                new VectorLayer({
+                    source: countriesSource,
+                    style: {
+                        "stroke-color": "black",
+                    }
+                }),
+                new VectorLayer({
+                    source: eventsSource,
+                    style: {
+                        "circle-radius": 5,
+                        "circle-fill-color": "white",
+                        "circle-stroke-color": "black",
+                        "circle-stroke-width": 1
+                    }
+                })
+            ],
+            view: new View({
+                projection: 'EPSG:54030',
+                center: [881240.1853814595, 5016383.577103197],
+                zoom: 5.5,
+            }),
+        });
+
+        var selectedEvent = null;
+        window.selectEvent = function (index) {
+            if (selectedEvent !== null) {
+                eventsSource.getFeatureById(selectedEvent).setStyle();
+            }
+            selectedEvent = index;
+
+            eventsSource.getFeatureById(selectedEvent).setStyle(new Style({
+                image: new Circle({
+                    radius: 6,
+                    fill: new Fill({
+                        color: 'black'
+                    })
+                })
+            }));
+        }
+    }
+</script>

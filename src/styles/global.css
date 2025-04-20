@@ -8,3 +8,9 @@
     --font-mono: 'Geist Mono', monospace;
     --font-serif: 'Source Serif 4', serif;
 }
+
+@layer utilities {
+    .custom-scrollbar {
+        @apply [&::-webkit-scrollbar]:w-2.5 [&::-webkit-scrollbar-track]:bg-black [&::-webkit-scrollbar-thumb]:bg-[#fffaea] [&::-webkit-scrollbar-thumb]:border-2;
+    }
+}

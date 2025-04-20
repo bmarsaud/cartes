@@ -9,7 +9,7 @@ const { title, date, description } = Astro.props;
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <title>Cartes | {title}</title>
+    <title>Cartes. | {title}</title>
 </head>
 <body class="bg-[#fffaea] font-serif max-w-[1600px] mx-auto pt-6 pb-8 flex flex-col h-screen">
     <div class="flex">
@@ -25,7 +25,7 @@ const { title, date, description } = Astro.props;
         </div>
     </div>
     <div class="flex justify-end"><a href="https://www.linkedin.com/in/bastien-marsaud/" target="_blank" class="font-[700] underline">Bastien MARSAUD</a></div>
-    <div class="flex mt-8 border flex-1">
+    <div class="flex mt-8 border flex-1 overflow-y-hidden">
         <slot />
     </div>
 </body>
