@@ -1,0 +1,414 @@
+[
+  {
+    "name": "Inondations en Angleterre",
+    "date": "2024-01-04",
+    "evacuated": 300,
+    "death": 0,
+    "event": "Tempête Henk",
+    "source": "https://european-flood.emergency.copernicus.eu/en/news/storms-and-flood-uk-and-france-january-2024",
+    "locations": [ "Great Billing", "Worcester", "Tewkesbury" ],
+    "rivers": [ "Severn", "Avon" ],
+    "geometry": {
+      "type": "Point",
+      "coordinates": [-2.1549574, 51.9937857]
+    }
+  },
+  {
+    "name": "Crue de La Tamise",
+    "date": "2024-01-09",
+    "evacuated": 0,
+    "death": 0,
+    "event": "Tempête Henk",
+    "source": "https://european-flood.emergency.copernicus.eu/en/news/storms-and-flood-uk-and-france-january-2024",
+    "locations": ["Surrey", "Berkshire"],
+    "rivers": ["Thames"],
+    "geometry": {
+      "type": "Point",
+      "coordinates": [-0.7251, 51.3645]
+    }
+  },
+  {
+    "name": "Inondations du nord de la France",
+    "date": "2024-01-05",
+    "evacuated": 750,
+    "homes": 2084,
+    "death": 0,
+    "event": "Tempête Henk",
+    "source": "https://european-flood.emergency.copernicus.eu/en/news/storms-and-flood-uk-and-france-january-2024",
+    "locations": ["Thérouanne", "Delettes", "Quernes", "Lumbres", "Auchy-lès-Hesdin", "Aire-sur-la-Lys", "Arques", "Blendecques"],
+    "rivers": ["Aa", "Lys", "Hem", "Canche" ],
+    "geometry": {
+      "type": "Point",
+      "coordinates": [2.77765, 50.29137]
+    }
+  },
+  {
+    "name": "Inondations en Navarre et Pays basque",
+    "date": "2024-02-27",
+    "evacuated": 0,
+    "homes": 0,
+    "death": 0,
+    "event": null,
+    "source": "https://european-flood.emergency.copernicus.eu/en/news/floods-northern-spain-february-2024",
+    "locations": ["Pamplona", "Burlada", "Villava", "Funes", "Miranda de Arga", "Sunbilla", "Castejón", "Tudela", "Vitoria-Gasteiz", "Gamarra Nagusia", "Arkaute"],
+    "rivers": ["Arga", "Bidasoa", "Ebro", "Zadorra", "Santo Tomás"],
+    "geometry": {
+      "type": "Point",
+      "coordinates": [-1.6425, 42.8203]
+    }
+  },
+  {
+    "name": "Crue du fleuve Ebro à Saragosse",
+    "date": "2024-03-01",
+    "evacuated": 0,
+    "homes": 0,
+    "death": 0,
+    "event": null,
+    "source": "https://european-flood.emergency.copernicus.eu/en/news/floods-northern-spain-february-2024",
+    "locations": ["Zaragoza"],
+    "rivers": ["Ebro"],
+    "geometry": {
+      "type": "Point",
+      "coordinates": [-0.862, 41.666]
+    }
+  },
+  {
+    "name": "Crue de la Charente à Saintes",
+    "date": "2024-03-05",
+    "evacuated": 0,
+    "homes": 0,
+    "death": 0,
+    "event": null,
+    "source": "https://european-flood.emergency.copernicus.eu/en/news/floods-france-march-2024",
+    "locations": ["Saintes"],
+    "rivers": ["Charente"],
+    "geometry": {
+      "type": "Point",
+      "coordinates": [-0.62931, 45.74638]
+    }
+  },
+  {
+    "name": "Passage de la tempête Monica en France",
+    "date": "2024-03-09",
+    "evacuated": 0,
+    "homes": 0,
+    "death": 8,
+    "event": "Tempête Monica",
+    "source": "https://european-flood.emergency.copernicus.eu/en/news/floods-france-march-2024",
+    "locations": ["Gagnières", "Dions", "Goudargues", "Saint Martin de Valamas", "Fréjus", "Grimaud", "Hyères", "Pézenas", "Saint-Geniez-d'Olt-et-d'Aubrac", "Espalion"],
+    "rivers": ["Hérault", "Lot"],
+    "geometry": {
+      "type": "Point",
+      "coordinates": [4.084, 44.118]
+    }
+  },
+  {
+    "name": "Crue de la Garonne à Bordeaux",
+    "date": "2024-03-12",
+    "evacuated": 0,
+    "homes": 10,
+    "death": 0,
+    "event": null,
+    "source": "https://european-flood.emergency.copernicus.eu/en/news/floods-france-march-2024",
+    "locations": ["Bordeaux", "Cambes", "Quinsac", "Portets"],
+    "rivers": ["Garonne"],
+    "geometry": {
+      "type": "Point",
+      "coordinates": [-0.57953, 44.84157]
+    }
+  },
+  {
+    "name": "Inondations dans l'ouest de la France",
+    "date": "2024-03-30",
+    "evacuated": 393,
+    "homes": 283,
+    "death": 1,
+    "event": null,
+    "source": "https://european-flood.emergency.copernicus.eu/en/news/floods-france-march-2024",
+    "locations": [
+      "Montmorillon", "Saint-Savin", "Buxeuil", "La Roche-Posay", "Descartes",
+      "Châtellerault", "L'Île-Bouchard", "Chinon", "Saint-Germain-sur-Vienne", "Nouâtre",
+      "Bélâbre", "Châteauroux", "Aixe-sur-Vienne"
+    ],
+    "rivers": ["Vienne", "Indre"],
+    "geometry": {
+      "type": "Point",
+      "coordinates": [0.8679, 46.4263]
+    }
+  },
+  {
+    "name": "Inondations éclair en Andalousie",
+    "date": "2024-04-20",
+    "evacuated": 0,
+    "homes": 100,
+    "death": 1,
+    "event": null,
+    "source": "https://european-flood.emergency.copernicus.eu/en/news/flooding-andalusia-spain-april-2024",
+    "locations": [
+      "Cijuela", "Pinos Puente", "Láchar", "Moraleda de Zafayona",
+      "Fuente Vaqueros", "Trasmulas", "Píñar", "Valderrubio",
+      "Alcalá la Real", "Charilla", "Aracena", "Corteconcepción"
+    ],
+    "rivers": [],
+    "geometry": {
+      "type": "Point",
+      "coordinates": [-4.010, 37.542]
+    }
+  },
+  {
+    "name": "Inondations dans l'Est de la France",
+    "date": "2024-05-17",
+    "evacuated": 150,
+    "homes": 0,
+    "death": 0,
+    "event": null,
+    "source": "https://european-flood.emergency.copernicus.eu/en/news/floods-and-storms-western-europe-may-2024",
+    "locations": [
+      "Scheibenhard", "Berg-sur-Moselle", "Bouzonville", "Boulay", "Saint-Avold",
+      "Bambiderstroff", "Freyming-Merlebach", "Sarreguemines", "Diemeringen"
+    ],
+    "rivers": ["Sarre", "Nied", "Seille", "Eichel"],
+    "geometry": {
+      "type": "Point",
+      "coordinates": [6.31126, 49.43075]
+    }
+  },
+  {
+    "name": "Inondations dans le Sarre (Allemagne)",
+    "date": "2024-05-17",
+    "evacuated": 1800,
+    "homes": 0,
+    "death": 0,
+    "event": null,
+    "source": "https://european-flood.emergency.copernicus.eu/en/news/floods-and-storms-western-europe-may-2024",
+    "locations": [
+      "Nuremberg", "Saarbrücken", "Eppelborn", "Neunkirchen", "Gersweiler",
+      "St. Wendel", "Saarlouis", "Merzig", "Blieskastel", "Gersheim", "Reinheim",
+      "Habkirchen", "Schoden an der Saar", "Trittenheim", "Saarburg"
+    ],
+    "rivers": ["Blies", "Saar"],
+    "geometry": {
+      "type": "Point",
+      "coordinates": [6.9640, 49.3882]
+    }
+  },
+  {
+    "name": "Inondations à Liège en Belgique",
+    "date": "2024-05-17",
+    "evacuated": 0,
+    "homes": 0,
+    "death": 0,
+    "event": null,
+    "source": "https://european-flood.emergency.copernicus.eu/en/news/floods-and-storms-western-europe-may-2024",
+    "locations": [
+      "Voeren", "Dalhem", "Trooz", "Chênée", "Charleroi"
+    ],
+    "rivers": ["Berwinne", "Voer"],
+    "geometry": {
+      "type": "Point",
+      "coordinates": [5.5749, 50.6450]
+    }
+  },
+  {
+    "name": "Inondations aux Pays-Bas",
+    "date": "2024-05-18",
+    "evacuated": 0,
+    "homes": 0,
+    "death": 0,
+    "event": null,
+    "source": "https://european-flood.emergency.copernicus.eu/en/news/floods-and-storms-western-europe-may-2024",
+    "locations": [
+      "Wijlre", "Gulpen-Wittem", "Meerssen"
+    ],
+    "rivers": ["Geul"],
+    "geometry": {
+      "type": "Point",
+      "coordinates": [5.916, 51.206]
+    }
+  },
+  {
+    "name": "Inondations en Bavière et Bade-Wurtemberg",
+    "date": "2024-06-01",
+    "evacuated": 6600,
+    "homes": 0,
+    "death": 6,
+    "event": null,
+    "source": "https://european-flood.emergency.copernicus.eu/en/news/floods-southern-germany-june-2024",
+    "locations": [
+      "Sontheim", "Sigmarszell", "Nordendorf", "Baar-Ebenhausen", "Deggendorf",
+      "Passau", "Manching", "Geisenfeld", "Fischach", "Babenhausen",
+      "Pfaffenhofen an der Ilm", "Eichstätt", "Reichertshofen", "Offingen",
+      "Schrobenhausen", "Markt Rettenbach", "Schorndorf", "Schwäbisch Gmünd",
+      "Augsburg", "Regensburg"
+    ],
+    "rivers": [
+      "Danube", "Neckar", "Isar", "Fils", "Weilach", "Ilm", "Paar",
+      "Schmutter", "Roth", "Inn", "Leibi"
+    ],
+    "geometry": {
+      "type": "Point",
+      "coordinates": [10.283, 48.760]
+    }
+  },
+  {
+    "name": "Coulées de boue dans les Tatras (Slovaquie et Pologne)",
+    "date": "2024-07-11",
+    "evacuated": 0,
+    "homes": 20,
+    "death": 2,
+    "event": null,
+    "source": "https://european-flood.emergency.copernicus.eu/en/news/floods-poland-and-slovakia-july-2024",
+    "locations": [
+      "Tatras Mountains", "Monkova Valley", "Ždiar", "Poprad", "Prešov",
+      "Banská Bystrica", "Žilina", "Košice", "Zakopane", "Olcza", "Pardałówka"
+    ],
+    "rivers": [],
+    "geometry": {
+      "type": "Point",
+      "coordinates": [19.9429, 49.2290]
+    }
+  },
+  {
+    "name": "Inondations sur la côte de la mer Noire en Roumanie",
+    "date": "2024-08-31",
+    "evacuated": 67,
+    "homes": 250,
+    "death": 0,
+    "event": "Tempête Boris",
+    "source": "https://european-flood.emergency.copernicus.eu/en/news/flooding-romania-late-august-2024",
+    "locations": [
+      "Mangalia", "Vama Veche", "Amzacea", "Comana", "Costinești", "Jupiter",
+      "Olimp", "Techirghiol", "Tuzla", "Constanța", "Tulcea"
+    ],
+    "rivers": [],
+    "geometry": {
+      "type": "Point",
+      "coordinates": [28.58402, 43.81502]
+    }
+  },
+  {
+    "name": "Inondations en Autriche",
+    "date": "2024-09-15",
+    "evacuated": 1751,
+    "homes": 0,
+    "death": 5,
+    "event": "Tempête Boris",
+    "source": "https://european-flood.emergency.copernicus.eu/en/news/flooding-caused-storm-boris-central-and-eastern-europe-september-2024",
+    "locations": [
+      "Basse-Autriche", "Gänserndorf", "Krems", "Melk", "St. Pölten", "Tulln", "Zwettl", "Horn"
+    ],
+    "rivers": ["Danube", "Kamp", "Leitha", "Traisen"],
+    "geometry": {
+      "type": "Point",
+      "coordinates": [15.763, 48.273]
+    }
+  },
+  {
+    "name": "Inondations en Pologne",
+    "date": "2024-09-14",
+    "evacuated": 6544,
+    "homes": 11502,
+    "death": 9,
+    "event": "Tempête Boris",
+    "source": "https://european-flood.emergency.copernicus.eu/en/news/flooding-caused-storm-boris-central-and-eastern-europe-september-2024",
+    "locations": [
+      "Opole", "Basse-Silésie", "Silesie", "Jelenia Góra", "Kłodzko", "Lewin Brzeski", "Głuchołazy",
+      "Bielsko-Biala", "Międzygórze", "Stronie Śląskie", "Paczkow", "Jarnołtówek", "Międzylesie", "Śnieżnik"
+    ],
+    "rivers": ["Odra", "Wilczka", "Nysa Klodzko", "Kwisa", "Biała", "Bóbr"],
+    "geometry": {
+      "type": "Point",
+      "coordinates": [18.973, 50.320]
+    }
+  },
+  {
+    "name": "Inondations en République tchèque",
+    "date": "2024-09-14",
+    "evacuated": 19173,
+    "homes": 0,
+    "death": 5,
+    "event": "Tempête Boris",
+    "source": "https://european-flood.emergency.copernicus.eu/en/news/flooding-caused-storm-boris-central-and-eastern-europe-september-2024",
+    "locations": [
+      "Jeseník", "Opava", "Ostrava", "Olomouc", "Moravian-Silesian Region", "Přívoz"
+    ],
+    "rivers": ["Odra", "Olše", "Opava", "Bělá", "Smědá", "Morava"],
+    "geometry": {
+      "type": "Point",
+      "coordinates": [17.9029, 49.9412]
+    }
+  },
+  {
+    "name": "Inondations dans l'Est de la Roumanie",
+    "date": "2024-09-14",
+    "evacuated": 303,
+    "homes": 5890,
+    "death": 7,
+    "event": "Tempête Boris",
+    "source": "https://european-flood.emergency.copernicus.eu/en/news/flooding-caused-storm-boris-central-and-eastern-europe-september-2024",
+    "locations": [
+      "Iași", "Vaslui", "Bacău", "Galați", "Cudalbi", "Cuza-Vodă", "Pechea", "Slobozia-Conachi",
+      "Tudor Vladimirescu", "Costache Negri", "Zorleni", "Grivița", "Trestiana"
+    ],
+    "rivers": ["Siret", "Prut"],
+    "geometry": {
+      "type": "Point",
+      "coordinates": [27.477, 45.479]
+    }
+  },
+  {
+    "name": "Inondations en Bosnie-Herzégovine",
+    "date": "2024-10-04",
+    "evacuated": 400,
+    "homes": 1133,
+    "death": 27,
+    "event": null,
+    "source": "https://european-flood.emergency.copernicus.eu/en/news/flooding-bosnia-and-herzegovina-early-october-2024",
+    "locations": [
+      "Jablanica", "Konjic", "Fojnica", "Kiseljak", "Kreševo", "Buturović Polje"
+    ],
+    "rivers": [],
+    "geometry": {
+      "type": "Point",
+      "coordinates": [18.787, 44.633]
+    }
+  },
+  {
+    "name": "Inondations meurtières en Espagne",
+    "date": "2024-10-29",
+    "evacuated": 0,
+    "homes": 69487,
+    "death": 230,
+    "event": "DANA",
+    "source": "https://european-flood.emergency.copernicus.eu/en/news/floods-spain-late-october-early-november-2024",
+    "locations": [
+      "Turís", "Chiva", "Paiporta", "Utiel", "Valence", "Castellón", "Málaga", "Cadix", "Albacete", "Cuenca"
+    ],
+    "rivers": [
+      "Turia", "Júcar", "Magro", "Rambla del Poyo", "Guadalhorce"
+    ],
+    "geometry": {
+      "type": "Point",
+      "coordinates": [-0.3708, 39.4683]
+    }
+  },
+  {
+    "name": "Inondations au Royaume-Uni (Greater Manchester et Cheshire)",
+    "date": "2025-01-01",
+    "evacuated": 1000,
+    "homes": 50,
+    "death": null,
+    "event": null,
+    "source": "https://european-flood.emergency.copernicus.eu/en/news/floods-north-west-england-united-kingdom-december-2024",
+    "locations": [
+      "Bolton", "Didsbury", "Harpurhey", "Stalybridge", "Stockport", "Wigan", "Little Bollington", "Lymm", "Hazel Grove", "Wilmslow", "Warrington"
+    ],
+    "rivers": [
+      "Mersey", "Bridgewater Canal"
+    ],
+    "geometry": {
+      "type": "Point",
+      "coordinates": [-2.2467, 53.4836]
+    }
+  }
+]
