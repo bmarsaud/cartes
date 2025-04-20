@@ -1,0 +1,12 @@
+---
+const { elements, initialValue } = Astro.props;
+---
+<div class="flex text-sm border border-r-0" x-data={`{
+        selected: "${initialValue}",
+        select: function (element) {
+            this.selected = element;
+            this.$dispatch('tab-selected', { value: element });
+        }
+}`}>
+    { elements.map(element => (<div class="py-1 px-2 border-r cursor-pointer hover:underline" :class={`{ 'bg-black text-white': selected === "${element}" }`} @click={`select("${element}")`}>{ element }</div>)) }
+</div>
