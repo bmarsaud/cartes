@@ -2,8 +2,8 @@
 import Tabs from "../../components/Tabs.astro";
 const map = {
     "title": "Rétrospectives des inondations en Europe de l'année 2024",
-    "abstract": "",
-    "description": "",
+    "abstract": "A l'occasion de la publication du rapport sur l'état du climat européen de l'observatoire Copernicus, revenons sur la série d'inondations qui ont marqué l'Europe en 2024.",
+    "description": "Le mardi 15 avril 2025, l'observatoire Copernicus publie son <a href='https://climate.copernicus.eu/esotc/2024' target='_blank' class='underline'>rapport sur l'état du climat européen</a>, revenant sur l'année 2024. L'Europe a subie de plein fouet les conséquences du réchauffement climatique en cette année la plus chaude jamais enregistrée avec de nombreux phénomènes extrèmes : vagues de chaleur record et inondations meurtrières. ",
     "date": "23 avril 2025"
 };
 
@@ -14,22 +14,37 @@ events = events.sort((a, b) => new Date(a.date) - new Date(b.date));
 <MapLayout {...map}>
     <div class="w-1/4 border-r flex flex-col p-2 pr-1">
         <h2 class="text-2xl font-bold">Événements</h2>
-        <div class="flex flex-col gap-1 overflow-y-auto custom-scrollbar pr-1" x-data="{}">
+        <div class="flex flex-col gap-1 overflow-y-auto custom-scrollbar pr-1" @select-event-on-map.window="toggleEvent($event.detail.index)" x-data="{
+            selectedEvent: null,
+            toggleEvent: function (index, elem) {
+                if (this.selectedEvent === index) {
+                    this.selectedEvent = null;
+                } else {
+                    this.selectedEvent = index;
+                    setTimeout(() => {
+                        document.querySelectorAll('.flooding-event')[index].scrollIntoView();
+                    }, 10);
+                }
+            }
+        }">
             { events.map((event, index) => (
                 <>
                     { event.event && (index === 0 || events[index - 1].event !== event.event) && <h3 class="text-lg font-semibold underline">{event.event}</h3> }
-                    <div class="p-2 border cursor-pointer hover:text-white hover:bg-black group" style={ events[index + 1]?.event !== event.event ? 'margin-bottom: 1em' : '' } @click={`window.selectEvent(${index})`}>
-                        <div class="flex justify-between gap-1">
-                            <h3 class="font-semibold">{ event.name }</h3>
+                    <div class="border border-black hover:text-white hover:bg-black group flooding-event" :class=`{ 'text-white bg-black': selectedEvent === ${index} }` style={ events[index + 1]?.event !== event.event ? 'margin-bottom: 1em' : '' }>
+                        <div class="p-2 cursor-pointer" @click={`toggleEvent(${index}, $event.target)`}>
+                            <div class="flex justify-between gap-1">
+                                <h3 class="font-semibold">{ event.name }</h3>
+                                <div>
+                                    <span class="text-sm px-1 text-white bg-black group-hover:text-black group-hover:bg-white" :class=`{ 'text-black bg-white': selectedEvent === ${index}, 'text-white': selectedEvent !== ${index} }`>{ new Date(event.date).toLocaleDateString() }</span><br />
+                                </div>
+                            </div>
                             <div>
-                                <span class="text-sm px-1 text-white bg-black group-hover:text-black group-hover:bg-white">{ new Date(event.date).toLocaleDateString() }</span><br />
+                                { event.death ? <span class="text-sm">&bull; { event.death } mort{ event.death > 1 ? 's' : '' }</span> : <></> }
+                                { event.evacuated ? <span class="text-sm">&bull; { event.evacuated } évacués</span> : <></> }
+                                { event.homes ? <span class="text-sm">&bull; { event.homes } bâtiments touchés</span> : <></> }
                             </div>
                         </div>
-                        <div>
-                            { event.death ? <span class="text-sm">&bull; { event.death } mort{ event.death > 1 ? 's' : '' }</span> : <></> }
-                            { event.evacuated ? <span class="text-sm">&bull; { event.evacuated } évacués</span> : <></> }
-                            { event.homes ? <span class="text-sm">&bull; { event.homes } bâtiments touchés</span> : <></> }
-                        </div>
+                        <div class="p-2 border-t text-black bg-[#fffaea] text-sm hidden" :class=`{ 'hidden': selectedEvent !== ${index} }` set:html={ event.text }></div>
                     </div>
                 </>
             )) }
@@ -55,6 +70,7 @@ events = events.sort((a, b) => new Date(a.date) - new Date(b.date));
     import {Fill, Stroke, Style, Circle, Text} from "ol/style";
     import {interpolateRgbBasis} from 'd3-interpolate';
     import Feature from "ol/Feature";
+    import {Layer} from "ol/layer";
 
     proj4.defs("EPSG:54030","+proj=robin +lon_0=0 +x_0=0 +y_0=0 +datum=WGS84 +units=m +no_defs +type=crs");
     register(proj4);
@@ -102,6 +118,36 @@ events = events.sort((a, b) => new Date(a.date) - new Date(b.date));
             'homes': 25
         };
 
+        const frenchNumberFormat = new Intl.NumberFormat('fr-FR');
+        function getFeatureStyle (feature) {
+            let rawValue = feature.get(currentIndicator);
+            let value = indicatorMap[currentIndicator](rawValue);
+            let textValue = value / indicatorTextScale[currentIndicator];
+            return new Style({
+                image: new Circle({
+                    radius: value,
+                    fill: new Fill({
+                        color: '#0d2d55'
+                    }),
+                    stroke: new Stroke({
+                        color: 'black',
+                    })
+                }),
+                text: new Text({
+                    font: textValue + 'em "Source Serif 4"',
+                    text: feature.get(currentIndicator) > 0 ? frenchNumberFormat.format(rawValue) : null,
+                    fill: new Fill({
+                        color: 'white'
+                    })
+                })
+            });
+        }
+
+        const eventsLayer = new VectorLayer({
+            source: eventsSource,
+            style: getFeatureStyle,
+        });
+
         const map = new Map({
             target: 'map',
             layers: [
@@ -109,33 +155,10 @@ events = events.sort((a, b) => new Date(a.date) - new Date(b.date));
                     source: countriesSource,
                     style: {
                         "stroke-color": "black",
+                        "fill-color": "#eee"
                     }
                 }),
-                new VectorLayer({
-                    source: eventsSource,
-                    style: function (feature) {
-                        let value = indicatorMap[currentIndicator](feature.get(currentIndicator));
-                        let textScale = indicatorTextScale[currentIndicator];
-                        return new Style({
-                            image: new Circle({
-                                radius: value,
-                                fill: new Fill({
-                                    color: '#0d2d55'
-                                }),
-                                stroke: new Stroke({
-                                    color: 'black',
-                                })
-                            }),
-                            text: new Text({
-                                font: value / textScale + 'em "Source Serif 4"',
-                                text: feature.get(currentIndicator) > 0 ? new Intl.NumberFormat('fr-FR').format(feature.get(currentIndicator)) : null,
-                                fill: new Fill({
-                                    color: 'white'
-                                })
-                            })
-                        });
-                    }
-                })
+                eventsLayer
             ],
             view: new View({
                 projection: 'EPSG:54030',
@@ -144,23 +167,18 @@ events = events.sort((a, b) => new Date(a.date) - new Date(b.date));
             }),
         });
 
-        var selectedEvent = null;
+        // right panel event selection
+        let selectedEvent = null;
         window.selectEvent = function (index) {
             if (selectedEvent !== null) {
                 eventsSource.getFeatureById(selectedEvent).setStyle();
             }
             selectedEvent = index;
 
-            eventsSource.getFeatureById(selectedEvent).setStyle(new Style({
-                image: new Circle({
-                    radius: 6,
-                    fill: new Fill({
-                        color: 'black'
-                    })
-                })
-            }));
+            // TODO
         }
 
+        // indicator selection
         window.selectIndicator = function (indicator) {
             console.log(indicator);
             if (indicator === 'Morts') {
@@ -172,5 +190,41 @@ events = events.sort((a, b) => new Date(a.date) - new Date(b.date));
             }
             eventsSource.changed();
         }
+
+        // map hover
+        let hoveredEvent = null;
+        map.on('pointermove', function (evt) {
+            eventsLayer.getFeatures(evt.pixel).then((features) => {
+                let feature = features.pop();
+                if (hoveredEvent) {
+                    map.getTargetElement().style.cursor = 'auto';
+                    hoveredEvent.setStyle(undefined);
+                    hoveredEvent = null;
+                }
+
+                if (feature) {
+                    map.getTargetElement().style.cursor = 'pointer';
+                    hoveredEvent = feature;
+
+                    let featureStyle: Style = getFeatureStyle(feature);
+                    featureStyle.getImage().getStroke().setWidth(4);
+                    feature.setStyle(featureStyle.clone());
+                }
+            });
+        });
+
+        map.on('click', function (evt) {
+            eventsLayer.getFeatures(evt.pixel).then((features) => {
+                let feature = features.pop();
+                if (feature) {
+                    selectedEvent = feature.getId();
+                    window.dispatchEvent(new CustomEvent('select-event-on-map', {
+                        detail: {
+                            index: selectedEvent
+                        }
+                    }));
+                }
+            });
+        });
     }
 </script>

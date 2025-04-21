@@ -18,7 +18,7 @@ const { title, date, description } = Astro.props;
         </div>
         <div class="flex-1 border-b p-4">
             <h2 class="text-3xl text-bold font-[700]">{ title }</h2>
-            <p class="w-10/12">{ description }</p>
+            <p class="w-10/12" set:html={ description }></p>
         </div>
         <div class="border-b flex items-center">
             <p><span class="bg-black text-white px-1">{ date }</span></p>

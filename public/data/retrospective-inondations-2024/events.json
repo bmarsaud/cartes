@@ -11,13 +11,15 @@
     "geometry": {
       "type": "Point",
       "coordinates": [-2.1549574, 51.9937857]
-    }
+    },
+    "text": "<p>Début janvier 2024, la <a class='underline' href='https://en.wikipedia.org/wiki/2023%E2%80%9324_European_windstorm_season#Storm_Henk_(Annelie)' target='_blank'>tempête Henk</a> a provoqué d'importantes inondations en Angleterre et au Pays de Galles, en faisant déborder plusieurs rivières dont la Nene, la Severn et l’Avon.</p><p class='mt-2'>À Northampton, un camping de caravan a dû être entièrement évacué, tandis que les crues ont aussi touché Worcester et Tewkesbury, poussant les autorités à organiser des centaines d'évacuations.</p>"
   },
   {
     "name": "Crue de La Tamise",
     "date": "2024-01-09",
-    "evacuated": 0,
+    "evacuated": 100,
     "death": 0,
+    "homes": 271,
     "event": "Tempête Henk",
     "source": "https://european-flood.emergency.copernicus.eu/en/news/storms-and-flood-uk-and-france-january-2024",
     "locations": ["Surrey", "Berkshire"],
@@ -25,7 +27,8 @@
     "geometry": {
       "type": "Point",
       "coordinates": [-0.7251, 51.3645]
-    }
+    },
+    "text": "Le 8 janvier 2024, la montée de la Tamise a provoqué des inondations dans le Surrey et le Berkshire, entraînant des évacuations dans les villages aux alentours. Les autorités ont reportés <a href='https://www.rbwm.gov.uk/sites/default/files/2025-01/flooding_jan_2024_river_thames_flooding_section19_investigation_report.pdf' target='_blank' class='underline'>271 propriétés impactés</a>, 91 dont l'intérieur à été inondé."
   },
   {
     "name": "Inondations du nord de la France",
@@ -40,7 +43,8 @@
     "geometry": {
       "type": "Point",
       "coordinates": [2.77765, 50.29137]
-    }
+    },
+    "text": "Début janvier 2024, le Pas-de-Calais a de nouveau été frappé par d’importantes inondations, quelques semaines seulement après un premier épisode sévère en novembre. Les rivières Aa, Lys, Hem et Canche sont sorties de leur lit, touchant près de 190 communes, dont plusieurs ont été reconnues en état de catastrophe naturelle. Plus de 750 personnes ont été évacuées, et des centaines d'interventions ont été menées par les secours, appuyés par des travaux d'urgence sur les cours d’eau pour limiter les dégâts."
   },
   {
     "name": "Inondations en Navarre et Pays basque",
@@ -50,33 +54,19 @@
     "death": 0,
     "event": null,
     "source": "https://european-flood.emergency.copernicus.eu/en/news/floods-northern-spain-february-2024",
-    "locations": ["Pamplona", "Burlada", "Villava", "Funes", "Miranda de Arga", "Sunbilla", "Castejón", "Tudela", "Vitoria-Gasteiz", "Gamarra Nagusia", "Arkaute"],
-    "rivers": ["Arga", "Bidasoa", "Ebro", "Zadorra", "Santo Tomás"],
+    "locations": ["Pamplona", "Burlada", "Villava", "Funes", "Miranda de Arga", "Sunbilla", "Castejón", "Tudela", "Vitoria-Gasteiz", "Gamarra Nagusia", "Arkaute", "Zaragoza"],
+    "rivers": ["Arga", "Bidasoa", "Ebro", "Zadorra", "Santo Tomás", "Ebro"],
     "geometry": {
       "type": "Point",
       "coordinates": [-1.6425, 42.8203]
-    }
-  },
-  {
-    "name": "Crue du fleuve Ebro à Saragosse",
-    "date": "2024-03-01",
-    "evacuated": 0,
-    "homes": 0,
-    "death": 0,
-    "event": null,
-    "source": "https://european-flood.emergency.copernicus.eu/en/news/floods-northern-spain-february-2024",
-    "locations": ["Zaragoza"],
-    "rivers": ["Ebro"],
-    "geometry": {
-      "type": "Point",
-      "coordinates": [-0.862, 41.666]
-    }
+    },
+    "text": "Les 26 et 27 février 2024, de fortes pluies ont provoqué des inondations dans plusieurs régions du nord de l’Espagne, notamment en Navarre et au Pays basque. Les rivières Arga, Bidasoa, Ebro et Zadorra sont sorties de leur lit, inondant les villages qui les bordent. Malgré les dégâts sur les routes, les autorités ont constaté un impact matériel limité grâce aux travaux de renforcement réalisés ces dernières années."
   },
   {
     "name": "Crue de la Charente à Saintes",
     "date": "2024-03-05",
     "evacuated": 0,
-    "homes": 0,
+    "homes": 50,
     "death": 0,
     "event": null,
     "source": "https://european-flood.emergency.copernicus.eu/en/news/floods-france-march-2024",
@@ -85,7 +75,8 @@
     "geometry": {
       "type": "Point",
       "coordinates": [-0.62931, 45.74638]
-    }
+    },
+    "text": "Après une crue en novembre 2023 une en decembre 2023, la ville de Saintes est à nouveau touchée par une crue de la Charente. Une situation exceptionnelle car le territoire n'avait connu jusqu'alors que trois inondations en 40 ans. Face a cet état de fait, <a href='https://www.radiofrance.fr/franceinter/podcasts/le-zoom-de-la-redaction/le-zoom-de-la-redaction-du-mardi-12-mars-2024-1164550' target='_blank' class='underline'>un collectif d'une dizaine de familles</a> demande à la mairie de racheter leur maison pour déménager. Le maire Bruno Drapron y est favorable, mais affirme que la commune n'a pas les moyens financier et porte leur demande à l'État."
   },
   {
     "name": "Passage de la tempête Monica en France",
@@ -100,7 +91,8 @@
     "geometry": {
       "type": "Point",
       "coordinates": [4.084, 44.118]
-    }
+    },
+    "text": "Début mars 2024, la tempête Monica a frappé le sud-est de la France, provoquant des pluies diluviennes, de violentes crues et des vents tempétueux, particulièrement dans le Gard, l’Hérault et l’Ardèche. Le bilan humain s’est alourdi au fil des jours pour atteindre <a href='https://www.lemonde.fr/planete/article/2024/03/15/tempete-monica-dans-le-gard-decouverte-du-corps-du-dernier-enfant-porte-disparu_6222208_3244.html' target='_blank' class='underline'>huit morts</a>, dont plusieurs membres d'une même famille emportés par une rivière en crue alors qu’ils tentaient de traverser un pont submersible à Dions, près de Nimes."
   },
   {
     "name": "Crue de la Garonne à Bordeaux",
@@ -115,13 +107,14 @@
     "geometry": {
       "type": "Point",
       "coordinates": [-0.57953, 44.84157]
-    }
+    },
+    "text": "Début mars 2024, la Garonne a connu une crue exceptionnelle à Bordeaux, principalement due à la conjonction de grandes marées d’équinoxe (coefficient de 117 sur 120) et à la tempête Monica. Le fleuve a débordé dans plusieurs quartiers, notamment la Bastide et les quais du centre-ville."
   },
   {
     "name": "Inondations dans l'ouest de la France",
     "date": "2024-03-30",
-    "evacuated": 393,
-    "homes": 283,
+    "evacuated": 283,
+    "homes": 47,
     "death": 1,
     "event": null,
     "source": "https://european-flood.emergency.copernicus.eu/en/news/floods-france-march-2024",
@@ -134,7 +127,8 @@
     "geometry": {
       "type": "Point",
       "coordinates": [0.8679, 46.4263]
-    }
+    },
+    "text": "Fin mars 2024, la Vienne, la Haute-Vienne, l'Indre et l'Indre-et-Loire ont été touchées par des inondations historiques provoquées par des précipitations exceptionnelles et la saturation des sols. Au total 283 personnes ont du être évacués et <a href='https://www.lemonde.fr/planete/article/2024/03/30/indre-et-loire-et-vienne-places-en-vigilance-rouge-pour-risque-de-crues-des-vents-forts-privent-6-000-foyers-d-electricite-en-auvergne-rhone-alpes_6225102_3245.html' target='_blank' class='underline'>47 personnes relogés</a> à l'issue des inondations. Un kayakeur est porté disparu a Aixe-sur-Vienne."
   },
   {
     "name": "Inondations éclair en Andalousie",
@@ -153,7 +147,8 @@
     "geometry": {
       "type": "Point",
       "coordinates": [-4.010, 37.542]
-    }
+    },
+    "text": "À partir du 20 avril 2024, de violentes intempéries ont provoqué des inondations soudaines et des glissements de terrain en Andalousie, touchant particulièrement les provinces de Grenade, Jaén et Huelva. À Cijuela, près de 100 habitations ont été endommagées et une personne est décédée sur une route inondée. Des dizaines de maisons ont été envahies par les eaux dans plusieurs communes, tandis que des routes ont été coupées, isolant temporairement certains villages."
   },
   {
     "name": "Inondations dans l'Est de la France",
@@ -171,7 +166,8 @@
     "geometry": {
       "type": "Point",
       "coordinates": [6.31126, 49.43075]
-    }
+    },
+    "text": "Le 16 mai 2024, de fortes pluies ont provoqué des inondations dans l’est de la France, touchant particulièrement la Moselle, la Meurthe-et-Moselle et le Bas-Rhin. Des cumuls de précipitations exceptionnels ont fait déborder plusieurs rivières, dont la Sarre, les Nieds, la Seille et l’Eichel. En Moselle, plus de 500 interventions ont été menées et environ 150 personnes ont dû être évacuées."
   },
   {
     "name": "Inondations dans le Sarre (Allemagne)",
@@ -190,7 +186,8 @@
     "geometry": {
       "type": "Point",
       "coordinates": [6.9640, 49.3882]
-    }
+    },
+    "text": "Le 16 mai 2024, de violents orages accompagnés de fortes pluies ont provoqué des inondations soudaines en Allemagne, touchant notamment la Bavière, la Sarre et la Rhénanie-Palatinat. À Nuremberg, des sauvetages ont été nécessaires, tandis que les rivières Blies et Sarre ont atteint des niveaux critiques. Des centaines de personnes ont été évacuées."
   },
   {
     "name": "Inondations à Liège en Belgique",
@@ -207,7 +204,8 @@
     "geometry": {
       "type": "Point",
       "coordinates": [5.5749, 50.6450]
-    }
+    },
+    "text": "Le 17 mai 2024, de fortes pluies ont provoqué des inondations dans les provinces de Limbourg, Liège et Hainaut en Belgique. Plusieurs rivières du bassin de la Meuse, dont la Berwinne et la Voer, ont débordé, causant des crues historiques à Voeren. Des évacuations ont eu lieu à Dalhem, Trooz et Chênée, tandis que des inondations soudaines ont touché Charleroi."
   },
   {
     "name": "Inondations aux Pays-Bas",
@@ -224,7 +222,8 @@
     "geometry": {
       "type": "Point",
       "coordinates": [5.916, 51.206]
-    }
+    },
+    "text": "Le 18 mai 2024, la montée de la rivière Geul a entraîné l’évacuation de plusieurs campings dans la province néerlandaise du Limbourg, notamment à Wijlre et Meerssen."
   },
   {
     "name": "Inondations en Bavière et Bade-Wurtemberg",
@@ -248,7 +247,8 @@
     "geometry": {
       "type": "Point",
       "coordinates": [10.283, 48.760]
-    }
+    },
+    "text": "En juin 2024, le sud de l’Allemagne a été frappé par de graves inondations touchant surtout la Bavière et le Bade-Wurtemberg. Des pluies intenses ont fait déborder de nombreuses rivières, dont le Danube, l’Isar et la Paar, entraînant des ruptures de digues, des évacuations massives, au moins six morts et d'importants dégâts matériels. Plus de 6 600 personnes ont dû quitter leur domicile, et les secours ont été mobilisés à grande échelle. Les dommages assurés sont estimés à 2 milliards d’euros."
   },
   {
     "name": "Coulées de boue dans les Tatras (Slovaquie et Pologne)",
@@ -266,7 +266,8 @@
     "geometry": {
       "type": "Point",
       "coordinates": [19.9429, 49.2290]
-    }
+    },
+    "text": "En juillet 2024, une série d’orages a provoqué des crues soudaines et des coulées de boue dans le nord de la Slovaquie et le sud de la Pologne, notamment dans les Tatras. Deux personnes sont mortes dans un refuge touristique touché par une coulée de boue dans la vallée de Monkova, près de Ždiar. Une vingtaine de bâtiments ont été endommagés à Zakopane, côté polonais. L’état d’urgence a été déclaré dans la zone slovaque."
   },
   {
     "name": "Inondations sur la côte de la mer Noire en Roumanie",
@@ -274,7 +275,7 @@
     "evacuated": 67,
     "homes": 250,
     "death": 0,
-    "event": "Tempête Boris",
+    "event": null,
     "source": "https://european-flood.emergency.copernicus.eu/en/news/flooding-romania-late-august-2024",
     "locations": [
       "Mangalia", "Vama Veche", "Amzacea", "Comana", "Costinești", "Jupiter",
@@ -284,7 +285,8 @@
     "geometry": {
       "type": "Point",
       "coordinates": [28.58402, 43.81502]
-    }
+    },
+    "text": "De très fortes pluies à partir du 30 août 2024 ont causé d’importantes inondations en Roumanie, notamment sur le littoral touristique de la mer Noire : jusqu’à 330 mm de pluie sont tombés en 48 heures. Environ 250 bâtiments ont été endommagés, dont 17 hôtels. Les secours ont évacué 67 personnes dans huit communes."
   },
   {
     "name": "Inondations en Autriche",
@@ -301,7 +303,8 @@
     "geometry": {
       "type": "Point",
       "coordinates": [15.763, 48.273]
-    }
+    },
+    "text": "Le passage de la tempête Boris à entrainer plusieurs fleuves et rivières dont le Danube à sortir de leur lit, provoquant des inondations majeures en Basse-Autriche. L’état de catastrophe a été déclaré le 15 septembre 2024. Plus de 1750 foyers ont dû être évacués et des centaines de personnes ont été secourues, dont 82 par hélicoptère. Cinq personnes ont perdu la vie, dont un pompier."
   },
   {
     "name": "Inondations en Pologne",
@@ -319,7 +322,8 @@
     "geometry": {
       "type": "Point",
       "coordinates": [18.973, 50.320]
-    }
+    },
+    "text": "La tempête Boris a provoqué des pluies diluviennes à partir du 13 septembre 2024 dans le sud-ouest de la Pologne, particulièrement dans les voïvodies. Des cumuls de pluie exceptionnels ont été enregistrés faisant déborder de nombreuses rivières. Le Premier ministre Donald Tusk a déclaré l’état de catastrophe naturelle pour les voïvodies d’Opole, de Basse-Silésie et de Silésie. Au 21 septembre, 57 000 personnes étaient directement touchées, plus de 6 500 évacuées, et plus de 11 500 bâtiments résidentiels endommagés. Neuf personnes ont perdu la vie."
   },
   {
     "name": "Inondations en République tchèque",
@@ -336,7 +340,8 @@
     "geometry": {
       "type": "Point",
       "coordinates": [17.9029, 49.9412]
-    }
+    },
+    "text": "En République le service météorologique national a enregistré jusqu’à 203,4 mm de pluie en 24 heures le 13 septembre 2024. Plusieurs rivières, dont l’Odra, l’Olše, l’Opava et la Morava, sont sorties de leur lit. À Ostrava, des quartiers ont été évacués en raison de fissures sur un barrage. Au 15 septembre, 10 500 personnes avaient été évacuées. Le bilan s’élevait à 5 morts et 8 disparus au 19 septembre."
   },
   {
     "name": "Inondations dans l'Est de la Roumanie",
@@ -354,7 +359,8 @@
     "geometry": {
       "type": "Point",
       "coordinates": [27.477, 45.479]
-    }
+    },
+    "text": "De fortes pluies ont provoqué des inondations meurtrières dans l’est de la Roumanie. Jusqu’à 165,8 mm de pluie sont tombés en 24 h à Cârja (Vaslui) et 148,1 mm à Gănești (Galați). Les rivières Siret et Prut sont sorties de leur lit, inondant routes et villages. À la date du 15 septembre, 5 890 foyers étaient touchés, 303 personnes évacuées, et 7 morts confirmés."
   },
   {
     "name": "Inondations en Bosnie-Herzégovine",
@@ -371,7 +377,8 @@
     "geometry": {
       "type": "Point",
       "coordinates": [18.787, 44.633]
-    }
+    },
+    "text": "Début octobre 2024, la Bosnie-Herzégovine a connu ses pires inondations depuis 2014. De fortes pluies ont touché notamment les cantons de Bosnie centrale et d’Herzégovine-Neretva, provoquant crues soudaines, glissements de terrain et dégâts importants. L’état d’urgence a été déclaré le 5 octobre. Au 17 octobre, la Croix-Rouge dénombrait 27 morts, environ 5 000 personnes affectées et 400 déplacées. Plus de 1 100 maisons et 700 tronçons routiers ont été endommagés ou détruits."
   },
   {
     "name": "Inondations meurtières en Espagne",
@@ -379,7 +386,7 @@
     "evacuated": 0,
     "homes": 69487,
     "death": 230,
-    "event": "DANA",
+    "event": null,
     "source": "https://european-flood.emergency.copernicus.eu/en/news/floods-spain-late-october-early-november-2024",
     "locations": [
       "Turís", "Chiva", "Paiporta", "Utiel", "Valence", "Castellón", "Málaga", "Cadix", "Albacete", "Cuenca"
@@ -390,14 +397,15 @@
     "geometry": {
       "type": "Point",
       "coordinates": [-0.3708, 39.4683]
-    }
+    },
+    "text": "<p>Des inondations meurtrières ont frappées l’Espagne, et particulièrement la région de Valence, dans la nuit du 28 au 29 octobre 2024.</p><p class='mt-2'>Elles ont été provoquées par des pluies torrentielles d’une intensité exceptionnelle, dépassant localement 600 litres/m² en quelques heures : le phénomène <a href='https://fr.wikipedia.org/wiki/Goutte_froide' target='_blank' class='underline'>DANA</a> (acronyme de <span class='italic'>depresion aislada en niveles alto</span>, ou dépression isolée à niveau élevé en français).</p><p class='mt-2'>Ce déluge a causé la crue soudaine de nombreux cours d’eau, submergeant 79 communes et transformant rues et routes en torrents de boue, piégeant de nombreux habitants dans leurs maisons et emportant véhicules et infrastructures.</p><p class='mt-2'>Le bilan humain est dramatique : au moins 225 morts et 14 disparus selon les chiffres officiels fin novembre, dont la quasi-totalité dans la province de Valence, ce qui en fait <span class='font-bold'>l’une des pires catastrophes naturelles de l’histoire récente de l’Europe</span>.</p><p class='mt-2'>Plusieurs centaines de personnes ont été évacuées, 400 sinistrés ont été pris en charge dans des centres d’accueil rien qu'a Valence.</p><p class='mt-2'>Les dégâts matériels sont considérables, avec de nombreux bâtiments, écoles, ponts et routes endommagés ou détruits, et un impact majeur sur l’activité économique et les transports de la région.</p><p class='mt-2'>Ces inondations ont également déclenché une vive polémique sur la gestion de l'alerte, des secours, de la prévention des risques ainsi qu'autour du président valencien Carlos Mazón dont la compétence est remise en cause. La population locale réclame des comptes face à l’ampleur du drame.</p>"
   },
   {
     "name": "Inondations au Royaume-Uni (Greater Manchester et Cheshire)",
     "date": "2025-01-01",
     "evacuated": 1000,
     "homes": 50,
-    "death": null,
+    "death": 0,
     "event": null,
     "source": "https://european-flood.emergency.copernicus.eu/en/news/floods-north-west-england-united-kingdom-december-2024",
     "locations": [
@@ -409,6 +417,7 @@
     "geometry": {
       "type": "Point",
       "coordinates": [-2.2467, 53.4836]
-    }
+    },
+    "text": "De fortes pluies fin décembre 2024 dans le nord-ouest de l’Angleterre ont provoqué d’importantes inondations début janvier 2025, touchant particulièrement le Grand Manchester et le Cheshire. Un incident majeur a été déclaré le 1er janvier. Près de 1000 personnes ont été évacuées, dont la moitié par bateaux, notamment à Didsbury où la rivière Mersey a débordé. Des bâtiments ont été inondés, des routes submergées, et l’hôtel Britannia a dû être évacué."
   }
 ]
