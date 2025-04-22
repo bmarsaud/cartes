@@ -9,7 +9,6 @@ const map = {
 
 import MapLayout from "../../layouts/MapLayout.astro";
 import events from '../../../public/data/retrospective-inondations-2024/events.json';
-events = events.sort((a, b) => new Date(a.date) - new Date(b.date));
 ---
 <MapLayout {...map}>
     <div class="w-1/4 border-r flex flex-col p-2 pr-1">
@@ -21,9 +20,7 @@ events = events.sort((a, b) => new Date(a.date) - new Date(b.date));
                     this.selectedEvent = null;
                 } else {
                     this.selectedEvent = index;
-                    setTimeout(() => {
-                        document.querySelectorAll('.flooding-event')[index].scrollIntoView();
-                    }, 10);
+                    window.selectEvent(index);
                 }
             }
         }">
@@ -55,6 +52,9 @@ events = events.sort((a, b) => new Date(a.date) - new Date(b.date));
             <h3 class="font-semibold">Indicateur</h3>
             <Tabs elements={["Morts", "Déplacés", "Bâtiments"]} initialValue="Morts"></Tabs>
         </div>
+        <div class="absolute bottom-2 right-2 z-20 bg-[#fffaea] border p-2 text-sm">
+            <span class="font-semibold">Sources</span> : <a href="https://european-flood.emergency.copernicus.eu/en/search/node?keys=EFAS+Bulletin+2024" target="_blank" class="underline">EFAS Bulletins</a>, <span class="italic">Richard Davies</span> @ <a href="https://floodlist.com/" target="_blank" class="underline">Floodlist</a>
+        </div>
     </div>
 </MapLayout>
 
@@ -68,9 +68,6 @@ events = events.sort((a, b) => new Date(a.date) - new Date(b.date));
     import proj4 from 'proj4';
     import {register} from 'ol/proj/proj4';
     import {Fill, Stroke, Style, Circle, Text} from "ol/style";
-    import {interpolateRgbBasis} from 'd3-interpolate';
-    import Feature from "ol/Feature";
-    import {Layer} from "ol/layer";
 
     proj4.defs("EPSG:54030","+proj=robin +lon_0=0 +x_0=0 +y_0=0 +datum=WGS84 +units=m +no_defs +type=crs");
     register(proj4);
@@ -83,7 +80,7 @@ events = events.sort((a, b) => new Date(a.date) - new Date(b.date));
         const eventsSource = new VectorSource({
             features: new GeoJSON().readFeatures({
                 type: "FeatureCollection",
-                features: events.map((event, index) => ({
+                features: events.map((event: any, index: number) => ({
                     type: "Feature",
                     id: index,
                     properties: {
@@ -108,9 +105,9 @@ events = events.sort((a, b) => new Date(a.date) - new Date(b.date));
         // style
         let currentIndicator = 'death';
         const indicatorMap = {
-            'death': (value) => value == 0 ? 5 : (value / 200 * 50) + 10,
-            'evacuated': (value) => value == 0 ? 5 : (value / 20000 * 50) + 10,
-            'homes': (value) => value == 0 ? 5 : (value / 70000 * 70) + 10
+            'death': (value: number) => value == 0 ? 5 : (value / 200 * 50) + 10,
+            'evacuated': (value: number) => value == 0 ? 5 : (value / 20000 * 50) + 10,
+            'homes': (value: number) => value == 0 ? 5 : (value / 70000 * 70) + 10
         };
         const indicatorTextScale = {
             'death': 15,
@@ -118,6 +115,7 @@ events = events.sort((a, b) => new Date(a.date) - new Date(b.date));
             'homes': 25
         };
 
+        let selectedEvent: number | null = null;
         const frenchNumberFormat = new Intl.NumberFormat('fr-FR');
         function getFeatureStyle (feature) {
             let rawValue = feature.get(currentIndicator);
@@ -127,10 +125,11 @@ events = events.sort((a, b) => new Date(a.date) - new Date(b.date));
                 image: new Circle({
                     radius: value,
                     fill: new Fill({
-                        color: '#0d2d55'
+                        color: selectedEvent === feature.getId() ? '#0b4897' : "#0d2d55"
                     }),
                     stroke: new Stroke({
                         color: 'black',
+                        width: selectedEvent === feature.getId() ? 4 : 1
                     })
                 }),
                 text: new Text({
@@ -168,19 +167,23 @@ events = events.sort((a, b) => new Date(a.date) - new Date(b.date));
         });
 
         // right panel event selection
-        let selectedEvent = null;
-        window.selectEvent = function (index) {
-            if (selectedEvent !== null) {
-                eventsSource.getFeatureById(selectedEvent).setStyle();
-            }
-            selectedEvent = index;
+        window.selectEvent = function (index: number) {
+            // timeout to wait for description to show before scrolling
+            setTimeout(() => {
+                document.querySelectorAll('.flooding-event')[index].scrollIntoView();
+            }, 10);
 
-            // TODO
+            if (selectedEvent) {
+                // setStyle tags features as changed so no need to call it
+                eventsSource.getFeatureById(selectedEvent)?.setStyle();
+            }
+
+            selectedEvent = index;
+            eventsSource.getFeatureById(selectedEvent)?.setStyle();
         }
 
         // indicator selection
-        window.selectIndicator = function (indicator) {
-            console.log(indicator);
+        window.selectIndicator = function (indicator: string) {
             if (indicator === 'Morts') {
                 currentIndicator = 'death';
             } else if (indicator === 'Déplacés') {
@@ -192,7 +195,7 @@ events = events.sort((a, b) => new Date(a.date) - new Date(b.date));
         }
 
         // map hover
-        let hoveredEvent = null;
+        let hoveredEvent: any = null;
         map.on('pointermove', function (evt) {
             eventsLayer.getFeatures(evt.pixel).then((features) => {
                 let feature = features.pop();
@@ -207,7 +210,7 @@ events = events.sort((a, b) => new Date(a.date) - new Date(b.date));
                     hoveredEvent = feature;
 
                     let featureStyle: Style = getFeatureStyle(feature);
-                    featureStyle.getImage().getStroke().setWidth(4);
+                    featureStyle.getImage()?.getStroke().setWidth(4);
                     feature.setStyle(featureStyle.clone());
                 }
             });
@@ -217,7 +220,7 @@ events = events.sort((a, b) => new Date(a.date) - new Date(b.date));
             eventsLayer.getFeatures(evt.pixel).then((features) => {
                 let feature = features.pop();
                 if (feature) {
-                    selectedEvent = feature.getId();
+                    selectedEvent = feature.getId() as number;
                     window.dispatchEvent(new CustomEvent('select-event-on-map', {
                         detail: {
                             index: selectedEvent
