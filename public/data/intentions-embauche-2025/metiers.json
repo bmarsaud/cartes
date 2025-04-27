@@ -1,0 +1,653 @@
+{
+  "J5X80": {
+    "label": "Techniciens d'exploitation et d'administration des transports"
+  },
+  "V5X82": {
+    "label": "Sportifs et animateurs sportifs"
+  },
+  "L4X80": {
+    "label": "Techniciens des services administratifs"
+  },
+  "QEX01": {
+    "label": "Managers en banque assurance"
+  },
+  "J5X60": {
+    "label": "Contrôleurs des transports"
+  },
+  "H0X90": {
+    "label": "Techniciens du contrôle qualité"
+  },
+  "G0B40": {
+    "label": "Carrossiers automobiles"
+  },
+  "A0X42": {
+    "label": "Bûcherons, sylviculteurs et agents forestiers"
+  },
+  "B5X40": {
+    "label": "Conducteurs d'engins du bâtiment et des travaux publics"
+  },
+  "V0X60": {
+    "label": "Aides-soignants"
+  },
+  "T3X61": {
+    "label": "Agents de sécurité et de surveillance"
+  },
+  "E1X41": {
+    "label": "Ouvriers qualifiés de conduite d'installation de production de métaux"
+  },
+  "V2X92": {
+    "label": "Vétérinaires"
+  },
+  "R3X83": {
+    "label": "Professions intermédiaires du marketing et des services commerciaux (hors achats)"
+  },
+  "V5X84": {
+    "label": "Surveillants d'établissements scolaires et accompagnateurs des élèves en situation de handicap"
+  },
+  "U0X81": {
+    "label": "Interprètes"
+  },
+  "L1X60": {
+    "label": "Employés de la comptabilité"
+  },
+  "U1X91": {
+    "label": "Artistes (musique, danse, spectacles)"
+  },
+  "L2X60": {
+    "label": "Agents d'accueil et d'information"
+  },
+  "B1X38": {
+    "label": "Professionnels du travail de la pierre et des matériaux associés"
+  },
+  "R3X82": {
+    "label": "Professions intermédiaires commerciales des achats"
+  },
+  "L6X00": {
+    "label": "Dirigeants de petites et moyennes entreprises de moins de 50 salariés"
+  },
+  "D0X33": {
+    "label": "Régleurs"
+  },
+  "T4X61": {
+    "label": "Agents de service hospitaliers"
+  },
+  "J3X43": {
+    "label": "Conducteurs routiers"
+  },
+  "A3X90": {
+    "label": "Cadres et maîtres d'équipage de la marine"
+  },
+  "QAX03": {
+    "label": "Experts de l'assurance"
+  },
+  "T4X60": {
+    "label": "Agents d'entretien de locaux"
+  },
+  "D6X80": {
+    "label": "Agents de maîtrise et assimilés en fabrication mécanique"
+  },
+  "T1X60": {
+    "label": "Personnels de ménage chez des particuliers"
+  },
+  "QAX02": {
+    "label": "Experts de la banque"
+  },
+  "V4X83": {
+    "label": "Educateurs spécialisés et autres intervenants socio-éducatifs"
+  },
+  "V4X84": {
+    "label": "Aides médico-psychologiques"
+  },
+  "G1X70": {
+    "label": "Techniciens et agents de maîtrise en intervention technique en Hygiène Sécurité Environnement -HSE industriel et protection du patrimoine naturel"
+  },
+  "B2X37": {
+    "label": "Ouvriers peu qualifiés en menuiserie et en agencement du BTP"
+  },
+  "R3X80": {
+    "label": "Maîtrise des magasins"
+  },
+  "D6X70": {
+    "label": "Techniciens en mécanique et travail des métaux"
+  },
+  "S1X40": {
+    "label": "Cuisiniers"
+  },
+  "J4X62": {
+    "label": "Employés administratifs et commerciaux des transports"
+  },
+  "F0X32": {
+    "label": "Ouvriers, techniciens et agents de maîtrise du textile"
+  },
+  "M1X80": {
+    "label": "Techniciens d'étude et de développement en informatique"
+  },
+  "B2X33": {
+    "label": "Plombiers chauffagistes"
+  },
+  "L6X90": {
+    "label": "Cadres dirigeants des grandes entreprises de plus de 50 salariés"
+  },
+  "R1X62": {
+    "label": "Vendeurs en habillement et accessoires, articles de luxe, de sport, de loisirs et culturels"
+  },
+  "L4X81": {
+    "label": "Techniciens et agents de maîtrise des services financiers ou comptables"
+  },
+  "T2A60": {
+    "label": "Aides à domicile et auxiliaires de vie"
+  },
+  "R2X83": {
+    "label": "Représentants auprès des particuliers"
+  },
+  "V4X80": {
+    "label": "Professionnels de l’orientation et de l’insertion professionnelle"
+  },
+  "V3X80": {
+    "label": "Autres professionnels para-médicaux"
+  },
+  "J0X31": {
+    "label": "Manutentionnaires et déménageurs qualifiés"
+  },
+  "QDX01": {
+    "label": "Employés et techniciens commerciaux des assurances"
+  },
+  "M2X90": {
+    "label": "Ingénieurs et cadres d'étude, recherche et développement en informatique et télécom"
+  },
+  "G1X76": {
+    "label": "Mainteniciens en biens électrodomestiques"
+  },
+  "V2X93": {
+    "label": "Pharmaciens"
+  },
+  "L5X91": {
+    "label": "Juristes et avocats"
+  },
+  "A2X90": {
+    "label": "Ingénieurs, cadres techniques de l'agriculture"
+  },
+  "J6X91": {
+    "label": "Personnels techniques navigants de l’aviation"
+  },
+  "D2X32": {
+    "label": "Ouvriers de la peinture et du traitement de surface"
+  },
+  "N1X91": {
+    "label": "Chercheurs (sauf industrie et enseignement supérieur)"
+  },
+  "U0X80": {
+    "label": "Assistants de la communication"
+  },
+  "QBX01": {
+    "label": "Gestionnaires de la banque et de l'assurance"
+  },
+  "K0X30": {
+    "label": "Artisans et ouvriers artisanaux"
+  },
+  "M2X92": {
+    "label": "Responsables et cadres de la production, de l'exploitation et de la maintenance informatique et télécom"
+  },
+  "B2X32": {
+    "label": "Ouvriers en électricité du bâtiment"
+  },
+  "F0X33": {
+    "label": "Ouvriers, techniciens et agents de maîtrise de l'habillement"
+  },
+  "D2X31": {
+    "label": "Ouvriers qualifiés en ajustement, montage et assemblage mécanique"
+  },
+  "QAX01": {
+    "label": "Experts de la finance"
+  },
+  "J3X44": {
+    "label": "Conducteurs sur rails et d'engins de traction"
+  },
+  "U0X92": {
+    "label": "Journalistes et cadres de l'édition"
+  },
+  "B7X90": {
+    "label": "Architectes"
+  },
+  "L2X61": {
+    "label": "Agents administratifs"
+  },
+  "J1X80": {
+    "label": "Responsable du magasinage et de la logistique (non cadres)"
+  },
+  "M2X91": {
+    "label": "Chefs de projet et directeurs de service informatique"
+  },
+  "T3X60": {
+    "label": "Concierges"
+  },
+  "T2B60": {
+    "label": "Assistants maternels, auxiliaires de puériculture, assistants familiaux et gardes à domicile"
+  },
+  "R1X60": {
+    "label": "Vendeurs en produits alimentaires"
+  },
+  "R4X93": {
+    "label": "Cadres agents immobiliers et syndics"
+  },
+  "H1X91": {
+    "label": "Ingénieurs et cadres techniques en Hygiène Sécurité Environnement -HSE- industriels et exploitation éco-industriel"
+  },
+  "A1X40": {
+    "label": "Maraîchers et horticulteurs"
+  },
+  "S2X61": {
+    "label": "Serveurs de cafés restaurants"
+  },
+  "U0X90": {
+    "label": "Cadres de la communication"
+  },
+  "B6X74": {
+    "label": "Conducteurs de travaux et chefs de chantier non cadres"
+  },
+  "B2X35": {
+    "label": "Ouvriers en montage réseaux électriques et télécoms"
+  },
+  "B6X70": {
+    "label": "Géomètres"
+  },
+  "V2X91": {
+    "label": "Dentistes"
+  },
+  "N1X90": {
+    "label": "Ingénieurs et cadres d'étude, recherche et développement (industrie)"
+  },
+  "B1X34": {
+    "label": "Couvreurs"
+  },
+  "J6X90": {
+    "label": "Cadres des transports et du tourisme"
+  },
+  "L5X92": {
+    "label": "Cadres des ressources humaines et du recrutement"
+  },
+  "H1X92": {
+    "label": "Ingénieurs en maintenance et support technique client"
+  },
+  "J5X40": {
+    "label": "Agents d'exploitation du transport"
+  },
+  "R1X68": {
+    "label": "Employés des services commerciaux"
+  },
+  "E0X30": {
+    "label": "Pilotes d'installation lourdes des industries de transformation et d'énergie"
+  },
+  "F1X31": {
+    "label": "Ouvriers et techniciens de la scierie, de l'assemblage et de la fabrication d'ouvrages en bois"
+  },
+  "S2X81": {
+    "label": "Agents de maîtrise de l'hôtellerie et de la gestion des structures de loisirs"
+  },
+  "A1X41": {
+    "label": "Jardiniers des espaces verts et naturels"
+  },
+  "V3X71": {
+    "label": "Spécialistes de l'appareillage médical"
+  },
+  "A1X42": {
+    "label": "Viticulteurs, arboriculteurs"
+  },
+  "D1X32": {
+    "label": "Tuyauteurs"
+  },
+  "E5X80": {
+    "label": "Agents de maitrise et assimilés des industries de process"
+  },
+  "G1X74": {
+    "label": "Techniciens et agents de maîtrise en installation et maintenance en froid et conditionnement d'air"
+  },
+  "E3X20": {
+    "label": "Ouviers peu qualifiés des industries agro-alimentaires"
+  },
+  "B6X71": {
+    "label": "Techniciens experts et chargés d’études du BTP"
+  },
+  "G1X71": {
+    "label": "Techniciens et agents de maîtrise en maintenance de véhicules"
+  },
+  "A0X43": {
+    "label": "Conducteurs d'engins agricoles ou forestiers"
+  },
+  "C0X30": {
+    "label": "Ouvriers de l'électricité et de l'électronique"
+  },
+  "S3X90": {
+    "label": "Patrons et cadres de l’hôtellerie et de la restauration"
+  },
+  "S2X80": {
+    "label": "Agents de maîtrise de la restauration"
+  },
+  "B6X73": {
+    "label": "Techniciens et agents de maîtrise de chantiers du BTP"
+  },
+  "N0X70": {
+    "label": "Techniciens d'étude, recherche et développement"
+  },
+  "V5X81": {
+    "label": "Professionnels de l'animation socioculturelle"
+  },
+  "R0X61": {
+    "label": "Caissiers"
+  },
+  "L5X93": {
+    "label": "Chargés d'études socio-économiques"
+  },
+  "D0X30": {
+    "label": "Ouvriers peu qualifiés en conduite d'équipement d'usinage"
+  },
+  "W0X90": {
+    "label": "Professeurs du secondaire"
+  },
+  "S0X41": {
+    "label": "Charcutiers, traiteurs"
+  },
+  "J0X32": {
+    "label": "Conducteurs d’engins légers de déplacement de charges, cariste"
+  },
+  "J6X92": {
+    "label": "Cadres de la logistique"
+  },
+  "K0X32": {
+    "label": "Artisans et ouvriers de blanchisserie"
+  },
+  "J2X40": {
+    "label": "Facteurs et distributeurs de documents (non cadres)"
+  },
+  "H1X90": {
+    "label": "Ingénieurs et cadres de fabrication et de la production"
+  },
+  "J3X41": {
+    "label": "Conducteurs de transport en commun sur route"
+  },
+  "E2X20": {
+    "label": "Ouvriers peu qualifiés des industries chimiques et plastiques"
+  },
+  "G0A43": {
+    "label": "Ouvriers polyvalents d'entretien du bâtiment"
+  },
+  "U1X82": {
+    "label": "Graphistes, dessinateurs, stylistes, décorateurs et créateurs de supports de communication visuelle"
+  },
+  "C2X70": {
+    "label": "Techniciens, agents de maîtrise et assimilés en électricité et en électronique"
+  },
+  "G1X77": {
+    "label": "Techniciens et agents de maîtrise en maintenance électrique, électronique et automatismes"
+  },
+  "V4X85": {
+    "label": "Professionnels de l'action sociale"
+  },
+  "V1X80": {
+    "label": "Infirmiers et sages-femmes"
+  },
+  "T0X60": {
+    "label": "Coiffeurs, esthéticiens"
+  },
+  "L0X60": {
+    "label": "Secrétaires bureautiques et assimilés"
+  },
+  "R1X67": {
+    "label": "Télévendeurs et téléconseillers"
+  },
+  "L3X80": {
+    "label": "Secrétaires de direction"
+  },
+  "R1X61": {
+    "label": "Vendeurs en ameublement, équipement du foyer, bricolage"
+  },
+  "A0X40": {
+    "label": "Agriculteurs"
+  },
+  "E1X21": {
+    "label": "Ouvriers peu qualifiés de conduite d'installation de production de métaux"
+  },
+  "E4X32": {
+    "label": "Ouvriers du conditionnement, du tri et de l'emballage"
+  },
+  "L4X82": {
+    "label": "Techniciens et agents de maîtrise chargés d'études socio-économiques"
+  },
+  "J4X60": {
+    "label": "Agents et hôtesses d'accompagnement"
+  },
+  "G1X78": {
+    "label": "Techniciens et agents de maîtrise en distribution et assainissement d'eau et gestion des déchets"
+  },
+  "M1X81": {
+    "label": "Techniciens de production, d'exploitation, d'installation, et de maintenance, support et services aux utilisateurs en informatique"
+  },
+  "G0B41": {
+    "label": "Ouvriers mécaniciens de véhicules"
+  },
+  "M2X93": {
+    "label": "Experts et consultants en systèmes d'information"
+  },
+  "R3X84": {
+    "label": "Employés et professions intermédiaires de l'immobilier"
+  },
+  "U1X80": {
+    "label": "Professionnels des spectacles"
+  },
+  "W1X80": {
+    "label": "Formateurs"
+  },
+  "J0X33": {
+    "label": "Magasiniers et préparateurs de commandes peu qualifiés"
+  },
+  "F2X30": {
+    "label": "Ouvriers, techniciens et agents de maîtrise de l'imprimerie"
+  },
+  "H0X91": {
+    "label": "Techniciens du dessin industriel"
+  },
+  "F1X30": {
+    "label": "Ouvriers de la réalisation d'ouvrages décoratifs et meubles en bois"
+  },
+  "E5X70": {
+    "label": "Techniciens des industries de process"
+  },
+  "A3X40": {
+    "label": "Pêcheurs et aquaculteurs"
+  },
+  "G0A40": {
+    "label": "Ouvriers de la maintenance générale et mécanique"
+  },
+  "U1X92": {
+    "label": "Écrivains"
+  },
+  "R4X90": {
+    "label": "Cadres commerciaux, acheteurs et cadres de la mercatique"
+  },
+  "J3X40": {
+    "label": "Conducteurs de véhicules légers"
+  },
+  "B2X30": {
+    "label": "Ouvriers en pose et décoration de revêtements"
+  },
+  "V2X90": {
+    "label": "Médecins"
+  },
+  "U1X81": {
+    "label": "Photographes"
+  },
+  "G1X72": {
+    "label": "Techniciens et agents de maîtrise en maintenance générale et mécanique industrielle"
+  },
+  "QDX02": {
+    "label": "Cadres et indépendants commerciaux des assurances"
+  },
+  "U0X91": {
+    "label": "Cadres et techniciens de la documentation"
+  },
+  "B0X30": {
+    "label": "Ouvriers peu qualifiés de l'extraction et des travaux publics"
+  },
+  "H0X92": {
+    "label": "Techniciens et agents de maîtrise de la logistique, du planning, de l'ordonnancement et méthodes en industrialisation"
+  },
+  "W0X80": {
+    "label": "Professeurs des écoles"
+  },
+  "E3X40": {
+    "label": "Ouviers qualifiés des industries agro-alimentaires"
+  },
+  "V3X70": {
+    "label": "Techniciens médicaux et préparateurs"
+  },
+  "S1X20": {
+    "label": "Aides de cuisine et employés polyvalents de la restauration"
+  },
+  "D2X30": {
+    "label": "Ouvriers peu qualifiés en ajustement, montage et assemblage mécanique"
+  },
+  "J5X81": {
+    "label": "Techniciens et agents de maîtrise du tourisme"
+  },
+  "QCX02": {
+    "label": "Cadres et indépendants commerciaux de la banque"
+  },
+  "L5X90": {
+    "label": "Cadres administratifs, comptables et financiers (hors juristes)"
+  },
+  "B1X33": {
+    "label": "Charpentiers (métal et bois)"
+  },
+  "B7X91": {
+    "label": "Cadres des études BTP, des études géologiques, du métré de la construction et du contrôle et diagnostic technique du BTP"
+  },
+  "B1X30": {
+    "label": "Maçons peu qualifiés"
+  },
+  "F0X30": {
+    "label": "Ouvriers, techniciens et agents de maîtrise en traitement du cuir"
+  },
+  "S2X60": {
+    "label": "Employés de l'hôtellerie"
+  },
+  "B2X31": {
+    "label": "Ouvriers en travaux de façade, d'étanchéité et d'isolation"
+  },
+  "E2X40": {
+    "label": "Ouvriers qualifiés des industries chimiques et plastiques"
+  },
+  "T6X61": {
+    "label": "Employés des services divers"
+  },
+  "S0X40": {
+    "label": "Bouchers"
+  },
+  "A3X41": {
+    "label": "Marins"
+  },
+  "B2X38": {
+    "label": "Ouvriers qualifiés en menuiserie et en agencement du BTP"
+  },
+  "D0X31": {
+    "label": "Ouvriers qualifiés en conduite d'équipement d'usinage"
+  },
+  "R4X92": {
+    "label": "Cadres du management des magasins"
+  },
+  "B0X32": {
+    "label": "Ouvriers de la construction en béton"
+  },
+  "R0X60": {
+    "label": "Employés de libre service"
+  },
+  "R2X80": {
+    "label": "Attachés commerciaux"
+  },
+  "S1X80": {
+    "label": "Chefs cuisiniers"
+  },
+  "H1X93": {
+    "label": "Ingénieurs des méthodes de production, du contrôle qualité"
+  },
+  "G1X75": {
+    "label": "Techniciens et agents de maîtrise en assistance et support technique client et en installation et maintenance télécoms et courants faibles"
+  },
+  "B1X31": {
+    "label": "Maçons qualifiés"
+  },
+  "D1X33": {
+    "label": "Soudeurs"
+  },
+  "A0X41": {
+    "label": "Eleveurs"
+  },
+  "J4X63": {
+    "label": "Employés du tourisme et agent de billetterie des transports"
+  },
+  "B7X92": {
+    "label": "Ingénieurs du bâtiment et des travaux publics, chefs de chantier et conducteurs de travaux (cadres)"
+  },
+  "E4X30": {
+    "label": "Ouvriers en conduite d’équipement de fabrication de pâte à papier, de papier et de carton et de panneaux de bois"
+  },
+  "B6X72": {
+    "label": "Dessinateurs en bâtiment et en travaux publics"
+  },
+  "P3X90": {
+    "label": "Professionnels du droit"
+  },
+  "A2X70": {
+    "label": "Techniciens et agents d'encadrement d'exploitations agricoles"
+  },
+  "J3X42": {
+    "label": "Conducteurs et livreurs sur courte distance (hors distribution de documents)"
+  },
+  "W0X92": {
+    "label": "Professeurs du supérieur"
+  },
+  "J0X30": {
+    "label": "Manutentionnaires et déménageurs peu qualifiés"
+  },
+  "U1X93": {
+    "label": "Artistes plasticiens"
+  },
+  "B2X36": {
+    "label": "Ouvriers en peinture en bâtiment"
+  },
+  "B0X31": {
+    "label": "Ouvriers qualifiés de l'extraction et des travaux publics"
+  },
+  "W0X91": {
+    "label": "Directeurs d’établissements du secondaire ou du supérieur et inspecteurs"
+  },
+  "R4X91": {
+    "label": "Technico-commerciaux"
+  },
+  "J0X34": {
+    "label": "Magasiniers et préparateurs de commande qualifiés"
+  },
+  "S0X42": {
+    "label": "Boulangers, pâtissiers"
+  },
+  "V3X90": {
+    "label": "Psychologues, psychothérapeutes"
+  },
+  "T4X62": {
+    "label": "Ouvriers de l'assainissement et du traitement des déchets"
+  },
+  "H0X40": {
+    "label": "Ouvriers qualifiés du contrôle qualité et de laboratoire"
+  },
+  "G0A41": {
+    "label": "Ouvriers de la maintenance en électricité et en électronique"
+  },
+  "D1X30": {
+    "label": "Ouvriers en chaudronnerie et tôlerie"
+  },
+  "QCX01": {
+    "label": "Employés et techniciens commerciaux de la banque"
+  },
+  "E1X30": {
+    "label": "Ouvriers de l'industrie verrière, céramique et matériaux de construction"
+  }
+}

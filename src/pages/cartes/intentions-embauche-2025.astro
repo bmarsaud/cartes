@@ -10,13 +10,35 @@ const map = {
 import MapLayout from "../../layouts/MapLayout.astro";
 ---
 <MapLayout {...map}>
-    <div class="w-1/4 border-r flex flex-col p-2 pr-1">
-        <h2 class="text-2xl font-bold">Side panel</h2>
+    <div class="w-1/3 border-r flex flex-col p-2 pr-1 gap-4">
+        <div class="flex flex-col gap-1" x-data="{
+            geolocation: 'A l\\'échelle nationale',
+            direction: 'baissé',
+            evolution: '12.5 %',
+            projets2024: '2 401 105',
+            projets2025: '2 751 069',
+            updateData: function(event) {
+                this.location = event.location;
+                this.direction = event.evolution > 0 ? 'augmenté' : 'baissé';
+                this.evolution = (Math.abs(event.evolution) * 100).toFixed(2) + ' %';
+                this.projets2024 = event.projets2024;
+                this.projets2025 = event.projets2025;
+            }
+        }" @update-data.window="updateData($event.detail)">
+            <h2 class="text-2xl font-bold">Tendance</h2>
+            <p><span x-text="geolocation"></span> les intentions d'embauche ont <span x-text="direction"></span> de <span class="font-semibold" x-text="evolution"></span> par rapport à 2024 selon l'enquête <a href="https://statistiques.francetravail.org/bmo/" target="_blank" class="underline">Besoins en Main-d'Œuvre</a> de France Travail.</p>
+            <p class="mt-1">Cela représente un total de <span x-text="projets2025" class="font-semibold"></span> projets d'embauche en 2025 contre <span x-text="projets2024"  class="font-semibold"></span> en 2024.</p>
+        </div>
+        <div class="flex flex-col gap-1">
+            <h2 class="text-2xl font-bold">Répartition par métier</h2>
+            <p>Le graphique ci-dessous représente les 10 métiers les plus recherchés par les projets d'embauche.</p>
+            <canvas class="w-full mt-2" id="metier-chart"></canvas>
+        </div>
     </div>
     <div id="map" class="h-full w-3/4 relative">
         <div class="absolute top-2 right-2 z-20 bg-[#fffaea] border p-2" x-data="{}" @tab-selected="window.selectIndicator($event.detail.value)">
             <h3 class="font-semibold">Indicateur</h3>
-            <Tabs elements={["Nombre de projets", "Évolution p/r à 2024"]} initialValue="Nombre de projets"></Tabs>
+            <Tabs elements={["Évolution p/r à 2024", "Nombre de projets"]} initialValue="Évolution p/r à 2024"></Tabs>
         </div>
     </div>
 </MapLayout>
@@ -31,12 +53,16 @@ import MapLayout from "../../layouts/MapLayout.astro";
     import proj4 from 'proj4';
     import {register} from 'ol/proj/proj4';
     import {Fill, Stroke, Style, Circle, Text} from "ol/style";
+    import {interpolateRgbBasis} from 'd3-interpolate';
+    import {Chart, PieController, ArcElement, Legend, Tooltip} from "chart.js";
+
+    Chart.register([PieController, ArcElement, Legend, Tooltip]);
 
     proj4.defs("EPSG:2154","+proj=lcc +lat_0=46.5 +lon_0=3 +lat_1=49 +lat_2=44 +x_0=700000 +y_0=6600000 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs +type=crs");
     register(proj4);
 
     var state = {
-        indicator: 'value',
+        indicator: 'evolution',
         region: null,
         departement: null,
         metier: null
@@ -45,8 +71,9 @@ import MapLayout from "../../layouts/MapLayout.astro";
     loadMap();
     async function loadMap() {
         // data
-        const [departements, bmo2024, bmo2025] = await Promise.all([
+        const [departements, metiers, bmo2024, bmo2025] = await Promise.all([
             fetch('/data/intentions-embauche-2025/departements.json').then(res => res.json()),
+            fetch('/data/intentions-embauche-2025/metiers.json').then(res => res.json()),
             fetch('/data/intentions-embauche-2025/bmo_2024_dept.json').then(res => res.json()),
             fetch('/data/intentions-embauche-2025/bmo_2025_dept.json').then(res => res.json())]
         );
@@ -56,6 +83,7 @@ import MapLayout from "../../layouts/MapLayout.astro";
             format: new GeoJSON(),
         });
 
+        const colorPalette = ["#a50026","#d73027","#f46d43","#fdae61","#fee08b","#ffffbf","#d9ef8b","#a6d96a","#66bd63","#1a9850","#006837"];
         const frenchNumberFormat = new Intl.NumberFormat('fr-FR');
         const frenchPercentFormat = new Intl.NumberFormat('fr-FR', {style: 'percent'});
         const map = new Map({
@@ -67,14 +95,14 @@ import MapLayout from "../../layouts/MapLayout.astro";
                         let value = getCurrentValue(feature.get('code'), state.departement, state.metier);
                         return new Style({
                             fill: new Fill({
-                                color: '#eee',
+                                color: state.indicator === 'value' ? '#eee' : interpolateRgbBasis(colorPalette)((value[state.indicator] + 0.3) / 0.6),
                             }),
                             stroke: new Stroke({
                                 color: 'black',
                             }),
                             text: new Text({
                                 font: '1em "Source Serif 4"',
-                                text: state.indicator === 'value' ? frenchNumberFormat.format(value[state.indicator]) : frenchPercentFormat.format(value[state.indicator]),
+                                text: feature.get('nom') + '\n' + (state.indicator === 'value' ? frenchNumberFormat.format(value[state.indicator]) : frenchPercentFormat.format(value[state.indicator])),
                                 fill: new Fill({
                                     color: 'black'
                                 })
@@ -119,6 +147,33 @@ import MapLayout from "../../layouts/MapLayout.astro";
             return departements.filter((entry: any) => ('' + entry.REG) === region).map((entry: any) => '' + entry.DEP);
         }
 
+        function getMetierRepartition(region: string | null, departement: string | null, metier: string | null) {
+            let groupBy = function(xs, key) {
+                return xs.reduce(function(rv, x) {
+                    (rv[x[key]] ??= []).push(x);
+                    return rv;
+                }, {});
+            };
+
+            let data = filterData(bmo2025, region, departement, metier);
+            let groupedData = groupBy(data, 0);
+            let total = 0;
+            for (let metier of Object.keys(groupedData)) {
+                groupedData[metier] = groupedData[metier].reduce((sum, entry) => sum + entry[2], 0);
+                total += groupedData[metier];
+            }
+
+            let topTenKeys = Object.keys(groupedData).sort((a, b) => groupedData[b] - groupedData[a]).slice(0, 9);
+
+            let topTenLabels = [...topTenKeys.map(key => metiers[key].label), 'Autres'];
+            let topTenValues = [...topTenKeys.map(key => groupedData[key]), total - topTenKeys.reduce((sum, key) => sum + groupedData[key], 0)];
+
+            return {
+                labels: topTenLabels,
+                values: topTenValues
+            }
+        }
+
         // interactions
         window.selectIndicator = function (indicator: string) {
             if (indicator === 'Nombre de projets') {
@@ -128,5 +183,38 @@ import MapLayout from "../../layouts/MapLayout.astro";
             }
             regionsSource.changed();
         }
+
+        let repartition = getMetierRepartition(null, null, null);
+        const ctx = document.getElementById('metier-chart');
+        const metierChart = new Chart(ctx, {
+            type: 'pie',
+            data: {
+                labels: repartition.labels,
+                datasets: [{
+                    data: repartition.values,
+                    backgroundColor: [
+                        "#4269d0","#efb118","#ff725c","#6cc5b0","#3ca951","#ff8ab7","#a463f2","#97bbf5","#9c6b4e","#bbb"
+                    ],
+                    hoverOffset: 4
+                }]
+            },
+            options: {
+                plugins: {
+                    legend: {
+                        position: 'bottom',
+                        align: 'start',
+                        labels: {
+                            color: 'black',
+                            font: {
+                                size: 12,
+                                family: '"Source Serif 4"'
+                            }
+                        }
+                    }
+                },
+            }
+        });
+
+
     }
 </script>
