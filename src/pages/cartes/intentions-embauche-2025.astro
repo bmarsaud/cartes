@@ -1,0 +1,132 @@
+---
+import Tabs from "../../components/Tabs.astro";
+const map = {
+    "title": "Les intentions d'embauche en 2025",
+    "abstract": "",
+    "description": "",
+    "date": "30 avril 2025"
+};
+
+import MapLayout from "../../layouts/MapLayout.astro";
+---
+<MapLayout {...map}>
+    <div class="w-1/4 border-r flex flex-col p-2 pr-1">
+        <h2 class="text-2xl font-bold">Side panel</h2>
+    </div>
+    <div id="map" class="h-full w-3/4 relative">
+        <div class="absolute top-2 right-2 z-20 bg-[#fffaea] border p-2" x-data="{}" @tab-selected="window.selectIndicator($event.detail.value)">
+            <h3 class="font-semibold">Indicateur</h3>
+            <Tabs elements={["Nombre de projets", "Évolution p/r à 2024"]} initialValue="Nombre de projets"></Tabs>
+        </div>
+    </div>
+</MapLayout>
+
+<script>
+    import 'ol/ol.css';
+    import Map from 'ol/Map';
+    import View from 'ol/View';
+    import VectorLayer from 'ol/layer/Vector';
+    import VectorSource from 'ol/source/Vector';
+    import GeoJSON from 'ol/format/GeoJSON';
+    import proj4 from 'proj4';
+    import {register} from 'ol/proj/proj4';
+    import {Fill, Stroke, Style, Circle, Text} from "ol/style";
+
+    proj4.defs("EPSG:2154","+proj=lcc +lat_0=46.5 +lon_0=3 +lat_1=49 +lat_2=44 +x_0=700000 +y_0=6600000 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs +type=crs");
+    register(proj4);
+
+    var state = {
+        indicator: 'value',
+        region: null,
+        departement: null,
+        metier: null
+    };
+
+    loadMap();
+    async function loadMap() {
+        // data
+        const [departements, bmo2024, bmo2025] = await Promise.all([
+            fetch('/data/intentions-embauche-2025/departements.json').then(res => res.json()),
+            fetch('/data/intentions-embauche-2025/bmo_2024_dept.json').then(res => res.json()),
+            fetch('/data/intentions-embauche-2025/bmo_2025_dept.json').then(res => res.json())]
+        );
+
+        const regionsSource = new VectorSource({
+            url: 'https://raw.githubusercontent.com/gregoiredavid/france-geojson/refs/heads/master/regions.geojson',
+            format: new GeoJSON(),
+        });
+
+        const frenchNumberFormat = new Intl.NumberFormat('fr-FR');
+        const frenchPercentFormat = new Intl.NumberFormat('fr-FR', {style: 'percent'});
+        const map = new Map({
+            target: 'map',
+            layers: [
+                new VectorLayer({
+                    source: regionsSource,
+                    style: function (feature) {
+                        let value = getCurrentValue(feature.get('code'), state.departement, state.metier);
+                        return new Style({
+                            fill: new Fill({
+                                color: '#eee',
+                            }),
+                            stroke: new Stroke({
+                                color: 'black',
+                            }),
+                            text: new Text({
+                                font: '1em "Source Serif 4"',
+                                text: state.indicator === 'value' ? frenchNumberFormat.format(value[state.indicator]) : frenchPercentFormat.format(value[state.indicator]),
+                                fill: new Fill({
+                                    color: 'black'
+                                })
+                            })
+                        })
+                    }
+                }),
+            ],
+            view: new View({
+                projection: 'EPSG:2154',
+                center: [0, 0],
+                zoom: 0,
+            }),
+        });
+
+        regionsSource.on('featuresloadend', function() {
+            map.getView().fit(regionsSource.getExtent(), {padding: [10, 10, 10, 10]});
+        });
+
+        // data access
+        function getCurrentValue(region: string | null, departement: string | null, metier: string | null) {
+            let data2025 = filterData(bmo2025, region, departement, metier).reduce((sum, entry) => sum + entry[2], 0);
+            let data2024 = filterData(bmo2024, region, departement, metier).reduce((sum, entry) => sum + entry[2], 0);
+
+            return {
+                value: data2025,
+                evolution: (data2025 - data2024) / data2024
+            }
+        }
+
+        function filterData(data: any[], region: string | null, departement: string | null, metier: string | null): any[] {
+            let regionDepartements = getRegionDepartements(region);
+            return data.filter(entry =>
+                (metier != null ? entry[0] === metier : true) &&
+                (departement != null ? entry[1] === departement : true) &&
+                (region != null ? regionDepartements.includes(entry[1]) : true)
+            );
+        }
+
+        function getRegionDepartements(region: string | null) {
+            if (region === null) return [];
+            return departements.filter((entry: any) => ('' + entry.REG) === region).map((entry: any) => '' + entry.DEP);
+        }
+
+        // interactions
+        window.selectIndicator = function (indicator: string) {
+            if (indicator === 'Nombre de projets') {
+                state.indicator = 'value';
+            } else {
+                state.indicator = 'evolution';
+            }
+            regionsSource.changed();
+        }
+    }
+</script>
