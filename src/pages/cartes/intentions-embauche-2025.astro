@@ -2,8 +2,8 @@
 import Tabs from "../../components/Tabs.astro";
 const map = {
     "title": "Les intentions d'embauche en 2025",
-    "abstract": "",
-    "description": "",
+    "abstract": "Dans son enquête Besoins en Main-d'Œuvre 2025, France Travail annonce une diminution de 12,5 % du nombre de projets d'embauche par rapport à 2025. Une phénomène général mais inégal sur le territoire.",
+    "description": "Chaque année, France Travail publie son enquête <a href=\"https://statistiques.francetravail.org/bmo/\" target=\"_blank\" class=\"underline\">Besoins en Main-d'Œuvre</a> qui recense les besoins en recrutement des entreprises française. En 2025, on observe un baisse du nombre de projet de recrutement de 12,5 % par rapport à 2024 qui s'explique notamment par la baisse de 4,1 points de la proportion d'établissements prévoyant d'embaucher.",
     "date": "30 avril 2025"
 };
 
@@ -491,9 +491,11 @@ import MapLayout from "../../layouts/MapLayout.astro";
             if (state.departement) {
                 let departementRegion = departements.find(elem => elem.DEP === state.departement).REG;
                 let regionFeature = regionsSource.getFeatures().find(feature => feature.get('code') === departementRegion);
-                updateData('Région ' + regionFeature.get('nom'), 'Dans la région ' + regionFeature.get('nom'));
 
                 state.departement = null;
+
+                updateData('Région ' + regionFeature.get('nom'), 'Dans la région ' + regionFeature.get('nom'));
+
                 departementsSource.changed();
                 regionsSource.changed();
 
