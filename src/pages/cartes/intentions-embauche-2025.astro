@@ -28,7 +28,14 @@ import MapLayout from "../../layouts/MapLayout.astro";
                 this.projets2025 = this.numberFormat.format(event.projets2025);
             }
         }" @update-data.window="updateData($event.detail)">
-            <h2 class="text-2xl font-bold" x-text="title"></h2>
+            <div class="flex gap-2 items-center">
+                <template x-if="title !== 'France métropolitaine'">
+                    <div class="stroke-white bg-black border hover:stroke-black hover:bg-transparent cursor-pointer" @click="window.goBack()">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-left-icon lucide-chevron-left"><path d="m15 18-6-6 6-6"/></svg>
+                    </div>
+                </template>
+                <h2 class="text-2xl font-bold" x-text="title"></h2>
+            </div>
             <p><span x-text="geolocation"></span> les intentions d'embauche ont <span x-text="direction"></span> de <span class="font-semibold" x-text="evolution"></span> par rapport à 2024 selon l'enquête <a href="https://statistiques.francetravail.org/bmo/" target="_blank" class="underline">Besoins en Main-d'Œuvre</a> de France Travail.</p>
             <p class="mt-1">Cela représente un total de <span x-text="projets2025" class="font-semibold"></span> projets d'embauche en 2025 contre <span x-text="projets2024"  class="font-semibold"></span> en 2024.</p>
             <p>La répartition des métiers recherchés par les projets d'embauche est la suivante :</p>
@@ -364,6 +371,31 @@ import MapLayout from "../../layouts/MapLayout.astro";
             metierChart.data.datasets[0].data = repartition.values;
             metierChart.data.labels = repartition.labels;
             metierChart.update();
+        }
+
+        // side panel interactions
+        window.goBack = function() {
+            if (state.departement) {
+                let departementRegion = departements.find(elem => elem.DEP === state.departement).REG;
+                let regionFeature = regionsSource.getFeatures().find(feature => feature.get('code') === departementRegion);
+                updateData('Région ' + regionFeature.get('nom'), 'Dans la région ' + regionFeature.get('nom'));
+
+                state.departement = null;
+                departementsSource.changed();
+                regionsSource.changed();
+            } else if (state.region) {
+                state.region = null;
+                state.departement = null;
+
+                updateData('France métropolitaine', "A l'échelle nationale");
+
+                regionsSource.forEachFeature((feature) => {
+                    feature.setStyle(undefined);
+                });
+
+                regionsSource.changed();
+                map.getView().fit(regionsSource.getExtent(), {padding: [10, 10, 75, 10]});
+            }
         }
     }
 </script>
