@@ -71,6 +71,8 @@ import MapLayout from "../../layouts/MapLayout.astro";
     import {interpolateRgbBasis} from 'd3-interpolate';
     import {Chart, PieController, ArcElement, Legend, Tooltip} from "chart.js";
     import Feature from "ol/Feature";
+    import {Point} from "ol/geom";
+    import {getCenter} from "ol/extent";
 
     Chart.register([PieController, ArcElement, Legend, Tooltip]);
 
@@ -111,21 +113,62 @@ import MapLayout from "../../layouts/MapLayout.astro";
         function getRegionFeatureStyle (feature) {
             if (!state.region) {
                 let value = getCurrentValue(feature.get('code'), state.departement, state.metier);
-                return new Style({
-                    fill: new Fill({
-                        color: state.indicator === 'value' ? '#eee' : interpolateRgbBasis(colorPalette)((value[state.indicator] + 0.3) / 0.6),
-                    }),
-                    stroke: new Stroke({
-                        color: 'black',
-                    }),
-                    text: new Text({
-                        font: '1em "Source Serif 4"',
-                        text: feature.get('nom') + '\n' + (state.indicator === 'value' ? frenchNumberFormat.format(value[state.indicator]) : frenchPercentFormat.format(value[state.indicator])),
-                        fill: new Fill({
-                            color: 'black'
-                        })
-                    })
-                })
+
+                if (state.indicator === 'value') {
+                    return [
+                        new Style({
+                            fill: new Fill({
+                                color: '#eee',
+                            }),
+                            stroke: new Stroke({
+                                color: 'black'
+                            }),
+                        }),
+                        new Style({
+                            geometry: new Point(getCenter(feature.getGeometry().getExtent())),
+                            image: new Circle({
+                                radius: value[state.indicator] / 5000,
+                                fill: new Fill({
+                                    color: "#0d2d55"
+                                }),
+                                stroke: new Stroke({
+                                    color: 'black',
+                                    width: 1
+                                })
+                            }),
+                            text: new Text({
+                                font: (value[state.indicator]  / 10000) + 'px "Source Serif 4"',
+                                text: frenchNumberFormat.format(value[state.indicator]),
+                                fill: new Fill({
+                                    color: 'white'
+                                })
+                            })
+                        })]
+                } else {
+                    return [
+                        new Style({
+                            fill: new Fill({
+                                color: interpolateRgbBasis(colorPalette)((value[state.indicator] + 0.3) / 0.6),
+                            }),
+                            stroke: new Stroke({
+                                color: 'black',
+                            })
+                        }),
+                        new Style({
+                            geometry: new Point(getCenter(feature.getGeometry().getExtent())),
+                            text: new Text({
+                                text: [
+                                    feature.get('nom'), '500 1em "Source Serif 4"',
+                                    '\n', '',
+                                    frenchPercentFormat.format(value[state.indicator]), '1em "Source Serif 4"',
+                                ],
+                                fill: new Fill({
+                                    color: 'black'
+                                })
+                            })
+                        }),
+                    ]
+                }
             }
 
             return new Style({
@@ -134,6 +177,7 @@ import MapLayout from "../../layouts/MapLayout.astro";
                 }),
                 stroke: new Stroke({
                     color: 'black',
+                    width: !state.departement && state.region === feature.get('code') ? 3 : 1
                 }),
             });
         }
@@ -146,22 +190,59 @@ import MapLayout from "../../layouts/MapLayout.astro";
         function getDepartementFeatureStyle(feature) {
             if (state.region && state.departementsForRegion.includes(feature.get('code'))) {
                 let value = getCurrentValue(state.region, feature.get('code'), state.metier);
-                return new Style({
-                    fill: new Fill({
-                        color: state.indicator === 'value' ? '#eee' : interpolateRgbBasis(colorPalette)((value[state.indicator] + 0.3) / 0.6),
-                    }),
-                    stroke: new Stroke({
-                        color: 'black',
-                        width: state.departement === feature.get('code') ? 3 : 1
-                    }),
-                    text: new Text({
-                        font: '1em "Source Serif 4"',
-                        text: feature.get('nom') + '\n' + (state.indicator === 'value' ? frenchNumberFormat.format(value[state.indicator]) : frenchPercentFormat.format(value[state.indicator])),
+
+                if (state.indicator === 'value') {
+                    return [
+                        new Style({
+                            fill: new Fill({
+                                color: '#eee',
+                            }),
+                            stroke: new Stroke({
+                                color: 'black',
+                                width: state.departement === feature.get('code') ? 3 : 1
+                            }),
+                        }),
+                        new Style({
+                            geometry: new Point(getCenter(feature.getGeometry().getExtent())),
+                            image: new Circle({
+                                radius: value[state.indicator] / 800,
+                                fill: new Fill({
+                                    color: "#0d2d55"
+                                }),
+                                stroke: new Stroke({
+                                    color: 'black',
+                                    width: 1
+                                })
+                            }),
+                            text: new Text({
+                                font: (value[state.indicator]  / 1500) + 'px "Source Serif 4"',
+                                text: frenchNumberFormat.format(value[state.indicator]),
+                                fill: new Fill({
+                                    color: 'white'
+                                })
+                            }),
+                        })]
+                } else {
+                    return new Style({
                         fill: new Fill({
-                            color: 'black'
+                            color: interpolateRgbBasis(colorPalette)((value[state.indicator] + 0.3) / 0.6),
+                        }),
+                        stroke: new Stroke({
+                            color: 'black',
+                            width: state.departement === feature.get('code') ? 3 : 1
+                        }),
+                        text: new Text({
+                            text: [
+                                feature.get('nom'), '500 1em "Source Serif 4"',
+                                '\n', '',
+                                frenchPercentFormat.format(value[state.indicator]), '1em "Source Serif 4"',
+                            ],
+                            fill: new Fill({
+                                color: 'black'
+                            })
                         })
-                    })
-                });
+                    });
+                }
             }
             return new Style({});
         }
@@ -302,9 +383,15 @@ import MapLayout from "../../layouts/MapLayout.astro";
                 map.getTargetElement().style.cursor = 'pointer';
                 hoveredRegion = feature;
 
-                let featureStyle: Style = getRegionFeatureStyle(feature);
-                featureStyle.getStroke()?.setWidth(3);
-                feature.setStyle(featureStyle);
+                if (feature.get('code') !== state.region || !state.departement) {
+                    let featureStyle: Style = getRegionFeatureStyle(feature);
+                    if (featureStyle.length > 0) {
+                        featureStyle[0].getStroke()?.setWidth(3);
+                    } else {
+                        featureStyle.getStroke()?.setWidth(3);
+                    }
+                    feature.setStyle(featureStyle);
+                }
 
                 return true;
             }, {
@@ -316,7 +403,11 @@ import MapLayout from "../../layouts/MapLayout.astro";
                 hoveredDepartement = feature;
 
                 let featureStyle: Style = getDepartementFeatureStyle(feature);
-                featureStyle.getStroke()?.setWidth(3);
+                if (featureStyle.length > 0) {
+                    featureStyle[0].getStroke()?.setWidth(3);
+                } else {
+                    featureStyle.getStroke()?.setWidth(3);
+                }
                 feature.setStyle(featureStyle);
 
                 return true;
@@ -383,6 +474,8 @@ import MapLayout from "../../layouts/MapLayout.astro";
                 state.departement = null;
                 departementsSource.changed();
                 regionsSource.changed();
+
+                map.getView().fit(regionFeature?.getGeometry(), {padding: [10, 10, 10, 10]});
             } else if (state.region) {
                 state.region = null;
                 state.departement = null;
