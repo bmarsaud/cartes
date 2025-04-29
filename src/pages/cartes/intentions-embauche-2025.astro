@@ -101,7 +101,7 @@ import MapLayout from "../../layouts/MapLayout.astro";
         const frenchNumberFormat = new Intl.NumberFormat('fr-FR');
         const frenchPercentFormat = new Intl.NumberFormat('fr-FR', {style: 'percent'});
 
-        function getFeatureStyle (feature) {
+        function getRegionFeatureStyle (feature) {
             if (!state.region) {
                 let value = getCurrentValue(feature.get('code'), state.departement, state.metier);
                 return new Style({
@@ -133,32 +133,35 @@ import MapLayout from "../../layouts/MapLayout.astro";
 
         const regionsLayer = new VectorLayer({
             source: regionsSource,
-            style: getFeatureStyle
+            style: getRegionFeatureStyle
         });
+
+        function getDepartementFeatureStyle(feature) {
+            if (state.region && state.departementsForRegion.includes(feature.get('code'))) {
+                let value = getCurrentValue(state.region, feature.get('code'), state.metier);
+                return new Style({
+                    fill: new Fill({
+                        color: state.indicator === 'value' ? '#eee' : interpolateRgbBasis(colorPalette)((value[state.indicator] + 0.3) / 0.6),
+                    }),
+                    stroke: new Stroke({
+                        color: 'black',
+                        width: state.departement === feature.get('code') ? 3 : 1
+                    }),
+                    text: new Text({
+                        font: '1em "Source Serif 4"',
+                        text: feature.get('nom') + '\n' + (state.indicator === 'value' ? frenchNumberFormat.format(value[state.indicator]) : frenchPercentFormat.format(value[state.indicator])),
+                        fill: new Fill({
+                            color: 'black'
+                        })
+                    })
+                });
+            }
+            return new Style({});
+        }
 
         const departementsLayer = new VectorLayer({
             source: departementsSource,
-            style: function (feature) {
-                if (state.region && state.departementsForRegion.includes(feature.get('code'))) {
-                    let value = getCurrentValue(state.region, feature.get('code'), state.metier);
-                    return new Style({
-                        fill: new Fill({
-                            color: state.indicator === 'value' ? '#eee' : interpolateRgbBasis(colorPalette)((value[state.indicator] + 0.3) / 0.6),
-                        }),
-                        stroke: new Stroke({
-                            color: 'black',
-                        }),
-                        text: new Text({
-                            font: '1em "Source Serif 4"',
-                            text: feature.get('nom') + '\n' + (state.indicator === 'value' ? frenchNumberFormat.format(value[state.indicator]) : frenchPercentFormat.format(value[state.indicator])),
-                            fill: new Fill({
-                                color: 'black'
-                            })
-                        })
-                    });
-                }
-                return new Style({});
-            }
+            style: getDepartementFeatureStyle
         });
 
         const map = new Map({
@@ -273,25 +276,45 @@ import MapLayout from "../../layouts/MapLayout.astro";
             departementsSource.changed();
         }
 
-        let hoveredFeature: Feature | null = null;
+        let hoveredRegion: Feature | null = null;
+        let hoveredDepartement: Feature | null = null;
         map.on('pointermove', function (evt) {
-            if (hoveredFeature) {
+            if (hoveredRegion) {
                 map.getTargetElement().style.cursor = 'auto';
-                hoveredFeature.setStyle(undefined);
-                hoveredFeature = null;
+                hoveredRegion.setStyle(undefined);
+                hoveredRegion = null;
+            }
+
+            if (hoveredDepartement) {
+                map.getTargetElement().style.cursor = 'auto';
+                hoveredDepartement.setStyle(undefined);
+                hoveredDepartement = null;
             }
 
             map.forEachFeatureAtPixel(evt.pixel, function (feature: Feature) {
                 map.getTargetElement().style.cursor = 'pointer';
-                hoveredFeature = feature;
+                hoveredRegion = feature;
 
-                let featureStyle: Style = getFeatureStyle(feature);
+                let featureStyle: Style = getRegionFeatureStyle(feature);
                 featureStyle.getStroke()?.setWidth(3);
                 feature.setStyle(featureStyle);
 
                 return true;
             }, {
                 layerFilter: (layer) => layer === regionsLayer
+            });
+
+            map.forEachFeatureAtPixel(evt.pixel, function (feature: Feature) {
+                map.getTargetElement().style.cursor = 'pointer';
+                hoveredDepartement = feature;
+
+                let featureStyle: Style = getDepartementFeatureStyle(feature);
+                featureStyle.getStroke()?.setWidth(3);
+                feature.setStyle(featureStyle);
+
+                return true;
+            }, {
+                layerFilter: (layer) => layer === departementsLayer
             });
         });
 
@@ -303,27 +326,44 @@ import MapLayout from "../../layouts/MapLayout.astro";
             if (regionFeature) {
                 state.region = regionFeature.get('code');
                 state.departementsForRegion = getRegionDepartements(state.region);
+                state.departement = null;
 
                 regionFeature.changed();
                 departementsSource.changed();
                 map.getView().fit(regionFeature.getGeometry(), { padding: [10, 10, 10, 10] });
 
-                let data = getCurrentValue(state.region, state.departement, state.metier);
-                window.dispatchEvent(new CustomEvent('update-data', {
-                    detail: {
-                        title: 'Région ' + regionFeature.get('nom'),
-                        geolocation: 'Dans la région ' + regionFeature.get('nom'),
-                        evolution: data.evolution,
-                        projets2024: data.oldValue,
-                        projets2025: data.value,
-                    }
-                }));
+                updateData('Région ' + regionFeature.get('nom'), 'Dans la région ' + regionFeature.get('nom'),)
+            }
 
-                let repartition = getMetierRepartition(state.region, state.departement, state.metier);
-                metierChart.data.datasets[0].data = repartition.values;
-                metierChart.data.labels = repartition.labels;
-                metierChart.update();
+            let departementFeature = map.getFeaturesAtPixel(evt.pixel, {
+                layerFilter: (layer) => layer === departementsLayer
+            }).pop();
+
+            if (departementFeature) {
+                state.departement = departementFeature.get('code');
+
+                departementFeature.changed();
+
+                updateData('Département ' + departementFeature.get('nom'), 'Dans le département ' + departementFeature.get('nom'),)
             }
         });
+
+        function updateData(title, geolocation) {
+            let data = getCurrentValue(state.region, state.departement, state.metier);
+            window.dispatchEvent(new CustomEvent('update-data', {
+                detail: {
+                    title,
+                    geolocation,
+                    evolution: data.evolution,
+                    projets2024: data.oldValue,
+                    projets2025: data.value,
+                }
+            }));
+
+            let repartition = getMetierRepartition(state.region, state.departement, state.metier);
+            metierChart.data.datasets[0].data = repartition.values;
+            metierChart.data.labels = repartition.labels;
+            metierChart.update();
+        }
     }
 </script>
