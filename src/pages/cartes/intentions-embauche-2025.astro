@@ -106,7 +106,7 @@ import MapLayout from "../../layouts/MapLayout.astro";
             format: new GeoJSON(),
         });
 
-        const colorPalette = ["#a50026","#d73027","#f46d43","#fdae61","#fee08b","#ffffbf","#d9ef8b","#a6d96a","#66bd63","#1a9850","#006837"];
+        const colorPalette = ["#fff7ec","#feebcf","#fddcaf","#fdca94","#fdb07a","#fa8e5d","#f16c49","#e04530","#c81d13","#a70403","#7f0000"];
         const frenchNumberFormat = new Intl.NumberFormat('fr-FR');
         const frenchPercentFormat = new Intl.NumberFormat('fr-FR', {style: 'percent'});
 
@@ -148,7 +148,7 @@ import MapLayout from "../../layouts/MapLayout.astro";
                     return [
                         new Style({
                             fill: new Fill({
-                                color: interpolateRgbBasis(colorPalette)((value[state.indicator] + 0.3) / 0.6),
+                                color: interpolateRgbBasis(colorPalette)(Math.abs(value[state.indicator]) / 0.4),
                             }),
                             stroke: new Stroke({
                                 color: 'black',
@@ -225,7 +225,7 @@ import MapLayout from "../../layouts/MapLayout.astro";
                 } else {
                     return new Style({
                         fill: new Fill({
-                            color: interpolateRgbBasis(colorPalette)((value[state.indicator] + 0.3) / 0.6),
+                            color: interpolateRgbBasis(colorPalette)(Math.abs(value[state.indicator]) / 0.4),
                         }),
                         stroke: new Stroke({
                             color: 'black',
