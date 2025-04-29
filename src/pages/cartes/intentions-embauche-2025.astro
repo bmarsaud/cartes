@@ -43,6 +43,10 @@ import MapLayout from "../../layouts/MapLayout.astro";
         </div>
     </div>
     <div id="map" class="h-full w-3/4 relative">
+        <div id="tooltip" class="absolute left-0 top-0 z-20 bg-[#fffaea] border p-2 pointer-events-none" style="display: none;">
+            <h3 class="font-[600] border-b mb-1" id="feature-name">Name</h3>
+            <span id="project-amount"></span> projets d'embauche.
+        </div>
         <div class="absolute top-2 right-2 z-20 bg-[#fffaea] border p-2" x-data="{}" @tab-selected="window.selectIndicator($event.detail.value)">
             <h3 class="font-semibold">Indicateur</h3>
             <Tabs elements={["Évolution p/r à 2024", "Nombre de projets"]} initialValue="Évolution p/r à 2024"></Tabs>
@@ -364,6 +368,10 @@ import MapLayout from "../../layouts/MapLayout.astro";
             departementsSource.changed();
         }
 
+        let tooltipElem = document.getElementById('tooltip');
+        let featureNameElem = document.getElementById('feature-name');
+        let projectAmountElem = document.getElementById('project-amount');
+
         let hoveredRegion: Feature | null = null;
         let hoveredDepartement: Feature | null = null;
         map.on('pointermove', function (evt) {
@@ -414,6 +422,20 @@ import MapLayout from "../../layouts/MapLayout.astro";
             }, {
                 layerFilter: (layer) => layer === departementsLayer
             });
+
+            if ((hoveredRegion || hoveredDepartement) && state.indicator === 'value') {
+                tooltipElem.style.left = evt.pixel[0] + 10 + 'px';
+                tooltipElem.style.top = evt.pixel[1] + 10 + 'px';
+
+                let hoveredFeature = hoveredDepartement || hoveredRegion;
+                if (hoveredFeature.getStyle()[1]?.getText().getText()) {
+                    featureNameElem.innerText = hoveredFeature.get('nom')
+                    projectAmountElem.innerText = hoveredFeature.getStyle()[1]?.getText().getText();
+                    tooltipElem.style.display = 'block';
+                }
+            } else {
+                tooltipElem.style.display = 'none';
+            }
         });
 
         map.on('click', function (evt) {
