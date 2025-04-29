@@ -1,507 +1,507 @@
 [
   {
-    "DEP": 1,
-    "REG": 84,
+    "DEP": "01",
+    "REG": "84",
     "LIBELLE": "Ain"
   },
   {
-    "DEP": 2,
-    "REG": 32,
+    "DEP": "02",
+    "REG": "32",
     "LIBELLE": "Aisne"
   },
   {
-    "DEP": 3,
-    "REG": 84,
+    "DEP": "03",
+    "REG": "84",
     "LIBELLE": "Allier"
   },
   {
-    "DEP": 4,
-    "REG": 93,
+    "DEP": "04",
+    "REG": "93",
     "LIBELLE": "Alpes-de-Haute-Provence"
   },
   {
-    "DEP": 5,
-    "REG": 93,
+    "DEP": "05",
+    "REG": "93",
     "LIBELLE": "Hautes-Alpes"
   },
   {
-    "DEP": 6,
-    "REG": 93,
+    "DEP": "06",
+    "REG": "93",
     "LIBELLE": "Alpes-Maritimes"
   },
   {
-    "DEP": 7,
-    "REG": 84,
+    "DEP": "07",
+    "REG": "84",
     "LIBELLE": "Ardèche"
   },
   {
-    "DEP": 8,
-    "REG": 44,
+    "DEP": "08",
+    "REG": "44",
     "LIBELLE": "Ardennes"
   },
   {
-    "DEP": 9,
-    "REG": 76,
+    "DEP": "09",
+    "REG": "76",
     "LIBELLE": "Ariège"
   },
   {
-    "DEP": 10,
-    "REG": 44,
+    "DEP": "10",
+    "REG": "44",
     "LIBELLE": "Aube"
   },
   {
-    "DEP": 11,
-    "REG": 76,
+    "DEP": "11",
+    "REG": "76",
     "LIBELLE": "Aude"
   },
   {
-    "DEP": 12,
-    "REG": 76,
+    "DEP": "12",
+    "REG": "76",
     "LIBELLE": "Aveyron"
   },
   {
-    "DEP": 13,
-    "REG": 93,
+    "DEP": "13",
+    "REG": "93",
     "LIBELLE": "Bouches-du-Rhône"
   },
   {
-    "DEP": 14,
-    "REG": 28,
+    "DEP": "14",
+    "REG": "28",
     "LIBELLE": "Calvados"
   },
   {
-    "DEP": 15,
-    "REG": 84,
+    "DEP": "15",
+    "REG": "84",
     "LIBELLE": "Cantal"
   },
   {
-    "DEP": 16,
-    "REG": 75,
+    "DEP": "16",
+    "REG": "75",
     "LIBELLE": "Charente"
   },
   {
-    "DEP": 17,
-    "REG": 75,
+    "DEP": "17",
+    "REG": "75",
     "LIBELLE": "Charente-Maritime"
   },
   {
-    "DEP": 18,
-    "REG": 24,
+    "DEP": "18",
+    "REG": "24",
     "LIBELLE": "Cher"
   },
   {
-    "DEP": 19,
-    "REG": 75,
+    "DEP": "19",
+    "REG": "75",
     "LIBELLE": "Corrèze"
   },
   {
-    "DEP": 21,
-    "REG": 27,
+    "DEP": "21",
+    "REG": "27",
     "LIBELLE": "Côte-d'Or"
   },
   {
-    "DEP": 22,
-    "REG": 53,
+    "DEP": "22",
+    "REG": "53",
     "LIBELLE": "Côtes-d'Armor"
   },
   {
-    "DEP": 23,
-    "REG": 75,
+    "DEP": "23",
+    "REG": "75",
     "LIBELLE": "Creuse"
   },
   {
-    "DEP": 24,
-    "REG": 75,
+    "DEP": "24",
+    "REG": "75",
     "LIBELLE": "Dordogne"
   },
   {
-    "DEP": 25,
-    "REG": 27,
+    "DEP": "25",
+    "REG": "27",
     "LIBELLE": "Doubs"
   },
   {
-    "DEP": 26,
-    "REG": 84,
+    "DEP": "26",
+    "REG": "84",
     "LIBELLE": "Drôme"
   },
   {
-    "DEP": 27,
-    "REG": 28,
+    "DEP": "27",
+    "REG": "28",
     "LIBELLE": "Eure"
   },
   {
-    "DEP": 28,
-    "REG": 24,
+    "DEP": "28",
+    "REG": "24",
     "LIBELLE": "Eure-et-Loir"
   },
   {
-    "DEP": 29,
-    "REG": 53,
+    "DEP": "29",
+    "REG": "53",
     "LIBELLE": "Finistère"
   },
   {
     "DEP": "2A",
-    "REG": 94,
+    "REG": "94",
     "LIBELLE": "Corse-du-Sud"
   },
   {
     "DEP": "2B",
-    "REG": 94,
+    "REG": "94",
     "LIBELLE": "Haute-Corse"
   },
   {
-    "DEP": 30,
-    "REG": 76,
+    "DEP": "30",
+    "REG": "76",
     "LIBELLE": "Gard"
   },
   {
-    "DEP": 31,
-    "REG": 76,
+    "DEP": "31",
+    "REG": "76",
     "LIBELLE": "Haute-Garonne"
   },
   {
-    "DEP": 32,
-    "REG": 76,
+    "DEP": "32",
+    "REG": "76",
     "LIBELLE": "Gers"
   },
   {
-    "DEP": 33,
-    "REG": 75,
+    "DEP": "33",
+    "REG": "75",
     "LIBELLE": "Gironde"
   },
   {
-    "DEP": 34,
-    "REG": 76,
+    "DEP": "34",
+    "REG": "76",
     "LIBELLE": "Hérault"
   },
   {
-    "DEP": 35,
-    "REG": 53,
+    "DEP": "35",
+    "REG": "53",
     "LIBELLE": "Ille-et-Vilaine"
   },
   {
-    "DEP": 36,
-    "REG": 24,
+    "DEP": "36",
+    "REG": "24",
     "LIBELLE": "Indre"
   },
   {
-    "DEP": 37,
-    "REG": 24,
+    "DEP": "37",
+    "REG": "24",
     "LIBELLE": "Indre-et-Loire"
   },
   {
-    "DEP": 38,
-    "REG": 84,
+    "DEP": "38",
+    "REG": "84",
     "LIBELLE": "Isère"
   },
   {
-    "DEP": 39,
-    "REG": 27,
+    "DEP": "39",
+    "REG": "27",
     "LIBELLE": "Jura"
   },
   {
-    "DEP": 40,
-    "REG": 75,
+    "DEP": "40",
+    "REG": "75",
     "LIBELLE": "Landes"
   },
   {
-    "DEP": 41,
-    "REG": 24,
+    "DEP": "41",
+    "REG": "24",
     "LIBELLE": "Loir-et-Cher"
   },
   {
-    "DEP": 42,
-    "REG": 84,
+    "DEP": "42",
+    "REG": "84",
     "LIBELLE": "Loire"
   },
   {
-    "DEP": 43,
-    "REG": 84,
+    "DEP": "43",
+    "REG": "84",
     "LIBELLE": "Haute-Loire"
   },
   {
-    "DEP": 44,
-    "REG": 52,
+    "DEP": "44",
+    "REG": "52",
     "LIBELLE": "Loire-Atlantique"
   },
   {
-    "DEP": 45,
-    "REG": 24,
+    "DEP": "45",
+    "REG": "24",
     "LIBELLE": "Loiret"
   },
   {
-    "DEP": 46,
-    "REG": 76,
+    "DEP": "46",
+    "REG": "76",
     "LIBELLE": "Lot"
   },
   {
-    "DEP": 47,
-    "REG": 75,
+    "DEP": "47",
+    "REG": "75",
     "LIBELLE": "Lot-et-Garonne"
   },
   {
-    "DEP": 48,
-    "REG": 76,
+    "DEP": "48",
+    "REG": "76",
     "LIBELLE": "Lozère"
   },
   {
-    "DEP": 49,
-    "REG": 52,
+    "DEP": "49",
+    "REG": "52",
     "LIBELLE": "Maine-et-Loire"
   },
   {
-    "DEP": 50,
-    "REG": 28,
+    "DEP": "50",
+    "REG": "28",
     "LIBELLE": "Manche"
   },
   {
-    "DEP": 51,
-    "REG": 44,
+    "DEP": "51",
+    "REG": "44",
     "LIBELLE": "Marne"
   },
   {
-    "DEP": 52,
-    "REG": 44,
+    "DEP": "52",
+    "REG": "44",
     "LIBELLE": "Haute-Marne"
   },
   {
-    "DEP": 53,
-    "REG": 52,
+    "DEP": "53",
+    "REG": "52",
     "LIBELLE": "Mayenne"
   },
   {
-    "DEP": 54,
-    "REG": 44,
+    "DEP": "54",
+    "REG": "44",
     "LIBELLE": "Meurthe-et-Moselle"
   },
   {
-    "DEP": 55,
-    "REG": 44,
+    "DEP": "55",
+    "REG": "44",
     "LIBELLE": "Meuse"
   },
   {
-    "DEP": 56,
-    "REG": 53,
+    "DEP": "56",
+    "REG": "53",
     "LIBELLE": "Morbihan"
   },
   {
-    "DEP": 57,
-    "REG": 44,
+    "DEP": "57",
+    "REG": "44",
     "LIBELLE": "Moselle"
   },
   {
-    "DEP": 58,
-    "REG": 27,
+    "DEP": "58",
+    "REG": "27",
     "LIBELLE": "Nièvre"
   },
   {
-    "DEP": 59,
-    "REG": 32,
+    "DEP": "59",
+    "REG": "32",
     "LIBELLE": "Nord"
   },
   {
-    "DEP": 60,
-    "REG": 32,
+    "DEP": "60",
+    "REG": "32",
     "LIBELLE": "Oise"
   },
   {
-    "DEP": 61,
-    "REG": 28,
+    "DEP": "61",
+    "REG": "28",
     "LIBELLE": "Orne"
   },
   {
-    "DEP": 62,
-    "REG": 32,
+    "DEP": "62",
+    "REG": "32",
     "LIBELLE": "Pas-de-Calais"
   },
   {
-    "DEP": 63,
-    "REG": 84,
+    "DEP": "63",
+    "REG": "84",
     "LIBELLE": "Puy-de-Dôme"
   },
   {
-    "DEP": 64,
-    "REG": 75,
+    "DEP": "64",
+    "REG": "75",
     "LIBELLE": "Pyrénées-Atlantiques"
   },
   {
-    "DEP": 65,
-    "REG": 76,
+    "DEP": "65",
+    "REG": "76",
     "LIBELLE": "Hautes-Pyrénées"
   },
   {
-    "DEP": 66,
-    "REG": 76,
+    "DEP": "66",
+    "REG": "76",
     "LIBELLE": "Pyrénées-Orientales"
   },
   {
-    "DEP": 67,
-    "REG": 44,
+    "DEP": "67",
+    "REG": "44",
     "LIBELLE": "Bas-Rhin"
   },
   {
-    "DEP": 68,
-    "REG": 44,
+    "DEP": "68",
+    "REG": "44",
     "LIBELLE": "Haut-Rhin"
   },
   {
-    "DEP": 69,
-    "REG": 84,
+    "DEP": "69",
+    "REG": "84",
     "LIBELLE": "Rhône"
   },
   {
-    "DEP": 70,
-    "REG": 27,
+    "DEP": "70",
+    "REG": "27",
     "LIBELLE": "Haute-Saône"
   },
   {
-    "DEP": 71,
-    "REG": 27,
+    "DEP": "71",
+    "REG": "27",
     "LIBELLE": "Saône-et-Loire"
   },
   {
-    "DEP": 72,
-    "REG": 52,
+    "DEP": "72",
+    "REG": "52",
     "LIBELLE": "Sarthe"
   },
   {
-    "DEP": 73,
-    "REG": 84,
+    "DEP": "73",
+    "REG": "84",
     "LIBELLE": "Savoie"
   },
   {
-    "DEP": 74,
-    "REG": 84,
+    "DEP": "74",
+    "REG": "84",
     "LIBELLE": "Haute-Savoie"
   },
   {
-    "DEP": 75,
-    "REG": 11,
+    "DEP": "75",
+    "REG": "11",
     "LIBELLE": "Paris"
   },
   {
-    "DEP": 76,
-    "REG": 28,
+    "DEP": "76",
+    "REG": "28",
     "LIBELLE": "Seine-Maritime"
   },
   {
-    "DEP": 77,
-    "REG": 11,
+    "DEP": "77",
+    "REG": "11",
     "LIBELLE": "Seine-et-Marne"
   },
   {
-    "DEP": 78,
-    "REG": 11,
+    "DEP": "78",
+    "REG": "11",
     "LIBELLE": "Yvelines"
   },
   {
-    "DEP": 79,
-    "REG": 75,
+    "DEP": "79",
+    "REG": "75",
     "LIBELLE": "Deux-Sèvres"
   },
   {
-    "DEP": 80,
-    "REG": 32,
+    "DEP": "80",
+    "REG": "32",
     "LIBELLE": "Somme"
   },
   {
-    "DEP": 81,
-    "REG": 76,
+    "DEP": "81",
+    "REG": "76",
     "LIBELLE": "Tarn"
   },
   {
-    "DEP": 82,
-    "REG": 76,
+    "DEP": "82",
+    "REG": "76",
     "LIBELLE": "Tarn-et-Garonne"
   },
   {
-    "DEP": 83,
-    "REG": 93,
+    "DEP": "83",
+    "REG": "93",
     "LIBELLE": "Var"
   },
   {
-    "DEP": 84,
-    "REG": 93,
+    "DEP": "84",
+    "REG": "93",
     "LIBELLE": "Vaucluse"
   },
   {
-    "DEP": 85,
-    "REG": 52,
+    "DEP": "85",
+    "REG": "52",
     "LIBELLE": "Vendée"
   },
   {
-    "DEP": 86,
-    "REG": 75,
+    "DEP": "86",
+    "REG": "75",
     "LIBELLE": "Vienne"
   },
   {
-    "DEP": 87,
-    "REG": 75,
+    "DEP": "87",
+    "REG": "75",
     "LIBELLE": "Haute-Vienne"
   },
   {
-    "DEP": 88,
-    "REG": 44,
+    "DEP": "88",
+    "REG": "44",
     "LIBELLE": "Vosges"
   },
   {
-    "DEP": 89,
-    "REG": 27,
+    "DEP": "89",
+    "REG": "27",
     "LIBELLE": "Yonne"
   },
   {
-    "DEP": 90,
-    "REG": 27,
+    "DEP": "90",
+    "REG": "27",
     "LIBELLE": "Territoire de Belfort"
   },
   {
-    "DEP": 91,
-    "REG": 11,
+    "DEP": "91",
+    "REG": "11",
     "LIBELLE": "Essonne"
   },
   {
-    "DEP": 92,
-    "REG": 11,
+    "DEP": "92",
+    "REG": "11",
     "LIBELLE": "Hauts-de-Seine"
   },
   {
-    "DEP": 93,
-    "REG": 11,
+    "DEP": "93",
+    "REG": "11",
     "LIBELLE": "Seine-Saint-Denis"
   },
   {
-    "DEP": 94,
-    "REG": 11,
+    "DEP": "94",
+    "REG": "11",
     "LIBELLE": "Val-de-Marne"
   },
   {
-    "DEP": 95,
-    "REG": 11,
+    "DEP": "95",
+    "REG": "11",
     "LIBELLE": "Val-d'Oise"
   },
   {
-    "DEP": 971,
-    "REG": 1,
+    "DEP": "971",
+    "REG": "1",
     "LIBELLE": "Guadeloupe"
   },
   {
-    "DEP": 972,
-    "REG": 2,
+    "DEP": "972",
+    "REG": "2",
     "LIBELLE": "Martinique"
   },
   {
-    "DEP": 973,
-    "REG": 3,
+    "DEP": "973",
+    "REG": "3",
     "LIBELLE": "Guyane"
   },
   {
-    "DEP": 974,
-    "REG": 4,
+    "DEP": "974",
+    "REG": "4",
     "LIBELLE": "La Réunion"
   },
   {
-    "DEP": 976,
-    "REG": 6,
+    "DEP": "976",
+    "REG": "6",
     "LIBELLE": "Mayotte"
   }
 ]

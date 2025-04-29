@@ -12,26 +12,26 @@ import MapLayout from "../../layouts/MapLayout.astro";
 <MapLayout {...map}>
     <div class="w-1/3 border-r flex flex-col p-2 pr-1 gap-4">
         <div class="flex flex-col gap-1" x-data="{
+            numberFormat: new Intl.NumberFormat('fr-FR'),
+            title: 'France métropolitaine',
             geolocation: 'A l\\'échelle nationale',
             direction: 'baissé',
             evolution: '12.5 %',
             projets2024: '2 401 105',
             projets2025: '2 751 069',
             updateData: function(event) {
-                this.location = event.location;
+                this.title = event.title;
+                this.geolocation = event.geolocation;
                 this.direction = event.evolution > 0 ? 'augmenté' : 'baissé';
                 this.evolution = (Math.abs(event.evolution) * 100).toFixed(2) + ' %';
-                this.projets2024 = event.projets2024;
-                this.projets2025 = event.projets2025;
+                this.projets2024 = this.numberFormat.format(event.projets2024);
+                this.projets2025 = this.numberFormat.format(event.projets2025);
             }
         }" @update-data.window="updateData($event.detail)">
-            <h2 class="text-2xl font-bold">Tendance</h2>
+            <h2 class="text-2xl font-bold" x-text="title"></h2>
             <p><span x-text="geolocation"></span> les intentions d'embauche ont <span x-text="direction"></span> de <span class="font-semibold" x-text="evolution"></span> par rapport à 2024 selon l'enquête <a href="https://statistiques.francetravail.org/bmo/" target="_blank" class="underline">Besoins en Main-d'Œuvre</a> de France Travail.</p>
             <p class="mt-1">Cela représente un total de <span x-text="projets2025" class="font-semibold"></span> projets d'embauche en 2025 contre <span x-text="projets2024"  class="font-semibold"></span> en 2024.</p>
-        </div>
-        <div class="flex flex-col gap-1">
-            <h2 class="text-2xl font-bold">Répartition par métier</h2>
-            <p>Le graphique ci-dessous représente les 10 métiers les plus recherchés par les projets d'embauche.</p>
+            <p>La répartition des métiers recherchés par les projets d'embauche est la suivante :</p>
             <canvas class="w-full mt-2" id="metier-chart"></canvas>
         </div>
     </div>
@@ -39,6 +39,14 @@ import MapLayout from "../../layouts/MapLayout.astro";
         <div class="absolute top-2 right-2 z-20 bg-[#fffaea] border p-2" x-data="{}" @tab-selected="window.selectIndicator($event.detail.value)">
             <h3 class="font-semibold">Indicateur</h3>
             <Tabs elements={["Évolution p/r à 2024", "Nombre de projets"]} initialValue="Évolution p/r à 2024"></Tabs>
+        </div>
+        <div class="absolute bottom-2 right-2 z-20 bg-[#fffaea] border p-2 text-xs">
+            <div>
+                <a href="https://france-geojson.gregoiredavid.fr/" target="_blank" class="underline">France GeoJSON</a>, <span class="italic">Grégoire David</span>
+            </div>
+            <div>
+                <a href="https://statistiques.francetravail.org/bmo" target="_blank" class="underline">Enquête Besoins en Main d'Oeuvre (BMO)</a>, <span class="italic">France Travail</span>
+            </div>
         </div>
     </div>
 </MapLayout>
@@ -55,6 +63,7 @@ import MapLayout from "../../layouts/MapLayout.astro";
     import {Fill, Stroke, Style, Circle, Text} from "ol/style";
     import {interpolateRgbBasis} from 'd3-interpolate';
     import {Chart, PieController, ArcElement, Legend, Tooltip} from "chart.js";
+    import Feature from "ol/Feature";
 
     Chart.register([PieController, ArcElement, Legend, Tooltip]);
 
@@ -64,6 +73,7 @@ import MapLayout from "../../layouts/MapLayout.astro";
     var state = {
         indicator: 'evolution',
         region: null,
+        departementsForRegion: [] as string[],
         departement: null,
         metier: null
     };
@@ -79,47 +89,92 @@ import MapLayout from "../../layouts/MapLayout.astro";
         );
 
         const regionsSource = new VectorSource({
-            url: 'https://raw.githubusercontent.com/gregoiredavid/france-geojson/refs/heads/master/regions.geojson',
+            url: '/data/intentions-embauche-2025/regions.json',
+            format: new GeoJSON(),
+        });
+        const departementsSource = new VectorSource({
+            url: '/data/intentions-embauche-2025/departements-features.json',
             format: new GeoJSON(),
         });
 
         const colorPalette = ["#a50026","#d73027","#f46d43","#fdae61","#fee08b","#ffffbf","#d9ef8b","#a6d96a","#66bd63","#1a9850","#006837"];
         const frenchNumberFormat = new Intl.NumberFormat('fr-FR');
         const frenchPercentFormat = new Intl.NumberFormat('fr-FR', {style: 'percent'});
+
+        function getFeatureStyle (feature) {
+            if (!state.region) {
+                let value = getCurrentValue(feature.get('code'), state.departement, state.metier);
+                return new Style({
+                    fill: new Fill({
+                        color: state.indicator === 'value' ? '#eee' : interpolateRgbBasis(colorPalette)((value[state.indicator] + 0.3) / 0.6),
+                    }),
+                    stroke: new Stroke({
+                        color: 'black',
+                    }),
+                    text: new Text({
+                        font: '1em "Source Serif 4"',
+                        text: feature.get('nom') + '\n' + (state.indicator === 'value' ? frenchNumberFormat.format(value[state.indicator]) : frenchPercentFormat.format(value[state.indicator])),
+                        fill: new Fill({
+                            color: 'black'
+                        })
+                    })
+                })
+            }
+
+            return new Style({
+                fill: new Fill({
+                    color: '#eee',
+                }),
+                stroke: new Stroke({
+                    color: 'black',
+                }),
+            });
+        }
+
+        const regionsLayer = new VectorLayer({
+            source: regionsSource,
+            style: getFeatureStyle
+        });
+
+        const departementsLayer = new VectorLayer({
+            source: departementsSource,
+            style: function (feature) {
+                if (state.region && state.departementsForRegion.includes(feature.get('code'))) {
+                    let value = getCurrentValue(state.region, feature.get('code'), state.metier);
+                    return new Style({
+                        fill: new Fill({
+                            color: state.indicator === 'value' ? '#eee' : interpolateRgbBasis(colorPalette)((value[state.indicator] + 0.3) / 0.6),
+                        }),
+                        stroke: new Stroke({
+                            color: 'black',
+                        }),
+                        text: new Text({
+                            font: '1em "Source Serif 4"',
+                            text: feature.get('nom') + '\n' + (state.indicator === 'value' ? frenchNumberFormat.format(value[state.indicator]) : frenchPercentFormat.format(value[state.indicator])),
+                            fill: new Fill({
+                                color: 'black'
+                            })
+                        })
+                    });
+                }
+                return new Style({});
+            }
+        });
+
         const map = new Map({
             target: 'map',
             layers: [
-                new VectorLayer({
-                    source: regionsSource,
-                    style: function (feature) {
-                        let value = getCurrentValue(feature.get('code'), state.departement, state.metier);
-                        return new Style({
-                            fill: new Fill({
-                                color: state.indicator === 'value' ? '#eee' : interpolateRgbBasis(colorPalette)((value[state.indicator] + 0.3) / 0.6),
-                            }),
-                            stroke: new Stroke({
-                                color: 'black',
-                            }),
-                            text: new Text({
-                                font: '1em "Source Serif 4"',
-                                text: feature.get('nom') + '\n' + (state.indicator === 'value' ? frenchNumberFormat.format(value[state.indicator]) : frenchPercentFormat.format(value[state.indicator])),
-                                fill: new Fill({
-                                    color: 'black'
-                                })
-                            })
-                        })
-                    }
-                }),
+                regionsLayer,
+                departementsLayer
             ],
             view: new View({
-                projection: 'EPSG:2154',
                 center: [0, 0],
                 zoom: 0,
             }),
         });
 
         regionsSource.on('featuresloadend', function() {
-            map.getView().fit(regionsSource.getExtent(), {padding: [10, 10, 10, 10]});
+            map.getView().fit(regionsSource.getExtent(), {padding: [10, 10, 75, 10]});
         });
 
         // data access
@@ -128,6 +183,7 @@ import MapLayout from "../../layouts/MapLayout.astro";
             let data2024 = filterData(bmo2024, region, departement, metier).reduce((sum, entry) => sum + entry[2], 0);
 
             return {
+                oldValue: data2024,
                 value: data2025,
                 evolution: (data2025 - data2024) / data2024
             }
@@ -144,7 +200,7 @@ import MapLayout from "../../layouts/MapLayout.astro";
 
         function getRegionDepartements(region: string | null) {
             if (region === null) return [];
-            return departements.filter((entry: any) => ('' + entry.REG) === region).map((entry: any) => '' + entry.DEP);
+            return departements.filter((entry: any) => (entry.REG) === region).map((entry: any) => entry.DEP);
         }
 
         function getMetierRepartition(region: string | null, departement: string | null, metier: string | null) {
@@ -174,16 +230,7 @@ import MapLayout from "../../layouts/MapLayout.astro";
             }
         }
 
-        // interactions
-        window.selectIndicator = function (indicator: string) {
-            if (indicator === 'Nombre de projets') {
-                state.indicator = 'value';
-            } else {
-                state.indicator = 'evolution';
-            }
-            regionsSource.changed();
-        }
-
+        // chart
         let repartition = getMetierRepartition(null, null, null);
         const ctx = document.getElementById('metier-chart');
         const metierChart = new Chart(ctx, {
@@ -215,6 +262,68 @@ import MapLayout from "../../layouts/MapLayout.astro";
             }
         });
 
+        // interactions
+        window.selectIndicator = function (indicator: string) {
+            if (indicator === 'Nombre de projets') {
+                state.indicator = 'value';
+            } else {
+                state.indicator = 'evolution';
+            }
+            regionsSource.changed();
+            departementsSource.changed();
+        }
 
+        let hoveredFeature: Feature | null = null;
+        map.on('pointermove', function (evt) {
+            if (hoveredFeature) {
+                map.getTargetElement().style.cursor = 'auto';
+                hoveredFeature.setStyle(undefined);
+                hoveredFeature = null;
+            }
+
+            map.forEachFeatureAtPixel(evt.pixel, function (feature: Feature) {
+                map.getTargetElement().style.cursor = 'pointer';
+                hoveredFeature = feature;
+
+                let featureStyle: Style = getFeatureStyle(feature);
+                featureStyle.getStroke()?.setWidth(3);
+                feature.setStyle(featureStyle);
+
+                return true;
+            }, {
+                layerFilter: (layer) => layer === regionsLayer
+            });
+        });
+
+        map.on('click', function (evt) {
+            let regionFeature = map.getFeaturesAtPixel(evt.pixel, {
+                layerFilter: (layer) => layer === regionsLayer
+            }).pop();
+
+            if (regionFeature) {
+                state.region = regionFeature.get('code');
+                state.departementsForRegion = getRegionDepartements(state.region);
+
+                regionFeature.changed();
+                departementsSource.changed();
+                map.getView().fit(regionFeature.getGeometry(), { padding: [10, 10, 10, 10] });
+
+                let data = getCurrentValue(state.region, state.departement, state.metier);
+                window.dispatchEvent(new CustomEvent('update-data', {
+                    detail: {
+                        title: 'Région ' + regionFeature.get('nom'),
+                        geolocation: 'Dans la région ' + regionFeature.get('nom'),
+                        evolution: data.evolution,
+                        projets2024: data.oldValue,
+                        projets2025: data.value,
+                    }
+                }));
+
+                let repartition = getMetierRepartition(state.region, state.departement, state.metier);
+                metierChart.data.datasets[0].data = repartition.values;
+                metierChart.data.labels = repartition.labels;
+                metierChart.update();
+            }
+        });
     }
 </script>
