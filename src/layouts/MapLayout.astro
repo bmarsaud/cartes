@@ -1,7 +1,8 @@
 ---
 import '../styles/global.css';
 
-const { title, date, description } = Astro.props;
+const { title, date, description, abstract } = Astro.props;
+const id = Astro.url.pathname.replaceAll('/cartes', '').replaceAll('/', '');
 ---
 <html lang="fr">
 <head>
@@ -10,6 +11,10 @@ const { title, date, description } = Astro.props;
     <meta name="generator" content={Astro.generator} />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <title>Cartes. | {title}</title>
+    <meta property='og:title' content={ title }/>
+    <meta property='og:image' content={ `https://cartes.bastien-marsaud.fr/data/${id}/preview.png` } />
+    <meta property='og:description' content={ abstract }/>
+    <meta property='og:url' content={ `https://cartes.bastien-marsaud.fr/cartes/${id}/` } />
 </head>
 <body class="bg-[#fffaea] font-serif max-w-[1600px] mx-auto pt-6 pb-8 flex flex-col h-screen">
     <div class="flex">

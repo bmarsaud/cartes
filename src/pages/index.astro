@@ -13,6 +13,10 @@ const maps = await getCollection('maps');
 		<meta name="generator" content={Astro.generator} />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<title>Cartes. | Bastien MARSAUD</title>
+		<meta property='og:title' content="Cartes."/>
+		<meta property='og:description' content="Une collection de carte interactives confectionnées avec soin."/>
+		<meta property='og:image' content="https://cartes.bastien-marsaud.fr/data/preview.png" />
+		<meta property='og:url' content="https://cartes.bastien-marsaud.fr" />
 	</head>
 	<body class="bg-[#fffaea] font-serif">
 		<div class="max-w-[1600px] mx-auto grid grid-cols-3 pt-6">
@@ -26,7 +30,7 @@ const maps = await getCollection('maps');
 			</div>
 			<div class="border-b p-4 pb-10 flex flex-col justify-end text-right">
 				<p>
-					Une petite collection de cartes,<br /> confectionnées par <span class="font-bold underline">Bastien MARSAUD</span>.
+					Une petite collection de cartes interactives,<br /> confectionnées avec soin par <span class="font-bold underline">Bastien MARSAUD</span>.
 				</p>
 				<div class="inline-flex align-middle justify-end">
 					<a href="https://www.linkedin.com/in/bastien-marsaud/" target="_blank">
