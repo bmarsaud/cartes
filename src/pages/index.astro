@@ -14,21 +14,21 @@ const maps = await getCollection('maps');
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<title>Cartes. | Bastien MARSAUD</title>
 		<meta property='og:title' content="Cartes."/>
-		<meta property='og:description' content="Une collection de carte interactives confectionnées avec soin."/>
+		<meta property='og:description' content="Une collection de carte interactives confectionnées avec soin par moi, Bastien !"/>
 		<meta property='og:image' content="https://cartes.bastien-marsaud.fr/preview.png" />
 		<meta property='og:url' content="https://cartes.bastien-marsaud.fr" />
 	</head>
 	<body class="bg-[#fffaea] font-serif">
-		<div class="max-w-[1600px] mx-auto grid grid-cols-3 pt-6">
-			<div class="border-b border-r px-4">
-				<h1 class="font-serif-title text-[9rem]">Cartes.</h1>
+		<div class="max-w-[1600px] mx-auto grid grid-cols-1 md:grid-cols-10 lg:grid-cols-3 px-4 py-2 2xl:p-0 xl:pt-6">
+			<div class="flex items-center border-b md:border-r px-4 md:col-span-3 lg:col-span-1">
+				<h1 class="font-serif-title text-[2rem] md:text-[4rem] lg:text-[6rem] xl:text-[8rem] 2xl:text-[9rem]">Cartes.</h1>
 			</div>
-			<div class="border-b border-r flex flex-col gap-4 justify-end p-4 pb-10 text-lg">
+			<div class="border-b lg:border-r hidden md:flex flex-col gap-4 justify-end p-4 lg:pb-10 text-xs md:text-sm lg:text-base xl:text-lg md:col-span-7 lg:col-span-1">
 				<p>
 					Une <a href="https://fr.wikipedia.org/wiki/Carte_g%C3%A9ographique" target="_blank" class="font-semibold underline">carte géographique</a> est une <a href="https://fr.wikipedia.org/wiki/Repr%C3%A9sentation_graphique" target="_blank" class="underline">représentation</a> d'un <a href="https://fr.wikipedia.org/wiki/Espace_(notion)" target="_blank" class="underline">espace</a> géographique. Elle met en valeur l'étendue de cet espace, sa localisation relative par rapport aux espaces voisins, ainsi que la localisation des éléments qu'il contient.
 				</p>
 			</div>
-			<div class="border-b p-4 pb-10 flex flex-col justify-end text-right">
+			<div class="border-b p-4 lg:pb-10 flex lg:flex-col justify-between lg:justify-end lg:text-right text-xs md:text-sm lg:text-base md:col-span-10 lg:col-span-1">
 				<p>
 					Une petite collection de cartes interactives,<br /> confectionnées avec soin par <span class="font-bold underline">Bastien MARSAUD</span>.
 				</p>
@@ -46,7 +46,7 @@ const maps = await getCollection('maps');
 				</div>
 			</div>
 		</div>
-		<div class="max-w-[1800px] mx-auto grid grid-cols-4 gap-4 mt-16 px-4">
+		<div class="max-w-[1800px] mx-auto grid grid-cols-1 md:grid-cols-3 2xl:grid-cols-4 gap-4 mt-4 lg:mt-8 2xl:mt-16 px-4">
 			{ maps.map(elem => (
 				<a href={ `cartes/${elem.id}` }>
 					<Map id={ elem.id } title={ elem.data.title } description={ elem.data.abstract } date={ elem.data.date }></Map>
