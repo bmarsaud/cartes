@@ -11,7 +11,7 @@ import MapLayout from "../../layouts/MapLayout.astro";
 import events from '../../../public/data/retrospective-inondations-2024/events.json';
 ---
 <MapLayout {...map}>
-    <div class="w-1/4 border-r flex flex-col p-2 pr-1">
+    <div class="lg:w-1/4 border lg:border-0 lg:border-r flex flex-col p-2 pr-1">
         <h2 class="text-2xl font-bold">Événements</h2>
         <div class="flex flex-col gap-1 overflow-y-auto custom-scrollbar pr-1" @select-event-on-map.window="toggleEvent($event.detail.index)" x-data="{
             selectedEvent: null,
@@ -47,7 +47,7 @@ import events from '../../../public/data/retrospective-inondations-2024/events.j
             )) }
         </div>
     </div>
-    <div id="map" class="h-full w-3/4 relative">
+    <div id="map" class="h-[60vh] lg:h-full lg:w-3/4 relative border lg:border-none">
         <div class="absolute top-2 right-2 z-20 bg-[#fffaea] border p-2" x-data="{}" @tab-selected="window.selectIndicator($event.detail.value)">
             <h3 class="font-semibold">Indicateur</h3>
             <Tabs elements={["Morts", "Déplacés", "Bâtiments"]} initialValue="Morts"></Tabs>

@@ -16,21 +16,21 @@ const id = Astro.url.pathname.replaceAll('/cartes', '').replaceAll('/', '');
     <meta property='og:description' content={ abstract }/>
     <meta property='og:url' content={ `https://cartes.bastien-marsaud.fr/cartes/${id}/` } />
 </head>
-<body class="bg-[#fffaea] font-serif max-w-[1600px] mx-auto pt-6 pb-8 flex flex-col h-screen">
-    <div class="flex">
-        <div class="border-b border-r p-4 flex items-center">
-            <a href="/"><h1 class="font-serif-title text-6xl hover:underline">Cartes.</h1></a>
+<body class="bg-[#fffaea] font-serif max-w-[1600px] mx-auto md:pt-6 pb-8 flex flex-col lg:h-screen">
+    <div class="flex flex-col md:flex-row px-2 2xl:px-0">
+        <div class="border-b lg:border-r p-2 md:p-4 flex items-center">
+            <a href="/"><h1 class="font-serif-title text-4xl md:text-6xl hover:underline">Cartes.</h1></a>
         </div>
-        <div class="flex-1 border-b p-4">
-            <h2 class="text-3xl text-bold font-[700]">{ title }</h2>
-            <p class="w-10/12" set:html={ description }></p>
+        <div class="flex-1 border-b p-2 md:p-4">
+            <h2 class="text-lg lg:text-3xl text-bold font-[700]">{ title }</h2>
+            <p class="text-xs lg:text-base lg:w-10/12" set:html={ description }></p>
         </div>
-        <div class="border-b flex items-center">
-            <p><span class="bg-black text-white px-1">{ date }</span></p>
+        <div class="border-b hidden md:flex items-center">
+            <p><span class="bg-black text-white px-1 text-xs lg:text-base">{ date }</span></p>
         </div>
     </div>
-    <div class="flex justify-end"><a href="https://www.linkedin.com/in/bastien-marsaud/" target="_blank" class="font-[700] underline">Bastien MARSAUD</a></div>
-    <div class="flex mt-8 border flex-1 overflow-y-hidden">
+    <div class="hidden sm:flex justify-end px-2 2xl:px-0 text-xs lg:text-base"><a href="https://www.linkedin.com/in/bastien-marsaud/" target="_blank" class="font-[700] underline">Bastien MARSAUD</a></div>
+    <div class="flex flex-col-reverse lg:flex-row mt-8 lg:border flex-1 overflow-y-hidden px-2 lg:px-0 gap-2 lg:gap-0">
         <slot />
     </div>
 </body>

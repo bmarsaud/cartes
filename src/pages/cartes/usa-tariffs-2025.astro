@@ -10,13 +10,13 @@ import MapLayout from "../../layouts/MapLayout.astro";
 import Slider from "../../components/Slider.astro";
 ---
 <MapLayout {...map}>
-    <div id="map" class="h-full w-full relative">
+    <div id="map" class=" h-[60vh] lg:h-full w-full relative">
         <div id="tooltip" class="absolute left-0 top-0 z-20 bg-[#fffaea] border p-2 pointer-events-none" style="display: none;">
             <h3 class="font-[600] border-b mb-1" id="country-name">Country</h3>
             <p class="text-sm">Les droits de douane appliqués<br />sont de <span class="font-[700]" id="tariff">20 %</span></p>
         </div>
-        <div class="absolute left-4 bottom-4 w-1/4 flex flex-col gap-4 z-20">
-            <div class="bg-[#fffaea] border p-2">
+        <div class="lg:absolute left-4 bottom-4 lg:w-1/4 flex flex-col gap-4 z-20 text-xs lg:text-base">
+            <div class="bg-[#fffaea] border p-2 hidden lg:block">
                 <p id="tariff-description"></p>
             </div>
             <div class="bg-[#fffaea] border p-2" x-data="{}" @slider-changed="loadTariff($event.detail.value)">
@@ -24,7 +24,7 @@ import Slider from "../../components/Slider.astro";
                 <Slider elements={["1er février", "3 février", "4 mars", "6 mars", "2 avril", "8 avril", "9 avril"]} initialValue="4"></Slider>
             </div>
         </div>
-        <div class="absolute right-4 bottom-4 z-20">
+        <div class="hidden lg:block absolute right-4 bottom-4 z-20">
             <div class="bg-[#fffaea] border p-2 flex flex-col gap-1">
                 <h3 class="font-[600]">Légende</h3>
                 <div class="text-xs">Droits de douane appliqués aux produits en provance du pays</div>

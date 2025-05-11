@@ -10,7 +10,7 @@ const map = {
 import MapLayout from "../../layouts/MapLayout.astro";
 ---
 <MapLayout {...map}>
-    <div class="w-1/3 border-r flex flex-col p-2 pr-1 gap-4">
+    <div class="lg:w-1/3 border lg:border-0 lg:border-r flex flex-col p-2 pr-1 gap-4">
         <div class="flex flex-col gap-1" x-data="{
             numberFormat: new Intl.NumberFormat('fr-FR'),
             title: 'France métropolitaine',
@@ -42,7 +42,7 @@ import MapLayout from "../../layouts/MapLayout.astro";
             <canvas class="w-full mt-2" id="metier-chart"></canvas>
         </div>
     </div>
-    <div id="map" class="h-full w-3/4 relative">
+    <div id="map" class="h-[60vh] lg:h-full lg:w-2/3 relative border lg:border-none">
         <div id="tooltip" class="absolute left-0 top-0 z-20 bg-[#fffaea] border p-2 pointer-events-none" style="display: none;">
             <h3 class="font-[600] border-b mb-1" id="feature-name">Name</h3>
             <span id="project-amount"></span> projets d'embauche.
