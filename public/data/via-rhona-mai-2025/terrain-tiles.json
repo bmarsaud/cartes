@@ -1,0 +1,22 @@
+{
+  "tiles": [
+    "/mounted/bdtopo/{z}/{x}/{y}.webp"
+  ],
+  "name": "ombrage_rgb_25m_webp",
+  "format": "webp",
+  "basename": "ombrage_rgb_25m_webp",
+  "id": "ombrage_rgb_25m_webp",
+  "description": "ombrage_rgb_25m_webp",
+  "version": "1",
+  "type": "baselayer",
+  "attribution": "BD Alti IGN 2021",
+  "minzoom": 4,
+  "maxzoom": 12,
+  "bounds": [
+    -180.000000,-21.389748,180.000000,85.051129
+  ],
+  "center": [
+    55.469971,-21.094750,14
+  ],
+  "tilejson": "2.0.0"
+}

@@ -1,0 +1,173 @@
+---
+import MapLayout from "../../layouts/MapLayout.astro";
+import Tabs from "../../components/Tabs.astro";
+const map = {
+    "title": "Voyage en vélo sur la Via-Rhona",
+    "abstract": "",
+    "description": "",
+    "date": "14 mai 2025"
+};
+---
+<MapLayout {...map}>
+    <div id="map" class="h-[60vh] lg:h-full w-full relative">
+        <div class="absolute top-2 right-2 z-20 bg-[#fffaea] border p-2 font-serif text-base flex gap-6">
+            <div class="flex items-center gap-2">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-clock-icon lucide-clock"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                <span id="time">09:55</span>
+            </div>
+            <div class="flex items-center gap-2">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-heart-icon lucide-heart"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg>
+                <span id="hr">0 bpm</span>
+            </div>
+            <div class="flex items-center gap-2">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-mountain-snow-icon lucide-mountain-snow"><path d="m8 3 4 8 5-5 5 15H2L8 3z"/><path d="M4.14 15.08c2.62-1.57 5.24-1.43 7.86.42 2.74 1.94 5.49 2 8.23.19"/></svg>
+                <span id="elevation"> 200 m</span>
+            </div>
+            <div class="flex items-center gap-2">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-gauge-icon lucide-gauge"><path d="m12 14 4-4"/><path d="M3.34 19a10 10 0 1 1 17.32 0"/></svg>
+                <span id="speed">0 km/h</span>
+            </div>
+        </div>
+    </div>
+</MapLayout>
+
+<script>
+    import {Map, Popup} from 'maplibre-gl';
+    import 'maplibre-gl/dist/maplibre-gl.css';
+    import distance from "@turf/distance";
+
+    const map = new Map({
+        container: 'map',
+        zoom: 12,
+        pitch: 70,
+        hash: true,
+        style: {
+            version: 8,
+            sources: {
+                osm: {
+                    type: 'raster',
+                    tiles: ['https://a.tile.openstreetmap.org/{z}/{x}/{y}.png'],
+                    tileSize: 256,
+                    attribution: '&copy; OpenStreetMap Contributors',
+                    maxzoom: 19
+                },
+                ortho: {
+                    type: 'raster',
+                    tiles: ['https://data.geopf.fr/tms/1.0.0/HR.ORTHOIMAGERY.ORTHOPHOTOS/{z}/{x}/{y}.jpeg'],
+                    tileSize: 256,
+                    attribution: 'IGN Orthophotos',
+                    maxzoom: 19
+                },
+                terrainSource: {
+                    type: 'raster-dem',
+                    url: '/data/via-rhona-mai-2025/terrain-tiles.json',
+                    tileSize: 512
+                },
+                hillshadeSource: {
+                    type: 'raster-dem',
+                    url: '/data/via-rhona-mai-2025/terrain-tiles.json',
+                    tileSize: 512
+                }
+            },
+            layers: [
+                // {
+                //     id: 'osm',
+                //     type: 'raster',
+                //     source: 'osm'
+                // },
+                {
+                    id: 'ortho',
+                    type: 'raster',
+                    source: 'ortho'
+                },
+                {
+                    id: 'hills',
+                    type: 'hillshade',
+                    source: 'hillshadeSource',
+                    layout: {visibility: 'visible'},
+                    paint: {'hillshade-shadow-color': '#473B24'}
+                }
+            ],
+            terrain: {
+                source: 'terrainSource',
+                exaggeration: 1.5
+            },
+            sky: {}
+        },
+        maxZoom: 18,
+        maxPitch: 85
+    });
+
+    map.on('load', async () => {
+        const response = await fetch('/data/via-rhona-mai-2025/trace.json',);
+        const data = await response.json();
+
+        const line = {
+            type: 'Feature',
+            properties: {},
+            geometry: {
+                type: 'LineString',
+                coordinates: [data.features[0].geometry.coordinates]
+            }
+        };
+
+        map.addSource('trace', { type: 'geojson', data: line });
+        map.addLayer({
+            'id': 'trace',
+            'type': 'line',
+            'source': 'trace',
+            'paint': {
+                'line-color': 'blue',
+                'line-opacity': 0.75,
+                'line-width': 5
+            }
+        });
+
+        map.jumpTo({ 'center': line.geometry.coordinates[0], 'zoom': 14 });
+        map.setPitch(30);
+
+        let speedSamples: any[] = [];
+        let i = 0;
+        const timer = setInterval(() => {
+            if (i < data.features.length) {
+                let feature = data.features[i];
+
+                line.geometry.coordinates.push(feature.geometry.coordinates);
+                map.getSource('trace').setData(line);
+
+                map.panTo(feature.geometry.coordinates);
+
+                let date = new Date(feature.properties.time);
+                document.getElementById('time').innerText = date.toLocaleDateString('fr-FR', {hour: '2-digit', minute: '2-digit'}).split(' ')[1];
+                document.getElementById('hr').innerText = feature.properties.heart_rate + ' bpm';
+                document.getElementById('elevation').innerText = feature.properties.ele.toFixed(0) + ' m';
+
+
+                if (speedSamples.length > 5) {
+                    speedSamples.shift();
+                }
+                speedSamples.push(feature);
+
+                if (speedSamples.length > 1) {
+                    let speed = 0;
+                    for (let j = 0; j < speedSamples.length - 1; j++) {
+                        speed += distanceBetweenFeatures(speedSamples[j], speedSamples[j + 1]) / (timeBetweenFeatures(speedSamples[j], speedSamples[j + 1]) / 60 / 60);
+                    }
+                    document.getElementById('speed').innerText = (speed / (speedSamples.length - 1)).toFixed(2) + ' km/h';
+                }
+
+                i++;
+            } else {
+                window.clearInterval(timer);
+            }
+        }, 30);
+    });
+
+    function distanceBetweenFeatures(feature1, feature2) {
+        return distance(feature1.geometry.coordinates, feature2.geometry.coordinates);
+    }
+
+    function timeBetweenFeatures(feature1, feature2) {
+        return (new Date(feature2.properties.time).getTime() - new Date(feature1.properties.time).getTime()) / 1000;
+    }
+</script>
