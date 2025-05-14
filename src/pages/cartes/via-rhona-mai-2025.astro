@@ -10,22 +10,27 @@ const map = {
 ---
 <MapLayout {...map}>
     <div id="map" class="h-[60vh] lg:h-full w-full relative">
-        <div class="absolute top-2 right-2 z-20 bg-[#fffaea] border p-2 font-serif text-base flex gap-6">
-            <div class="flex items-center gap-2">
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-clock-icon lucide-clock"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-                <span id="time">09:55</span>
+        <div class="absolute top-0 right-0 p-2 z-20 flex flex-col items-end gap-2 font-serif text-xs sm:text-base">
+            <div class="z-20 bg-[#fffaea] border p-2 flex gap-6">
+                <div class="flex items-center gap-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-clock-icon lucide-clock"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                    <span id="time">09:55</span>
+                </div>
+                <div class="flex items-center gap-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-heart-icon lucide-heart"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg>
+                    <span id="hr">0 bpm</span>
+                </div>
+                <div class="flex items-center gap-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-mountain-snow-icon lucide-mountain-snow"><path d="m8 3 4 8 5-5 5 15H2L8 3z"/><path d="M4.14 15.08c2.62-1.57 5.24-1.43 7.86.42 2.74 1.94 5.49 2 8.23.19"/></svg>
+                    <span id="elevation"> 200 m</span>
+                </div>
+                <div class="flex items-center gap-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-gauge-icon lucide-gauge"><path d="m12 14 4-4"/><path d="M3.34 19a10 10 0 1 1 17.32 0"/></svg>
+                    <span id="speed">0 km/h</span>
+                </div>
             </div>
-            <div class="flex items-center gap-2">
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-heart-icon lucide-heart"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg>
-                <span id="hr">0 bpm</span>
-            </div>
-            <div class="flex items-center gap-2">
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-mountain-snow-icon lucide-mountain-snow"><path d="m8 3 4 8 5-5 5 15H2L8 3z"/><path d="M4.14 15.08c2.62-1.57 5.24-1.43 7.86.42 2.74 1.94 5.49 2 8.23.19"/></svg>
-                <span id="elevation"> 200 m</span>
-            </div>
-            <div class="flex items-center gap-2">
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-gauge-icon lucide-gauge"><path d="m12 14 4-4"/><path d="M3.34 19a10 10 0 1 1 17.32 0"/></svg>
-                <span id="speed">0 km/h</span>
+            <div class=" w-fit z-20 bg-[#fffaea] border p-2" x-data="{}" @tab-selected="window.selectBasemap($event.detail.value)">
+                <Tabs elements={["Photographies aériennes", "Carte OSM"]} initialValue="Photographies aériennes" class="text-xs"></Tabs>
             </div>
         </div>
     </div>
@@ -70,11 +75,14 @@ const map = {
                 }
             },
             layers: [
-                // {
-                //     id: 'osm',
-                //     type: 'raster',
-                //     source: 'osm'
-                // },
+                {
+                    id: 'osm',
+                    type: 'raster',
+                    source: 'osm',
+                    layout: {
+                        visibility: 'none'
+                    },
+                },
                 {
                     id: 'ortho',
                     type: 'raster',
@@ -169,5 +177,15 @@ const map = {
 
     function timeBetweenFeatures(feature1, feature2) {
         return (new Date(feature2.properties.time).getTime() - new Date(feature1.properties.time).getTime()) / 1000;
+    }
+
+    window.selectBasemap = function(baseMap) {
+        if (baseMap === 'Photographies aériennes') {
+            map.setLayoutProperty('osm', 'visibility', 'none');
+            map.setLayoutProperty('ortho', 'visibility', 'visible');
+        } else {
+            map.setLayoutProperty('osm', 'visibility', 'visible');
+            map.setLayoutProperty('ortho', 'visibility', 'none');
+        }
     }
 </script>
