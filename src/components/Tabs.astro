@@ -1,7 +1,7 @@
 ---
 const { elements, initialValue } = Astro.props;
 ---
-<div class="flex text-sm border border-r-0" x-data={`{
+<div class="flex text-xs md:text-sm border border-r-0" x-data={`{
         selected: "${initialValue}",
         select: function (element) {
             this.selected = element;
