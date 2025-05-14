@@ -5,7 +5,17 @@ const { id, title, date, description } = Astro.props;
     <img src={`/data/${id}/preview.png`} class="aspect-16/9 object-cover" />
     <div>
         <h2 class="font-serif text-xl text-bold font-[700]">{ title }</h2>
-        <p><span class="bg-black text-white px-1 group-hover:text-black group-hover:bg-white">{ date }</span></p>
+        <p>
+            <span class="bg-black text-white px-1 group-hover:text-black group-hover:bg-white">
+                {
+                    new Date(date).toLocaleDateString('fr-FR', {
+                        day: 'numeric',
+                        month: 'long',
+                        year: 'numeric'
+                    })
+                }
+            </span>
+        </p>
     </div>
     <p>{ description }</p>
 </div>

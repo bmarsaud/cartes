@@ -26,7 +26,17 @@ const id = Astro.url.pathname.replaceAll('/cartes', '').replaceAll('/', '');
             <p class="text-xs lg:text-base lg:w-10/12" set:html={ description }></p>
         </div>
         <div class="border-b hidden md:flex items-center">
-            <p><span class="bg-black text-white px-1 text-xs lg:text-base">{ date }</span></p>
+            <p>
+                <span class="bg-black text-white px-1 text-xs lg:text-base">
+                {
+                    new Date(date).toLocaleDateString('fr-FR', {
+                        day: 'numeric',
+                        month: 'long',
+                        year: 'numeric'
+                    })
+                }
+                </span>
+            </p>
         </div>
     </div>
     <div class="hidden sm:flex justify-end px-2 2xl:px-0 text-xs lg:text-base"><a href="https://www.linkedin.com/in/bastien-marsaud/" target="_blank" class="font-[700] underline">Bastien MARSAUD</a></div>

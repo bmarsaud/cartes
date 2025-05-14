@@ -47,7 +47,7 @@ const maps = await getCollection('maps');
 			</div>
 		</div>
 		<div class="max-w-[1800px] mx-auto grid grid-cols-1 md:grid-cols-3 2xl:grid-cols-4 gap-4 mt-4 lg:mt-8 2xl:mt-16 px-4">
-			{ maps.map(elem => (
+			{ maps.sort((a, b) => new Date(b.data.date) - new Date(a.data.date)).map(elem => (
 				<a href={ `cartes/${elem.id}` }>
 					<Map id={ elem.id } title={ elem.data.title } description={ elem.data.abstract } date={ elem.data.date }></Map>
 				</a>
