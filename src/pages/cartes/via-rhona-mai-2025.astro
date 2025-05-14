@@ -43,9 +43,8 @@ const map = {
 
     const map = new Map({
         container: 'map',
-        zoom: 12,
-        pitch: 70,
-        hash: true,
+        zoom: 14,
+        pitch: 45,
         style: {
             version: 8,
             sources: {
@@ -67,11 +66,6 @@ const map = {
                     type: 'raster-dem',
                     url: '/data/via-rhona-mai-2025/terrain-tiles.json',
                     tileSize: 512
-                },
-                hillshadeSource: {
-                    type: 'raster-dem',
-                    url: '/data/via-rhona-mai-2025/terrain-tiles.json',
-                    tileSize: 512
                 }
             },
             layers: [
@@ -87,13 +81,6 @@ const map = {
                     id: 'ortho',
                     type: 'raster',
                     source: 'ortho'
-                },
-                {
-                    id: 'hills',
-                    type: 'hillshade',
-                    source: 'hillshadeSource',
-                    layout: {visibility: 'visible'},
-                    paint: {'hillshade-shadow-color': '#473B24'}
                 }
             ],
             terrain: {
@@ -102,8 +89,8 @@ const map = {
             },
             sky: {}
         },
-        maxZoom: 18,
-        maxPitch: 85
+        maxPitch: 85,
+        center: [5.6797663, 45.5265229]
     });
 
     map.on('load', async () => {
@@ -131,8 +118,8 @@ const map = {
             }
         });
 
-        map.jumpTo({ 'center': line.geometry.coordinates[0], 'zoom': 14 });
-        map.setPitch(30);
+
+        map.jumpTo({ 'center': line.geometry.coordinates[0] });
 
         let speedSamples: any[] = [];
         let i = 0;
