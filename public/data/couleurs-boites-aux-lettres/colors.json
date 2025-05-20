@@ -1,0 +1,2492 @@
+[
+  {
+    "alpha-3": "AFG",
+    "alpha-2": "AF",
+    "name": "Afghanistan",
+    "traduction": "پوسټ بکس",
+    "color_name": "Jaune",
+    "color": "#EAD83B",
+    "image": "https://images.csmonitor.com/csm/2024/07/1177459_1_0705-Afghanistan-Postman_standard.jpg?alias=standard_900x600",
+    "attribution": "<a href=\"https://apnews.com/article/afghanistan-taliban-post-office-79c37865fc3476a552ce47730a8f0acd\">AP Photo/Siddiqullah Alizai</a>"
+  },
+  {
+    "alpha-3": "ZAF",
+    "alpha-2": "ZA",
+    "name": "Afrique du Sud",
+    "traduction": "Ibhokisi lemeyili (Zoulou), Ibhokisi yemeyile (Xhosa), Posbus (Afrikaans)",
+    "color_name": "Rouge",
+    "color": "#D12825",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/1/1d/Red_Post_Box%2C_JHB.jpg",
+    "attribution": "<a href=\"https://commons.wikimedia.org/wiki/File:Red_Post_Box,_JHB.jpg\">Ossewa</a>, <a href=\"https://creativecommons.org/licenses/by-sa/4.0\">CC BY-SA 4.0</a>, via Wikimedia Commons"
+  },
+  {
+    "alpha-3": "ALA",
+    "alpha-2": "AX",
+    "name": "Îles Åland",
+    "traduction": "",
+    "color_name": "",
+    "color": "",
+    "image": "",
+    "attribution": ""
+  },
+  {
+    "alpha-3": "ALB",
+    "alpha-2": "AL",
+    "name": "Albanie",
+    "traduction": "Kuti postare",
+    "color_name": "Jaune",
+    "color": "#D2B81B",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/a/ae/Post_box_in_Albania.jpg",
+    "attribution": "<a href=\"https://commons.wikimedia.org/wiki/File:Post_box_in_Albania.jpg\">Dickelbers</a>, <a href=\"https://creativecommons.org/licenses/by-sa/4.0\">CC BY-SA 4.0</a>, via Wikimedia Commons"
+  },
+  {
+    "alpha-3": "DZA",
+    "alpha-2": "DZ",
+    "name": "Algérie",
+    "traduction": "صندوق بريد",
+    "color_name": "Jaune",
+    "color": "#F6C930",
+    "image": "https://scontent-mrs2-1.xx.fbcdn.net/v/t39.30808-6/468959224_10162535767069228_6015723575804252148_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=127cfc&_nc_ohc=YX1wqL1DNPkQ7kNvwFBEE89&_nc_oc=Admdvnw3iwfo5KUBghKhzw00N8eziCDtK2P1-NnPU9gjMDMCKozkDGLgvMrFQV4AzIGW8Y2DrnkWVhWwUA9vbB_A&_nc_zt=23&_nc_ht=scontent-mrs2-1.xx&_nc_gid=0FcbbEVLNWb1XQXUd_l59A&oh=00_AfLI9wvpMMQwT0sqJs7iypXDSXZSbCdluPN96mn52oq0ug&oe=682F9EB9",
+    "attribution": "<a href=\"https://www.facebook.com/permalink.php?id=149860099227&story_fbid=10153180667804228\">Musée de La Poste</a>"
+  },
+  {
+    "alpha-3": "DEU",
+    "alpha-2": "DE",
+    "name": "Allemagne",
+    "traduction": "Postbriefkasten",
+    "color_name": "Jaune",
+    "color": "#FED434",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/4/43/Public_letterbox_Deutsche_Post_Hannover_Germany.jpg",
+    "attribution": "<a href=\"https://commons.wikimedia.org/wiki/File:Public_letterbox_Deutsche_Post_Hannover_Germany.jpg\">Christian A. Schröder (ChristianSchd)</a>, <a href=\"https://creativecommons.org/licenses/by-sa/4.0\">CC BY-SA 4.0</a>, via Wikimedia Commons"
+  },
+  {
+    "alpha-3": "AND",
+    "alpha-2": "AD",
+    "name": "Andorre",
+    "traduction": "",
+    "color_name": "",
+    "color": "",
+    "image": "",
+    "attribution": ""
+  },
+  {
+    "alpha-3": "AGO",
+    "alpha-2": "AO",
+    "name": "Angola",
+    "traduction": "Caixa de correio",
+    "color_name": "Jaune",
+    "color": "#FAC524",
+    "image": "https://i0.wp.com/furtherafrica.com/content-files/uploads/2019/01/angola-postbox.jpg?w=842&ssl=1",
+    "attribution": "<a href=\"https://furtherafrica.com/2019/01/25/postal-sector-to-boost-angolas-economy/\">Postal sector to boost Angola’s economy</a>, FurtherAfrica"
+  },
+  {
+    "alpha-3": "AIA",
+    "alpha-2": "AI",
+    "name": "Anguilla",
+    "traduction": "",
+    "color_name": "",
+    "color": "",
+    "image": "",
+    "attribution": ""
+  },
+  {
+    "alpha-3": "ATA",
+    "alpha-2": "AQ",
+    "name": "Antarctique",
+    "traduction": "",
+    "color_name": "",
+    "color": "",
+    "image": "",
+    "attribution": ""
+  },
+  {
+    "alpha-3": "ATG",
+    "alpha-2": "AG",
+    "name": "Antigua-et-Barbuda",
+    "traduction": "",
+    "color_name": "",
+    "color": "",
+    "image": "",
+    "attribution": ""
+  },
+  {
+    "alpha-3": "SAU",
+    "alpha-2": "SA",
+    "name": "Arabie saoudite",
+    "traduction": "صندوق البريد",
+    "color_name": "Gris",
+    "color": "#D6CFC5",
+    "image": "https://www.rfidjournal.com/wp-content/uploads/2019/07/4829-4.jpg",
+    "attribution": "<a href=\"https://www.rfidjournal.com/news/saudi-post-adds-intelligence-to-mailboxes/81831/\">Saudi Post Adds Intelligence to Mailboxes</a>, RFID Journal"
+  },
+  {
+    "alpha-3": "ARG",
+    "alpha-2": "AR",
+    "name": "Argentine",
+    "traduction": "Buzón",
+    "color_name": "Rouge",
+    "color": "#F43F36",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/d/d6/Estafeta_del_fin_del_mundo.jpg",
+    "attribution": "<a href=\"https://commons.wikimedia.org/wiki/File:Estafeta_del_fin_del_mundo.jpg\">telam</a>, <a href=\"https://creativecommons.org/licenses/by-sa/4.0\">CC BY-SA 4.0</a>, via Wikimedia Commons"
+  },
+  {
+    "alpha-3": "ARM",
+    "alpha-2": "AM",
+    "name": "Arménie",
+    "traduction": "Փոստարկղ",
+    "color_name": "Bleu",
+    "color": "#1E79A8",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/4/4a/Raffi_kojian-mailbox-072329394.jpg",
+    "attribution": "<a href=\"https://commons.wikimedia.org/wiki/File:Raffi_kojian-mailbox-072329394.jpg\">RaffiKojian</a>, <a href=\"https://creativecommons.org/licenses/by/4.0\">CC BY 4.0</a>, via Wikimedia Commons"
+  },
+  {
+    "alpha-3": "ABW",
+    "alpha-2": "AW",
+    "name": "Aruba",
+    "traduction": "",
+    "color_name": "",
+    "color": "",
+    "image": "",
+    "attribution": ""
+  },
+  {
+    "alpha-3": "AUS",
+    "alpha-2": "AU",
+    "name": "Australie",
+    "traduction": "Postbox",
+    "color_name": "Rouge",
+    "color": "#E02321",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/2/2b/Australia_Post_box.jpg",
+    "attribution": "<a href=\"https://commons.wikimedia.org/wiki/File:Australia_Post_box.jpg\">Bidgee</a>, <a href=\"https://creativecommons.org/licenses/by-sa/3.0\">CC BY-SA 3.0</a>, via Wikimedia Commons"
+  },
+  {
+    "alpha-3": "AUT",
+    "alpha-2": "AT",
+    "name": "Autriche",
+    "traduction": "Postbriefkasten",
+    "color_name": "Jaune",
+    "color": "#F2CD00",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/f/f0/Post_box_Sch%C3%B6nbrunn_Vienna.jpg",
+    "attribution": "<a href=\"https://commons.wikimedia.org/wiki/File:Post_box_Sch%C3%B6nbrunn_Vienna.jpg\">Jebulon</a>, CC0, via Wikimedia Commons"
+  },
+  {
+    "alpha-3": "AZE",
+    "alpha-2": "AZ",
+    "name": "Azerbaïdjan",
+    "traduction": "Poçt qutusu",
+    "color_name": "Jaune",
+    "color": "#FFD313",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/d/dd/Az%C9%99rpo%C3%A7t.jpg",
+    "attribution": "<a href=\"https://commons.wikimedia.org/wiki/File:Az%C9%99rpo%C3%A7t.jpg\">Antonio Kless</a>, <a href=\"https://creativecommons.org/licenses/by-sa/4.0\">CC BY-SA 4.0</a>, via Wikimedia Commons"
+  },
+  {
+    "alpha-3": "BHS",
+    "alpha-2": "BS",
+    "name": "Bahamas",
+    "traduction": "Post box",
+    "color_name": "Rouge",
+    "color": "#C12D21",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/b/b6/Bahamas-letterbox.jpg",
+    "attribution": "<a href=\"https://commons.wikimedia.org/wiki/File:Bahamas-letterbox.jpg\">Dtobias</a>, <a href=\"https://creativecommons.org/licenses/by-sa/3.0\">CC BY-SA 3.0</a>, via Wikimedia Commons"
+  },
+  {
+    "alpha-3": "BHR",
+    "alpha-2": "BH",
+    "name": "Bahreïn",
+    "traduction": "",
+    "color_name": "",
+    "color": "",
+    "image": "",
+    "attribution": ""
+  },
+  {
+    "alpha-3": "BGD",
+    "alpha-2": "BD",
+    "name": "Bangladesh",
+    "traduction": "ডাকবাক্স",
+    "color_name": "Rouge",
+    "color": "#C72013",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/c/ca/Letter_Box_in_Dhaka_01.jpg",
+    "attribution": "<a href=\"https://commons.wikimedia.org/wiki/File:Letter_Box_in_Dhaka_01.jpg\">Asivechowdhury</a>, <a href=\"https://creativecommons.org/licenses/by-sa/4.0\">CC BY-SA 4.0</a>, via Wikimedia Commons"
+  },
+  {
+    "alpha-3": "BRB",
+    "alpha-2": "BB",
+    "name": "Barbade",
+    "traduction": "",
+    "color_name": "",
+    "color": "",
+    "image": "",
+    "attribution": ""
+  },
+  {
+    "alpha-3": "BLR",
+    "alpha-2": "BY",
+    "name": "Biélorussie",
+    "traduction": "Паштовая скрыня",
+    "color_name": "Bleu",
+    "color": "#3bbcff",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/a/a7/PostBoxBelarus.JPG",
+    "attribution": "<a href=\"https://commons.wikimedia.org/wiki/File:PostBoxBelarus.JPG\">Л.П. Джепко</a>, <a href=\"https://creativecommons.org/licenses/by-sa/3.0\">CC BY-SA 3.0</a>, via Wikimedia Commons"
+  },
+  {
+    "alpha-3": "BEL",
+    "alpha-2": "BE",
+    "name": "Belgique",
+    "traduction": "Boîte aux lettres",
+    "color_name": "Rouge",
+    "color": "#E34E5F",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/8/83/Bo%C3%AEte_aux_lettres_%C3%A0_Mons_en_Belgique_-_vrijstaande_brievenbus_in_Mons_Belgi%C3%AB_-_Foto_Wolfgang_Pehlemann_IMG_1684.jpg",
+    "attribution": "<a href=\"https://commons.wikimedia.org/wiki/File:Bo%C3%AEte_aux_lettres_%C3%A0_Mons_en_Belgique_-_vrijstaande_brievenbus_in_Mons_Belgi%C3%AB_-_Foto_Wolfgang_Pehlemann_IMG_1684.jpg\">&quot;Foto Wolfgang Pehlemann&quot; direkt unter dem Bild mit Angabe &quot;erweiterte Lizenz CC-by-sa  V. 3.0&quot;, wobei der Nutzer für dessen Nutzung a) Rechte oder Ansprüche Dritter prüfen und verantwortlich beachten sowie b) Motivveränderungen durch ihn als solche mit angeben muss.</a>, <a href=\"https://creativecommons.org/licenses/by-sa/3.0/de/deed.en\">CC BY-SA 3.0 DE</a>, via Wikimedia Commons"
+  },
+  {
+    "alpha-3": "BLZ",
+    "alpha-2": "BZ",
+    "name": "Belize",
+    "traduction": "Post box",
+    "color_name": "Rouge",
+    "color": "#FE536E",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/4/4c/Belize_-_Government_House_Entrance.jpg",
+    "attribution": "<a href=\"https://commons.wikimedia.org/wiki/File:Belize_-_Government_House_Entrance.jpg\">Roger W</a>, <a href=\"https://creativecommons.org/licenses/by-sa/2.0\">CC BY-SA 2.0</a>, via Wikimedia Commons"
+  },
+  {
+    "alpha-3": "BEN",
+    "alpha-2": "BJ",
+    "name": "Bénin",
+    "traduction": "Boîte aux lettres",
+    "color_name": "Jaune",
+    "color": "#E4BA4A",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/3/37/La_Poste_de_Calavi_Kpota_au_B%C3%A9nin_02.jpg",
+    "attribution": "<a href=\"https://commons.wikimedia.org/wiki/File:La_Poste_de_Calavi_Kpota_au_B%C3%A9nin_02.jpg\">Adoscam</a>, <a href=\"https://creativecommons.org/licenses/by-sa/4.0\">CC BY-SA 4.0</a>, via Wikimedia Commons"
+  },
+  {
+    "alpha-3": "BMU",
+    "alpha-2": "BM",
+    "name": "Bermudes",
+    "traduction": "",
+    "color_name": "",
+    "color": "",
+    "image": "",
+    "attribution": ""
+  },
+  {
+    "alpha-3": "BTN",
+    "alpha-2": "BT",
+    "name": "Bhoutan",
+    "traduction": "སྦྲག་སྒམ།",
+    "color_name": "Rouge",
+    "color": "#750101",
+    "image": "https://i0.wp.com/jacquelinemhadel.com/wp-content/uploads/2024/11/img_6054.jpg?resize=1152%2C1536&ssl=1",
+    "attribution": "<a href=\"https://jacquelinemhadel.com/2024/12/14/thimphu-bhutan-the-general-post-office-gpo/\">THIMPHU, BHUTAN: THE GENERAL POST OFFICE</a>, TOKIDOKI (NOMAD)"
+  },
+  {
+    "alpha-3": "BOL",
+    "alpha-2": "BO",
+    "name": "Bolivie",
+    "traduction": "",
+    "color_name": "",
+    "color": "",
+    "image": "",
+    "attribution": ""
+  },
+  {
+    "alpha-3": "BES",
+    "alpha-2": "BQ",
+    "name": "Pays-Bas caribéens",
+    "traduction": "",
+    "color_name": "",
+    "color": "",
+    "image": "",
+    "attribution": ""
+  },
+  {
+    "alpha-3": "BIH",
+    "alpha-2": "BA",
+    "name": "Bosnie-Herzégovine",
+    "traduction": "Poštanski sandučić",
+    "color_name": "Jaune",
+    "color": "#D7A601",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/f/f5/BHP_mailbox.jpg",
+    "attribution": "<a href=\"https://commons.wikimedia.org/wiki/File:BHP_mailbox.jpg\">anj?i from London, UK</a>, <a href=\"https://creativecommons.org/licenses/by/2.0\">CC BY 2.0</a>, via Wikimedia Commons"
+  },
+  {
+    "alpha-3": "BWA",
+    "alpha-2": "BW",
+    "name": "Botswana",
+    "traduction": "Post box",
+    "color_name": "Rouge",
+    "color": "#A71221",
+    "image": "/data/couleurs-boites-aux-lettres/botswana.png",
+    "attribution": "<a href=\"https://maps.app.goo.gl/Q7B7csTNyJL82qSG8\">Central Post Office</a>, <a href=\"https://maps.google.com/maps/contrib/108031458814177190666\">Mohan Kularathna</> Google Maps"
+  },
+  {
+    "alpha-3": "BVT",
+    "alpha-2": "BV",
+    "name": "Île Bouvet",
+    "traduction": "",
+    "color_name": "",
+    "color": "",
+    "image": "",
+    "attribution": ""
+  },
+  {
+    "alpha-3": "BRA",
+    "alpha-2": "BR",
+    "name": "Brésil",
+    "traduction": "Correio Mailbox",
+    "color_name": "Jaune",
+    "color": "#EBC42B",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/4/4e/Correio_Mailbox_in_Belo_Horizonte%2C_Brasil.jpg",
+    "attribution": "<a href=\"https://commons.wikimedia.org/wiki/File:Correio_Mailbox_in_Belo_Horizonte,_Brasil.jpg\">Morio</a>, <a href=\"http://creativecommons.org/licenses/by-sa/3.0/\">CC BY-SA 3.0</a>, via Wikimedia Commons"
+  },
+  {
+    "alpha-3": "BRN",
+    "alpha-2": "BN",
+    "name": "Brunei",
+    "traduction": "",
+    "color_name": "",
+    "color": "",
+    "image": "",
+    "attribution": ""
+  },
+  {
+    "alpha-3": "BGR",
+    "alpha-2": "BG",
+    "name": "Bulgarie",
+    "traduction": "Пощенска кутия",
+    "color_name": "Rouge",
+    "color": "#B83640",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/2/27/Postkasse_ubt.jpeg",
+    "attribution": "<a href=\"https://commons.wikimedia.org/wiki/User:Tsca\"> Tomasz Sienicki</a>"
+  },
+  {
+    "alpha-3": "BFA",
+    "alpha-2": "BF",
+    "name": "Burkina Faso",
+    "traduction": "",
+    "color_name": "",
+    "color": "",
+    "image": "",
+    "attribution": ""
+  },
+  {
+    "alpha-3": "BDI",
+    "alpha-2": "BI",
+    "name": "Burundi",
+    "traduction": "Agasandugu k'Iposita",
+    "color_name": "Marron",
+    "color": "#925B2E",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTpxuMBafMY2HOJsSYiGAk28OQWaXWXzI95Ww&s",
+    "attribution": ""
+  },
+  {
+    "alpha-3": "CYM",
+    "alpha-2": "KY",
+    "name": "Îles Caïmans",
+    "traduction": "",
+    "color_name": "",
+    "color": "",
+    "image": "",
+    "attribution": ""
+  },
+  {
+    "alpha-3": "KHM",
+    "alpha-2": "KH",
+    "name": "Cambodge",
+    "traduction": "ប្រអប់ប្រៃសណីយ៍",
+    "color_name": "Vert",
+    "color": "#5C884D",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/f/f4/Post_box_in_Cambodia_01.jpg",
+    "attribution": "<a href=\"https://commons.wikimedia.org/wiki/File:Post_box_in_Cambodia_01.jpg\">Dickelbers</a>, <a href=\"https://creativecommons.org/licenses/by-sa/4.0\">CC BY-SA 4.0</a>, via Wikimedia Commons"
+  },
+  {
+    "alpha-3": "CMR",
+    "alpha-2": "CM",
+    "name": "Cameroun",
+    "traduction": "Boite postale",
+    "color_name": "Blanc",
+    "color": "#83796F",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/6/60/Boite_postale.jpg",
+    "attribution": "<a href=\"https://commons.wikimedia.org/wiki/File:Boite_postale.jpg\">Suzanne Zang</a>, <a href=\"https://creativecommons.org/licenses/by-sa/4.0\">CC BY-SA 4.0</a>, via Wikimedia Commons"
+  },
+  {
+    "alpha-3": "CAN",
+    "alpha-2": "CA",
+    "name": "Canada",
+    "traduction": "Mailbox",
+    "color_name": "Rouge",
+    "color": "#D91D1E",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/0/0a/Canadapost.JPG",
+    "attribution": "<a href=\"https://commons.wikimedia.org/wiki/File:Canadapost.JPG\">Minor traveler</a>, Public domain, via Wikimedia Commons"
+  },
+  {
+    "alpha-3": "CPV",
+    "alpha-2": "CV",
+    "name": "Cap-Vert",
+    "traduction": "",
+    "color_name": "",
+    "color": "",
+    "image": "",
+    "attribution": ""
+  },
+  {
+    "alpha-3": "CAF",
+    "alpha-2": "CF",
+    "name": "République centrafricaine",
+    "traduction": "",
+    "color_name": "",
+    "color": "",
+    "image": "",
+    "attribution": ""
+  },
+  {
+    "alpha-3": "CHL",
+    "alpha-2": "CL",
+    "name": "Chili",
+    "traduction": "Buzón de Correos",
+    "color_name": "Rouge",
+    "color": "#A70616",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/f/f3/Buzon_Correo_Central_Santiago.jpg",
+    "attribution": "<a href=\"https://commons.wikimedia.org/wiki/File:Buzon_Correo_Central_Santiago.jpg\">Sfs90</a>, <a href=\"https://creativecommons.org/licenses/by-sa/4.0\">CC BY-SA 4.0</a>, via Wikimedia Commons"
+  },
+  {
+    "alpha-3": "CHN",
+    "alpha-2": "CN",
+    "name": "Chine",
+    "traduction": "郵箱",
+    "color_name": "Vert",
+    "color": "#1F443D",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/d/d0/Chinese_post_box_in_Shanghai.JPG",
+    "attribution": "<a href=\"https://commons.wikimedia.org/wiki/File:Chinese_post_box_in_Shanghai.JPG\">Mixtures</a>, <a href=\"https://creativecommons.org/licenses/by/3.0\">CC BY 3.0</a>, via Wikimedia Commons"
+  },
+  {
+    "alpha-3": "CXR",
+    "alpha-2": "CX",
+    "name": "Île Christmas",
+    "traduction": "",
+    "color_name": "",
+    "color": "",
+    "image": "",
+    "attribution": ""
+  },
+  {
+    "alpha-3": "CYP",
+    "alpha-2": "CY",
+    "name": "Chypre",
+    "traduction": "Γραμματοκιβώτιο",
+    "color_name": "Jaune",
+    "color": "#FECB4F",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/e/e4/Cyprus_Post.jpg",
+    "attribution": "<a href=\"https://commons.wikimedia.org/wiki/File:Cyprus_Post.jpg\">Alessio Bragadini</a>, <a href=\"https://creativecommons.org/licenses/by-sa/2.0\">CC BY-SA 2.0</a>, via Wikimedia Commons"
+  },
+  {
+    "alpha-3": "CCK",
+    "alpha-2": "CC",
+    "name": "Îles Cocos",
+    "traduction": "",
+    "color_name": "",
+    "color": "",
+    "image": "",
+    "attribution": ""
+  },
+  {
+    "alpha-3": "COL",
+    "alpha-2": "CO",
+    "name": "Colombie",
+    "traduction": "Buzón de correos",
+    "color_name": "Rouge",
+    "color": "#D00621",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/0/06/Pillar_box_in_Bogot%C3%A1%2C_Colombia_%28front%29.jpg",
+    "attribution": "<a href=\"https://commons.wikimedia.org/wiki/File:Pillar_box_in_Bogot%C3%A1,_Colombia_(front).jpg\">Anfecaro</a>, CC0, via Wikimedia Commons"
+  },
+  {
+    "alpha-3": "COM",
+    "alpha-2": "KM",
+    "name": "Comores",
+    "traduction": "",
+    "color_name": "",
+    "color": "",
+    "image": "",
+    "attribution": ""
+  },
+  {
+    "alpha-3": "COG",
+    "alpha-2": "CG",
+    "name": "République du Congo",
+    "traduction": "",
+    "color_name": "",
+    "color": "",
+    "image": "",
+    "attribution": ""
+  },
+  {
+    "alpha-3": "COD",
+    "alpha-2": "CD",
+    "name": "République démocratique du Congo",
+    "traduction": "",
+    "color_name": "",
+    "color": "",
+    "image": "",
+    "attribution": ""
+  },
+  {
+    "alpha-3": "COK",
+    "alpha-2": "CK",
+    "name": "Îles Cook",
+    "traduction": "",
+    "color_name": "",
+    "color": "",
+    "image": "",
+    "attribution": ""
+  },
+  {
+    "alpha-3": "KOR",
+    "alpha-2": "KR",
+    "name": "Corée du Sud",
+    "traduction": "우체통",
+    "color_name": "Rouge",
+    "color": "#FD5E37",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/2/27/Korea_post-box.jpgg",
+    "attribution": "<a href=\"https://commons.wikimedia.org/wiki/File:Korea_post-box.jpg\">날개</a>, <a href=\"https://creativecommons.org/licenses/by-sa/3.0\">CC BY-SA 3.0</a>, via Wikimedia Commons"
+  },
+  {
+    "alpha-3": "PRK",
+    "alpha-2": "KP",
+    "name": "Corée du Nord",
+    "traduction": "",
+    "color_name": "",
+    "color": "",
+    "image": "",
+    "attribution": ""
+  },
+  {
+    "alpha-3": "CRI",
+    "alpha-2": "CR",
+    "name": "Costa Rica",
+    "traduction": "Buzón de correos",
+    "color_name": "Bleu",
+    "color": "#2E4AAC",
+    "image": "/data/couleurs-boites-aux-lettres/costa-rica.jpg",
+    "attribution": "<a href=\"https://www.facebook.com/CorreosdeCostaRica/photos/env%C3%ADe-sus-cartas-tarjetas-postales/1063770973646009/\">Correos de Costa Rica</a>"
+  },
+  {
+    "alpha-3": "CIV",
+    "alpha-2": "CI",
+    "name": "Côte d'Ivoire",
+    "traduction": "Boîte aux lettres",
+    "color_name": "Blanc",
+    "color": "#BBB9B3",
+    "image": "https://ichef.bbci.co.uk/ace/standard/976/cpsprodpb/229C/production/_92906880_gettyimages-181919559.jpg.webp",
+    "attribution": "<a href=\"https://www.bbc.com/news/world-africa-38262877\">Ivory Coast post office adopts three-word system</a>, AFP"
+  },
+  {
+    "alpha-3": "HRV",
+    "alpha-2": "HR",
+    "name": "Croatie",
+    "traduction": "Poštanski sandučić",
+    "color_name": "Jaune",
+    "color": "#DABF18",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/0/04/Po%C5%A1tanski_sandu%C4%8Di%C4%87.jpg",
+    "attribution": "<a href=\"https://commons.wikimedia.org/wiki/File:Po%C5%A1tanski_sandu%C4%8Di%C4%87.jpg\">Suradnik13</a>, <a href=\"https://creativecommons.org/licenses/by-sa/4.0\">CC BY-SA 4.0</a>, via Wikimedia Commons"
+  },
+  {
+    "alpha-3": "CUB",
+    "alpha-2": "CU",
+    "name": "Cuba",
+    "traduction": "Buzón de correos",
+    "color_name": "Bleu",
+    "color": "#46A8CF",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/6/6d/Postbox_in_Cuba_01.JPG",
+    "attribution": "<a href=\"https://commons.wikimedia.org/wiki/File:Postbox_in_Cuba_01.JPG\">Dickelbers</a>, <a href=\"https://creativecommons.org/licenses/by-sa/3.0\">CC BY-SA 3.0</a>, via Wikimedia Commons"
+  },
+  {
+    "alpha-3": "CUW",
+    "alpha-2": "CW",
+    "name": "Curaçao",
+    "traduction": "",
+    "color_name": "",
+    "color": "",
+    "image": "",
+    "attribution": ""
+  },
+  {
+    "alpha-3": "DNK",
+    "alpha-2": "DK",
+    "name": "Danemark",
+    "traduction": "Postkasse (offentlig)",
+    "color_name": "Rouge",
+    "color": "#BD1D2F",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/0/03/Dansk_postkasse.jpg",
+    "attribution": "<a href=\"https://commons.wikimedia.org/wiki/File:Dansk_postkasse.jpg\">Henrik Sendelbach</a>, <a href=\"https://creativecommons.org/licenses/by-sa/3.0\">CC BY-SA 3.0</a>, via Wikimedia Commons"
+  },
+  {
+    "alpha-3": "DJI",
+    "alpha-2": "DJ",
+    "name": "Djibouti",
+    "traduction": "",
+    "color_name": "",
+    "color": "",
+    "image": "",
+    "attribution": ""
+  },
+  {
+    "alpha-3": "DOM",
+    "alpha-2": "DO",
+    "name": "République dominicaine",
+    "traduction": "Buzón de correos",
+    "color_name": "Bleu",
+    "color": "#1D2881",
+    "image": "http://4.bp.blogspot.com/-7w8AH9Le1IY/T9t3fr-7n_I/AAAAAAAAALA/6oOhBP_A0JI/s1600/buzones+sellos+(1).jpg",
+    "attribution": "<a href=\"https://inposdom.gob.do/filatelia/el-inposdom-cumpliendo-acuerdos-con-la-upaep-pone-a-circular-recientemente-la-serie-upaep-buzones-correspondiente-al-ano-2011/\">INPOSDOM</a>"
+  },
+  {
+    "alpha-3": "DMA",
+    "alpha-2": "DM",
+    "name": "Dominique",
+    "traduction": "",
+    "color_name": "",
+    "color": "",
+    "image": "",
+    "attribution": ""
+  },
+  {
+    "alpha-3": "EGY",
+    "alpha-2": "EG",
+    "name": "Égypte",
+    "traduction": "صندوق البريد",
+    "color_name": "Vert",
+    "color": "#4BA683",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/9/95/Postbox_in_Egypt.jpg",
+    "attribution": "<a href=\"https://commons.wikimedia.org/wiki/File:Postbox_in_Egypt.jpg\">Dickelbers</a>, <a href=\"https://creativecommons.org/licenses/by/4.0\">CC BY 4.0</a>, via Wikimedia Commons"
+  },
+  {
+    "alpha-3": "ARE",
+    "alpha-2": "AE",
+    "name": "Émirats arabes unis",
+    "traduction": "صندوق البريد",
+    "color_name": "Rouge",
+    "color": "#C23E31",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/3/30/Dubai_postbox_in_Al_Satwa.jpg",
+    "attribution": "<a href=\"https://commons.wikimedia.org/wiki/File:Dubai_postbox_in_Al_Satwa.jpg\">Doris Antony, Berlin</a>, <a href=\"https://creativecommons.org/licenses/by-sa/4.0\">CC BY-SA 4.0</a>, via Wikimedia Commons"
+  },
+  {
+    "alpha-3": "ECU",
+    "alpha-2": "EC",
+    "name": "Équateur",
+    "traduction": "Buzón de correos",
+    "color_name": "Jaune",
+    "color": "#D4A610",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/d/d6/2022-05-11_Post_box_Ecuador.jpg",
+    "attribution": "<a href=\"https://commons.wikimedia.org/wiki/File:2022-05-11_Post_box_Ecuador.jpg\">Bärbel Miemietz</a>, <a href=\"https://creativecommons.org/licenses/by-sa/4.0\">CC BY-SA 4.0</a>, via Wikimedia Commons"
+  },
+  {
+    "alpha-3": "ERI",
+    "alpha-2": "ER",
+    "name": "Érythrée",
+    "traduction": "ሳጹን ፖስታ",
+    "color_name": "Jaune",
+    "color": "#E49700",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/d/d8/Post_Box_Asmara%2C_Eritrea_%2830740248376%29.jpg",
+    "attribution": "<a href=\"https://commons.wikimedia.org/wiki/File:Post_Box_Asmara,_Eritrea_(30740248376).jpg\">Clay Gilliland from Chandler, U.S.A.</a>, <a href=\"https://creativecommons.org/licenses/by-sa/2.0\">CC BY-SA 2.0</a>, via Wikimedia Commons"
+  },
+  {
+    "alpha-3": "ESP",
+    "alpha-2": "ES",
+    "name": "Espagne",
+    "traduction": "Buzón de Correos",
+    "color_name": "Jaune",
+    "color": "#FBC700",
+    "image": "https://live.staticflickr.com/4150/4970890465_61e454c5f7_k.jpg",
+    "attribution": "<a href=\"https://www.flickr.com/photos/franciscojosegomez/\">Francisco José Gómez</a> sur Flickr"
+  },
+  {
+    "alpha-3": "EST",
+    "alpha-2": "EE",
+    "name": "Estonie",
+    "traduction": "Kirjakast",
+    "color_name": "Orange",
+    "color": "#FF751A",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/2/23/Eesti_mailbox.JPG",
+    "attribution": "<a href=\"https://commons.wikimedia.org/wiki/File:Eesti_mailbox.JPG\">Hans Kadereit</a>, <a href=\"https://commons.wikimedia.org/wiki/Commons:GNU_Free_Documentation_License,_version_1.2\">GNU FDL</a>, via Wikimedia Commons"
+  },
+  {
+    "alpha-3": "USA",
+    "alpha-2": "US",
+    "name": "États-Unis",
+    "traduction": "Mailbox",
+    "color_name": "Bleu",
+    "color": "#1D3D76",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/7/7b/New_USPS_mailbox_in_Buffalo_20240729_201102.jpg",
+    "attribution": "<a href=\"https://commons.wikimedia.org/wiki/File:New_USPS_mailbox_in_Buffalo_20240729_201102.jpg\">Oaktree b</a>, <a href=\"https://creativecommons.org/licenses/by/4.0\">CC BY 4.0</a>, via Wikimedia Commons"
+  },
+  {
+    "alpha-3": "ETH",
+    "alpha-2": "ET",
+    "name": "Éthiopie",
+    "traduction": "Sanduuqa poostaa (Oromo)",
+    "color_name": "Jaune",
+    "color": "#D1C221",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/e/ef/ET_Addis_asv2018-02_img5.jpg",
+    "attribution": "<a href=\"https://commons.wikimedia.org/wiki/File:ET_Addis_asv2018-02_img5.jpg\">A.Savin</a>, FAL, via Wikimedia Commons"
+  },
+  {
+    "alpha-3": "FLK",
+    "alpha-2": "FK",
+    "name": "Îles Malouines",
+    "traduction": "",
+    "color_name": "",
+    "color": "",
+    "image": "",
+    "attribution": ""
+  },
+  {
+    "alpha-3": "FRO",
+    "alpha-2": "FO",
+    "name": "Îles Féroé",
+    "traduction": "Postkasse",
+    "color_name": "Bleu",
+    "color": "#0C3263",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/7/7a/Postbox_in_Funningur%2C_Faroe_Islands.jpg",
+    "attribution": "<a href=\"https://commons.wikimedia.org/wiki/File:Postbox_in_Funningur,_Faroe_Islands.jpg\">Matthew Ross</a>, Public domain, via Wikimedia Commons"
+  },
+  {
+    "alpha-3": "FJI",
+    "alpha-2": "FJ",
+    "name": "Fidji",
+    "traduction": "",
+    "color_name": "",
+    "color": "",
+    "image": "",
+    "attribution": ""
+  },
+  {
+    "alpha-3": "FIN",
+    "alpha-2": "FI",
+    "name": "Finlande",
+    "traduction": "Kirjelaatikko",
+    "color_name": "Orange",
+    "color": "#B46A07",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/f/f7/Jyv%C3%A4skyl%C3%A4_mailbox.jpg",
+    "attribution": "<a href=\"https://commons.wikimedia.org/wiki/File:Jyv%C3%A4skyl%C3%A4_mailbox.jpg\">Tiia Monto</a>, <a href=\"https://creativecommons.org/licenses/by-sa/3.0\">CC BY-SA 3.0</a>, via Wikimedia Commons"
+  },
+  {
+    "alpha-3": "FRA",
+    "alpha-2": "FR",
+    "name": "France",
+    "traduction": "Boîte aux lettres",
+    "color_name": "Jaune",
+    "color": "#F5DD00",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/e/e8/Bo%C3%AEte_aux_lettres_1990.jpg",
+    "attribution": "<a href=\"https://commons.wikimedia.org/wiki/File:Bo%C3%AEte_aux_lettres_1990.jpg\">Janekvorik</a>, Public domain, via Wikimedia Commons"
+  },
+  {
+    "alpha-3": "GAB",
+    "alpha-2": "GA",
+    "name": "Gabon",
+    "traduction": "",
+    "color_name": "",
+    "color": "",
+    "image": "",
+    "attribution": ""
+  },
+  {
+    "alpha-3": "GMB",
+    "alpha-2": "GM",
+    "name": "Gambie",
+    "traduction": "",
+    "color_name": "",
+    "color": "",
+    "image": "",
+    "attribution": ""
+  },
+  {
+    "alpha-3": "GEO",
+    "alpha-2": "GE",
+    "name": "Géorgie",
+    "traduction": "საფოსტო ყუთი",
+    "color_name": "Bleu",
+    "color": "#478BE3",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/e/ec/Georgian_Post_mailbox.jpg",
+    "attribution": "<a href=\"https://commons.wikimedia.org/wiki/File:Georgian_Post_mailbox.jpg\">Nikolay Kazak</a>, <a href=\"https://creativecommons.org/licenses/by-sa/4.0\">CC BY-SA 4.0</a>, via Wikimedia Commons"
+  },
+  {
+    "alpha-3": "SGS",
+    "alpha-2": "GS",
+    "name": "Géorgie du Sud-et-les îles Sandwich du Sud",
+    "traduction": "",
+    "color_name": "",
+    "color": "",
+    "image": "",
+    "attribution": ""
+  },
+  {
+    "alpha-3": "GHA",
+    "alpha-2": "GH",
+    "name": "Ghana",
+    "traduction": "Post box",
+    "color_name": "Rouge",
+    "color": "#D93134",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/d/d4/Post_Office%2C_Ghana_%282973893912%29.jpeg",
+    "attribution": "<a href=\"https://commons.wikimedia.org/wiki/File:Post_Office,_Ghana_(2973893912).jpeg\">oneVillage Initiative</a>, <a href=\"https://creativecommons.org/licenses/by-sa/2.0\">CC BY-SA 2.0</a>, via Wikimedia Commons"
+  },
+  {
+    "alpha-3": "GIB",
+    "alpha-2": "GI",
+    "name": "Gibraltar",
+    "traduction": "",
+    "color_name": "",
+    "color": "",
+    "image": "",
+    "attribution": ""
+  },
+  {
+    "alpha-3": "GRC",
+    "alpha-2": "GR",
+    "name": "Grèce",
+    "traduction": "Γραμματοκιβώτιο",
+    "color_name": "Jaune",
+    "color": "#FFCB06",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/6/69/Attica_06-13_Sounion_28_postbox.jpg",
+    "attribution": "<a href=\"https://commons.wikimedia.org/wiki/File:Attica_06-13_Sounion_28_postbox.jpg\">A.Savin</a>, <a href=\"https://creativecommons.org/licenses/by-sa/3.0\">CC BY-SA 3.0</a>, via Wikimedia Commons"
+  },
+  {
+    "alpha-3": "GRD",
+    "alpha-2": "GD",
+    "name": "Grenade",
+    "traduction": "",
+    "color_name": "",
+    "color": "",
+    "image": "",
+    "attribution": ""
+  },
+  {
+    "alpha-3": "GRL",
+    "alpha-2": "GL",
+    "name": "Groenland",
+    "traduction": "Post box",
+    "color_name": "Rouge",
+    "color": "#FF592C",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/5/5a/Postbox_Greenland_02.jpg",
+    "attribution": "<a href=\"https://commons.wikimedia.org/wiki/File:Postbox_Greenland_02.jpg\">Dickelbers</a>, <a href=\"https://creativecommons.org/licenses/by-sa/4.0\">CC BY-SA 4.0</a>, via Wikimedia Commons"
+  },
+  {
+    "alpha-3": "GLP",
+    "alpha-2": "GP",
+    "name": "Guadeloupe",
+    "traduction": "",
+    "color_name": "",
+    "color": "",
+    "image": "",
+    "attribution": ""
+  },
+  {
+    "alpha-3": "GUM",
+    "alpha-2": "GU",
+    "name": "Guam",
+    "traduction": "",
+    "color_name": "",
+    "color": "",
+    "image": "",
+    "attribution": ""
+  },
+  {
+    "alpha-3": "GTM",
+    "alpha-2": "GT",
+    "name": "Guatemala",
+    "traduction": "Buzon postal",
+    "color_name": "Rouge",
+    "color": "#FF3A4B",
+    "image": "https://www.tema.ru/eng/travel/guatemala-2/IMG_2950.jpg",
+    "attribution": "<a href=\"https://www.tema.ru/eng/travel/guatemala-2/\">Artemy Lebedev</a>"
+  },
+  {
+    "alpha-3": "GGY",
+    "alpha-2": "GG",
+    "name": "Guernesey",
+    "traduction": "",
+    "color_name": "",
+    "color": "",
+    "image": "",
+    "attribution": ""
+  },
+  {
+    "alpha-3": "GIN",
+    "alpha-2": "GN",
+    "name": "Guinée",
+    "traduction": "Boîte aux lettres",
+    "color_name": "Blanc",
+    "color": "#D2D8D4",
+    "image": "/data/couleurs-boites-aux-lettres/guinée.jpg",
+    "attribution": "<a href=\"https://www.facebook.com/100083253464629/photos/643036428481467/\">La poste guinéese SA</a>"
+  },
+  {
+    "alpha-3": "GNB",
+    "alpha-2": "GW",
+    "name": "Guinée-Bissau",
+    "traduction": "",
+    "color_name": "",
+    "color": "",
+    "image": "",
+    "attribution": ""
+  },
+  {
+    "alpha-3": "GNQ",
+    "alpha-2": "GQ",
+    "name": "Guinée équatoriale",
+    "traduction": "",
+    "color_name": "",
+    "color": "",
+    "image": "",
+    "attribution": ""
+  },
+  {
+    "alpha-3": "GUY",
+    "alpha-2": "GY",
+    "name": "Guyana",
+    "traduction": "",
+    "color_name": "",
+    "color": "",
+    "image": "",
+    "attribution": ""
+  },
+  {
+    "alpha-3": "GUF",
+    "alpha-2": "GF",
+    "name": "Guyane",
+    "traduction": "",
+    "color_name": "",
+    "color": "",
+    "image": "",
+    "attribution": ""
+  },
+  {
+    "alpha-3": "HTI",
+    "alpha-2": "HT",
+    "name": "Haïti",
+    "traduction": "Boite postale",
+    "color_name": "Gris",
+    "color": "#6D6E6A",
+    "image": "https://laposte.gouv.ht/wp-content/uploads/2022/04/26910972_1941075809477965_765453965435399583_o.jpg",
+    "attribution": "<a href=\"https://laposte.gouv.ht/services/\">Office des Postes d’Haïti</a>"
+  },
+  {
+    "alpha-3": "HMD",
+    "alpha-2": "HM",
+    "name": "Îles Heard-et-MacDonald",
+    "traduction": "",
+    "color_name": "",
+    "color": "",
+    "image": "",
+    "attribution": ""
+  },
+  {
+    "alpha-3": "HND",
+    "alpha-2": "HN",
+    "name": "Honduras",
+    "traduction": "",
+    "color_name": "",
+    "color": "",
+    "image": "",
+    "attribution": ""
+  },
+  {
+    "alpha-3": "HKG",
+    "alpha-2": "HK",
+    "name": "Hong Kong",
+    "traduction": "郵箱",
+    "color_name": "Vert",
+    "color": "#013327",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/b/b0/Letter_box_in_Hong_Kong.jpg",
+    "attribution": "<a href=\"https://commons.wikimedia.org/wiki/File:Letter_box_in_Hong_Kong.jpg\">Annie Spratt</a>, CC0, via Wikimedia Commons"
+  },
+  {
+    "alpha-3": "HUN",
+    "alpha-2": "HU",
+    "name": "Hongrie",
+    "traduction": "Levélgyűjtőszekrény",
+    "color_name": "Rouge",
+    "color": "#EB0102",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/8/8f/Budapest-Briefkasten-3210547.jpg",
+    "attribution": "<a href=\"https://commons.wikimedia.org/wiki/File:Budapest-Briefkasten-3210547.jpg\">ermell</a>, <a href=\"https://creativecommons.org/licenses/by-sa/4.0\">CC BY-SA 4.0</a>, via Wikimedia Commons"
+  },
+  {
+    "alpha-3": "UMI",
+    "alpha-2": "UM",
+    "name": "Îles mineures éloignées des États-Unis",
+    "traduction": "",
+    "color_name": "",
+    "color": "",
+    "image": "",
+    "attribution": ""
+  },
+  {
+    "alpha-3": "IND",
+    "alpha-2": "IN",
+    "name": "Inde",
+    "traduction": "मेलबॉक्स",
+    "color_name": "Rouge",
+    "color": "#9C130F",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/a/a7/Post_Box_of_India.jpg",
+    "attribution": "<a href=\"https://commons.wikimedia.org/wiki/File:Post_Box_of_India.jpg\">Mullookkaaran</a>, <a href=\"https://creativecommons.org/licenses/by-sa/3.0\">CC BY-SA 3.0</a>, via Wikimedia Commons"
+  },
+  {
+    "alpha-3": "IDN",
+    "alpha-2": "ID",
+    "name": "Indonésie",
+    "traduction": "Bis surat",
+    "color_name": "Rouge",
+    "color": "#DF5E4B",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/5/5e/Sejarah_bis_surat_pt.pos_indonesia.jpg",
+    "attribution": "<a href=\"https://commons.wikimedia.org/wiki/File:Sejarah_bis_surat_pt.pos_indonesia.jpg\">SBudiMasdar</a>, <a href=\"https://creativecommons.org/licenses/by-sa/4.0\">CC BY-SA 4.0</a>, via Wikimedia Commons"
+  },
+  {
+    "alpha-3": "IRN",
+    "alpha-2": "IR",
+    "name": "Iran",
+    "traduction": "صندوق پستی",
+    "color_name": "Jaune",
+    "color": "#FFD020",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/e/e1/Post-Box_Iran.jpg",
+    "attribution": "<a href=\"https://commons.wikimedia.org/wiki/File:Post-Box_Iran.jpg\">خبرگزاری ایسنا</a>, <a href=\"https://creativecommons.org/licenses/by/4.0\">CC BY 4.0</a>, via Wikimedia Commons"
+  },
+  {
+    "alpha-3": "IRQ",
+    "alpha-2": "IQ",
+    "name": "Irak",
+    "traduction": "صندوق البريد",
+    "color_name": "Jaune",
+    "color": "#E3F271",
+    "image": "https://www.tema.ru/eng/travel/iraq-1/4F2C7906.jpg",
+    "attribution": "<a href=\"https://www.tema.ru/eng/travel/iraq-1/\">Artemy Lebedev</a>"
+  },
+  {
+    "alpha-3": "IRL",
+    "alpha-2": "IE",
+    "name": "Irlande",
+    "traduction": "Post box",
+    "color_name": "Vert",
+    "color": "#3F983A",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/b/be/Post_box_Dublin.jpgg",
+    "attribution": "<a href=\"https://commons.wikimedia.org/wiki/File:Post_box_Dublin.jpg\">Acediscovery</a>, <a href=\"https://creativecommons.org/licenses/by/4.0\">CC BY 4.0</a>, via Wikimedia Commons"
+  },
+  {
+    "alpha-3": "ISL",
+    "alpha-2": "IS",
+    "name": "Islande",
+    "traduction": "Pósthólf",
+    "color_name": "Rouge",
+    "color": "#B81D19",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/5/59/Ru%C4%9Da_po%C5%9Dtokesto_en_Rejkjaviko.jpg",
+    "attribution": "<a href=\"https://commons.wikimedia.org/wiki/File:Ru%C4%9Da_po%C5%9Dtokesto_en_Rejkjaviko.jpg\">RG72</a>, <a href=\"https://creativecommons.org/licenses/by-sa/4.0\">CC BY-SA 4.0</a>, via Wikimedia Commons"
+  },
+  {
+    "alpha-3": "ISR",
+    "alpha-2": "IL",
+    "name": "Israël",
+    "traduction": "תיבת דואר",
+    "color_name": "Rouge",
+    "color": "#D5321F",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/1/1e/Post_of_Ramat_Gan%2C_February_2024_05.jpg",
+    "attribution": "<a href=\"https://commons.wikimedia.org/wiki/File:Post_of_Ramat_Gan,_February_2024_05.jpg\">Chenspec</a>, <a href=\"https://creativecommons.org/licenses/by-sa/4.0\">CC BY-SA 4.0</a>, via Wikimedia Commons"
+  },
+  {
+    "alpha-3": "ITA",
+    "alpha-2": "IT",
+    "name": "Italie",
+    "traduction": "Cassetta postale",
+    "color_name": "Rouge",
+    "color": "#B53333",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/b/b3/Malborghetto_Valbruna_cassetta_postale_30032015_1268.jpg",
+    "attribution": "<a href=\"https://commons.wikimedia.org/wiki/File:Malborghetto_Valbruna_cassetta_postale_30032015_1268.jpg\">Johann Jaritz</a>, <a href=\"https://creativecommons.org/licenses/by-sa/3.0/at/deed.en\">CC BY-SA 3.0 AT</a>, via Wikimedia Commons"
+  },
+  {
+    "alpha-3": "JAM",
+    "alpha-2": "JM",
+    "name": "Jamaïque",
+    "traduction": "",
+    "color_name": "",
+    "color": "",
+    "image": "",
+    "attribution": ""
+  },
+  {
+    "alpha-3": "JPN",
+    "alpha-2": "JP",
+    "name": "Japon",
+    "traduction": "郵便ポスト",
+    "color_name": "Rouge",
+    "color": "#B92D02",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/6/68/Japanese_Mailbox.jpg",
+    "attribution": "<a href=\"https://commons.wikimedia.org/wiki/File:Japanese_Mailbox.jpg\">Douglas Paul Perkins</a>, <a href=\"https://creativecommons.org/licenses/by/4.0\">CC BY 4.0</a>, via Wikimedia Commons"
+  },
+  {
+    "alpha-3": "JEY",
+    "alpha-2": "JE",
+    "name": "Jersey",
+    "traduction": "",
+    "color_name": "",
+    "color": "",
+    "image": "",
+    "attribution": ""
+  },
+  {
+    "alpha-3": "JOR",
+    "alpha-2": "JO",
+    "name": "Jordanie",
+    "traduction": "",
+    "color_name": "",
+    "color": "",
+    "image": "",
+    "attribution": ""
+  },
+  {
+    "alpha-3": "KAZ",
+    "alpha-2": "KZ",
+    "name": "Kazakhstan",
+    "traduction": "",
+    "color_name": "",
+    "color": "",
+    "image": "",
+    "attribution": ""
+  },
+  {
+    "alpha-3": "KEN",
+    "alpha-2": "KE",
+    "name": "Kenya",
+    "traduction": "",
+    "color_name": "",
+    "color": "",
+    "image": "",
+    "attribution": ""
+  },
+  {
+    "alpha-3": "KGZ",
+    "alpha-2": "KG",
+    "name": "Kirghizistan",
+    "traduction": "",
+    "color_name": "",
+    "color": "",
+    "image": "",
+    "attribution": ""
+  },
+  {
+    "alpha-3": "KIR",
+    "alpha-2": "KI",
+    "name": "Kiribati",
+    "traduction": "",
+    "color_name": "",
+    "color": "",
+    "image": "",
+    "attribution": ""
+  },
+  {
+    "alpha-3": "KWT",
+    "alpha-2": "KW",
+    "name": "Koweït",
+    "traduction": "",
+    "color_name": "",
+    "color": "",
+    "image": "",
+    "attribution": ""
+  },
+  {
+    "alpha-3": "LAO",
+    "alpha-2": "LA",
+    "name": "Laos",
+    "traduction": "",
+    "color_name": "",
+    "color": "",
+    "image": "",
+    "attribution": ""
+  },
+  {
+    "alpha-3": "LSO",
+    "alpha-2": "LS",
+    "name": "Lesotho",
+    "traduction": "",
+    "color_name": "",
+    "color": "",
+    "image": "",
+    "attribution": ""
+  },
+  {
+    "alpha-3": "LVA",
+    "alpha-2": "LV",
+    "name": "Lettonie",
+    "traduction": "",
+    "color_name": "",
+    "color": "",
+    "image": "",
+    "attribution": ""
+  },
+  {
+    "alpha-3": "LBN",
+    "alpha-2": "LB",
+    "name": "Liban",
+    "traduction": "",
+    "color_name": "",
+    "color": "",
+    "image": "",
+    "attribution": ""
+  },
+  {
+    "alpha-3": "LBR",
+    "alpha-2": "LR",
+    "name": "Liberia",
+    "traduction": "",
+    "color_name": "",
+    "color": "",
+    "image": "",
+    "attribution": ""
+  },
+  {
+    "alpha-3": "LBY",
+    "alpha-2": "LY",
+    "name": "Libye",
+    "traduction": "",
+    "color_name": "",
+    "color": "",
+    "image": "",
+    "attribution": ""
+  },
+  {
+    "alpha-3": "LIE",
+    "alpha-2": "LI",
+    "name": "Liechtenstein",
+    "traduction": "",
+    "color_name": "",
+    "color": "",
+    "image": "",
+    "attribution": ""
+  },
+  {
+    "alpha-3": "LTU",
+    "alpha-2": "LT",
+    "name": "Lituanie",
+    "traduction": "Pašto dėžutė",
+    "color_name": "Jaune",
+    "color": "#EFC63B",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/b/b3/Lithuanian_mailbox.JPG",
+    "attribution": "<a href=\"https://commons.wikimedia.org/wiki/File:Lithuanian_mailbox.JPG\">Alma Pater</a>, <a href=\"https://creativecommons.org/licenses/by-sa/3.0\">CC BY-SA 3.0</a>, via Wikimedia Commons"
+  },
+  {
+    "alpha-3": "LUX",
+    "alpha-2": "LU",
+    "name": "Luxembourg",
+    "traduction": "",
+    "color_name": "Jaune",
+    "color": "",
+    "image": "",
+    "attribution": ""
+  },
+  {
+    "alpha-3": "MAC",
+    "alpha-2": "MO",
+    "name": "Macao",
+    "traduction": "",
+    "color_name": "",
+    "color": "",
+    "image": "",
+    "attribution": ""
+  },
+  {
+    "alpha-3": "MKD",
+    "alpha-2": "MK",
+    "name": "Macédoine du Nord",
+    "traduction": "",
+    "color_name": "",
+    "color": "",
+    "image": "",
+    "attribution": ""
+  },
+  {
+    "alpha-3": "MDG",
+    "alpha-2": "MG",
+    "name": "Madagascar",
+    "traduction": "",
+    "color_name": "",
+    "color": "",
+    "image": "",
+    "attribution": ""
+  },
+  {
+    "alpha-3": "MYS",
+    "alpha-2": "MY",
+    "name": "Malaisie",
+    "traduction": "Peti pos",
+    "color_name": "Rouge",
+    "color": "#D43A3C",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/7/70/Pos_Malaysia_Gelang_Patah_Post_Office_-_Mailbox.jpg",
+    "attribution": "<a href=\"https://commons.wikimedia.org/wiki/File:Pos_Malaysia_Gelang_Patah_Post_Office_-_Mailbox.jpg\">Chongkian</a>, <a href=\"https://creativecommons.org/licenses/by-sa/4.0\">CC BY-SA 4.0</a>, via Wikimedia Commons"
+  },
+  {
+    "alpha-3": "MWI",
+    "alpha-2": "MW",
+    "name": "Malawi",
+    "traduction": "",
+    "color_name": "",
+    "color": "",
+    "image": "",
+    "attribution": ""
+  },
+  {
+    "alpha-3": "MDV",
+    "alpha-2": "MV",
+    "name": "Maldives",
+    "traduction": "",
+    "color_name": "",
+    "color": "",
+    "image": "",
+    "attribution": ""
+  },
+  {
+    "alpha-3": "MLI",
+    "alpha-2": "ML",
+    "name": "Mali",
+    "traduction": "",
+    "color_name": "",
+    "color": "",
+    "image": "",
+    "attribution": ""
+  },
+  {
+    "alpha-3": "MLT",
+    "alpha-2": "MT",
+    "name": "Malte",
+    "traduction": "",
+    "color_name": "",
+    "color": "",
+    "image": "",
+    "attribution": ""
+  },
+  {
+    "alpha-3": "IMN",
+    "alpha-2": "IM",
+    "name": "Île de Man",
+    "traduction": "",
+    "color_name": "",
+    "color": "",
+    "image": "",
+    "attribution": ""
+  },
+  {
+    "alpha-3": "MNP",
+    "alpha-2": "MP",
+    "name": "Îles Mariannes du Nord",
+    "traduction": "",
+    "color_name": "",
+    "color": "",
+    "image": "",
+    "attribution": ""
+  },
+  {
+    "alpha-3": "MAR",
+    "alpha-2": "MA",
+    "name": "Maroc",
+    "traduction": "صندوق بريد",
+    "color_name": "Jaune",
+    "color": "#FEE845",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/d/dd/Poste_maroc_postbox_tangier.jpg",
+    "attribution": "<a href=\"https://commons.wikimedia.org/wiki/File:Poste_maroc_postbox_tangier.jpg\">Ramosc55</a>, <a href=\"https://creativecommons.org/licenses/by/4.0\">CC BY 4.0</a>, via Wikimedia Commons"
+  },
+  {
+    "alpha-3": "MHL",
+    "alpha-2": "MH",
+    "name": "Îles Marshall",
+    "traduction": "",
+    "color_name": "",
+    "color": "",
+    "image": "",
+    "attribution": ""
+  },
+  {
+    "alpha-3": "MTQ",
+    "alpha-2": "MQ",
+    "name": "Martinique",
+    "traduction": "",
+    "color_name": "",
+    "color": "",
+    "image": "",
+    "attribution": ""
+  },
+  {
+    "alpha-3": "MUS",
+    "alpha-2": "MU",
+    "name": "Maurice",
+    "traduction": "",
+    "color_name": "",
+    "color": "",
+    "image": "",
+    "attribution": ""
+  },
+  {
+    "alpha-3": "MRT",
+    "alpha-2": "MR",
+    "name": "Mauritanie",
+    "traduction": "",
+    "color_name": "",
+    "color": "",
+    "image": "",
+    "attribution": ""
+  },
+  {
+    "alpha-3": "MYT",
+    "alpha-2": "YT",
+    "name": "Mayotte",
+    "traduction": "",
+    "color_name": "",
+    "color": "",
+    "image": "",
+    "attribution": ""
+  },
+  {
+    "alpha-3": "MEX",
+    "alpha-2": "MX",
+    "name": "Mexique",
+    "traduction": "Buzón",
+    "color_name": "Rouge",
+    "color": "#D30B1F",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/1/1a/Buz%C3%B3n_Expresso_en_M%C3%A9xico.jpg",
+    "attribution": "<a href=\"https://commons.wikimedia.org/wiki/File:Buz%C3%B3n_Expresso_en_M%C3%A9xico.jpg\">Marinna</a>, <a href=\"https://creativecommons.org/licenses/by-sa/4.0\">CC BY-SA 4.0</a>, via Wikimedia Commons"
+  },
+  {
+    "alpha-3": "FSM",
+    "alpha-2": "FM",
+    "name": "États fédérés de Micronésie",
+    "traduction": "",
+    "color_name": "",
+    "color": "",
+    "image": "",
+    "attribution": ""
+  },
+  {
+    "alpha-3": "MDA",
+    "alpha-2": "MD",
+    "name": "Moldavie",
+    "traduction": "",
+    "color_name": "",
+    "color": "",
+    "image": "",
+    "attribution": ""
+  },
+  {
+    "alpha-3": "MCO",
+    "alpha-2": "MC",
+    "name": "Monaco",
+    "traduction": "",
+    "color_name": "",
+    "color": "",
+    "image": "",
+    "attribution": ""
+  },
+  {
+    "alpha-3": "MNG",
+    "alpha-2": "MN",
+    "name": "Mongolie",
+    "traduction": "",
+    "color_name": "",
+    "color": "",
+    "image": "",
+    "attribution": ""
+  },
+  {
+    "alpha-3": "MNE",
+    "alpha-2": "ME",
+    "name": "Monténégro",
+    "traduction": "поштанско сандуче",
+    "color_name": "Jaune",
+    "color": "#EFD864",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/f/f7/Montenegro.Post.Office.Kotor%2C.JPG",
+    "attribution": "<a href=\"https://commons.wikimedia.org/wiki/File:Montenegro.Post.Office.Kotor,.JPG\">Ekem</a>, <a href=\"https://creativecommons.org/licenses/by-sa/3.0\">CC BY-SA 3.0</a>, via Wikimedia Commons"
+  },
+  {
+    "alpha-3": "MSR",
+    "alpha-2": "MS",
+    "name": "Montserrat",
+    "traduction": "",
+    "color_name": "",
+    "color": "",
+    "image": "",
+    "attribution": ""
+  },
+  {
+    "alpha-3": "MOZ",
+    "alpha-2": "MZ",
+    "name": "Mozambique",
+    "traduction": "",
+    "color_name": "",
+    "color": "",
+    "image": "",
+    "attribution": ""
+  },
+  {
+    "alpha-3": "MMR",
+    "alpha-2": "MM",
+    "name": "Birmanie",
+    "traduction": "",
+    "color_name": "",
+    "color": "",
+    "image": "",
+    "attribution": ""
+  },
+  {
+    "alpha-3": "NAM",
+    "alpha-2": "NA",
+    "name": "Namibie",
+    "traduction": "",
+    "color_name": "",
+    "color": "",
+    "image": "",
+    "attribution": ""
+  },
+  {
+    "alpha-3": "NRU",
+    "alpha-2": "NR",
+    "name": "Nauru",
+    "traduction": "",
+    "color_name": "",
+    "color": "",
+    "image": "",
+    "attribution": ""
+  },
+  {
+    "alpha-3": "NPL",
+    "alpha-2": "NP",
+    "name": "Népal",
+    "traduction": "",
+    "color_name": "",
+    "color": "",
+    "image": "",
+    "attribution": ""
+  },
+  {
+    "alpha-3": "NIC",
+    "alpha-2": "NI",
+    "name": "Nicaragua",
+    "traduction": "",
+    "color_name": "",
+    "color": "",
+    "image": "",
+    "attribution": ""
+  },
+  {
+    "alpha-3": "NER",
+    "alpha-2": "NE",
+    "name": "Niger",
+    "traduction": "",
+    "color_name": "",
+    "color": "",
+    "image": "",
+    "attribution": ""
+  },
+  {
+    "alpha-3": "NGA",
+    "alpha-2": "NG",
+    "name": "Nigeria",
+    "traduction": "",
+    "color_name": "",
+    "color": "",
+    "image": "",
+    "attribution": ""
+  },
+  {
+    "alpha-3": "NIU",
+    "alpha-2": "NU",
+    "name": "Niue",
+    "traduction": "",
+    "color_name": "",
+    "color": "",
+    "image": "",
+    "attribution": ""
+  },
+  {
+    "alpha-3": "NFK",
+    "alpha-2": "NF",
+    "name": "Île Norfolk",
+    "traduction": "",
+    "color_name": "",
+    "color": "",
+    "image": "",
+    "attribution": ""
+  },
+  {
+    "alpha-3": "NOR",
+    "alpha-2": "NO",
+    "name": "Norvège",
+    "traduction": "Innleveringspostkasse",
+    "color_name": "Rouge",
+    "color": "#AF141C",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/6/63/Innleveringspostkasse_-_2013-03-03_at_16-23-06.jpg",
+    "attribution": "<a href=\"https://commons.wikimedia.org/wiki/File:Innleveringspostkasse_-_2013-03-03_at_16-23-06.jpg\">Kjetil Ree</a>, <a href=\"https://creativecommons.org/licenses/by-sa/3.0\">CC BY-SA 3.0</a>, via Wikimedia Commons"
+  },
+  {
+    "alpha-3": "NCL",
+    "alpha-2": "NC",
+    "name": "Nouvelle-Calédonie",
+    "traduction": "",
+    "color_name": "",
+    "color": "",
+    "image": "",
+    "attribution": ""
+  },
+  {
+    "alpha-3": "NZL",
+    "alpha-2": "NZ",
+    "name": "Nouvelle-Zélande",
+    "traduction": "Postbox",
+    "color_name": "Rouge",
+    "color": "#C65739",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/0/06/A_photo_of_a_New_Zealand_Post_post_box_2019-11-08.jpg",
+    "attribution": "<a href=\"https://commons.wikimedia.org/wiki/File:A_photo_of_a_New_Zealand_Post_post_box_2019-11-08.jpg\">Thomas Booker (CoderThomasB)</a>, <a href=\"https://creativecommons.org/licenses/by-sa/4.0\">CC BY-SA 4.0</a>, via Wikimedia Commons"
+  },
+  {
+    "alpha-3": "IOT",
+    "alpha-2": "IO",
+    "name": "Territoire britannique de l'océan Indien",
+    "traduction": "",
+    "color_name": "",
+    "color": "",
+    "image": "",
+    "attribution": ""
+  },
+  {
+    "alpha-3": "OMN",
+    "alpha-2": "OM",
+    "name": "Oman",
+    "traduction": "",
+    "color_name": "",
+    "color": "",
+    "image": "",
+    "attribution": ""
+  },
+  {
+    "alpha-3": "UGA",
+    "alpha-2": "UG",
+    "name": "Ouganda",
+    "traduction": "",
+    "color_name": "",
+    "color": "",
+    "image": "",
+    "attribution": ""
+  },
+  {
+    "alpha-3": "UZB",
+    "alpha-2": "UZ",
+    "name": "Ouzbékistan",
+    "traduction": "",
+    "color_name": "",
+    "color": "",
+    "image": "",
+    "attribution": ""
+  },
+  {
+    "alpha-3": "PAK",
+    "alpha-2": "PK",
+    "name": "Pakistan",
+    "traduction": "",
+    "color_name": "",
+    "color": "",
+    "image": "",
+    "attribution": ""
+  },
+  {
+    "alpha-3": "PLW",
+    "alpha-2": "PW",
+    "name": "Palaos",
+    "traduction": "",
+    "color_name": "",
+    "color": "",
+    "image": "",
+    "attribution": ""
+  },
+  {
+    "alpha-3": "PSE",
+    "alpha-2": "PS",
+    "name": "Palestine",
+    "traduction": "",
+    "color_name": "",
+    "color": "",
+    "image": "",
+    "attribution": ""
+  },
+  {
+    "alpha-3": "PAN",
+    "alpha-2": "PA",
+    "name": "Panama",
+    "traduction": "",
+    "color_name": "",
+    "color": "",
+    "image": "",
+    "attribution": ""
+  },
+  {
+    "alpha-3": "PNG",
+    "alpha-2": "PG",
+    "name": "Papouasie-Nouvelle-Guinée",
+    "traduction": "",
+    "color_name": "",
+    "color": "",
+    "image": "",
+    "attribution": ""
+  },
+  {
+    "alpha-3": "PRY",
+    "alpha-2": "PY",
+    "name": "Paraguay",
+    "traduction": "",
+    "color_name": "",
+    "color": "",
+    "image": "",
+    "attribution": ""
+  },
+  {
+    "alpha-3": "NLD",
+    "alpha-2": "NL",
+    "name": "Pays-Bas",
+    "traduction": "Brievenbus",
+    "color_name": "Orange",
+    "color": "#FF5420",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/9/93/PostNL_brievenbus_in_Ommoord.jpg",
+    "attribution": "<a href=\"https://commons.wikimedia.org/wiki/File:PostNL_brievenbus_in_Ommoord.jpg\">Someone Not Awful</a>, <a href=\"https://creativecommons.org/licenses/by-sa/4.0\">CC BY-SA 4.0</a>, via Wikimedia Commons"
+  },
+  {
+    "alpha-3": "PER",
+    "alpha-2": "PE",
+    "name": "Pérou",
+    "traduction": "",
+    "color_name": "",
+    "color": "",
+    "image": "",
+    "attribution": ""
+  },
+  {
+    "alpha-3": "PHL",
+    "alpha-2": "PH",
+    "name": "Philippines",
+    "traduction": "Post box",
+    "color_name": "Gris",
+    "color": "#8A8280",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/1/1e/Collections_of_Chinatown_Museum_32.jpg",
+    "attribution": "<a href=\"https://commons.wikimedia.org/wiki/File:Collections_of_Chinatown_Museum_32.jpg\">SwarmCheng</a>, <a href=\"https://creativecommons.org/licenses/by-sa/4.0\">CC BY-SA 4.0</a>, via Wikimedia Commons"
+  },
+  {
+    "alpha-3": "PCN",
+    "alpha-2": "PN",
+    "name": "Îles Pitcairn",
+    "traduction": "",
+    "color_name": "",
+    "color": "",
+    "image": "",
+    "attribution": ""
+  },
+  {
+    "alpha-3": "POL",
+    "alpha-2": "PL",
+    "name": "Pologne",
+    "traduction": "Skrzynka pocztowa",
+    "color_name": "Rouge",
+    "color": "#B9351E",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/c/cd/POL_2007_08_28_warsaw_miedzyborska_11.JPG",
+    "attribution": "<a href=\"https://commons.wikimedia.org/wiki/File:POL_2007_08_28_warsaw_miedzyborska_11.JPG\">Alina Zienowicz Ala z</a>, <a href=\"http://creativecommons.org/licenses/by-sa/3.0/\">CC BY-SA 3.0</a>, via Wikimedia Commons"
+  },
+  {
+    "alpha-3": "PYF",
+    "alpha-2": "PF",
+    "name": "Polynésie française",
+    "traduction": "",
+    "color_name": "",
+    "color": "",
+    "image": "",
+    "attribution": ""
+  },
+  {
+    "alpha-3": "PRI",
+    "alpha-2": "PR",
+    "name": "Porto Rico",
+    "traduction": "",
+    "color_name": "",
+    "color": "",
+    "image": "",
+    "attribution": ""
+  },
+  {
+    "alpha-3": "PRT",
+    "alpha-2": "PT",
+    "name": "Portugal",
+    "traduction": "Caixa de correio",
+    "color_name": "Rouge",
+    "color": "#EE3C28",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/b/bf/Marco_ctt.jpg",
+    "attribution": "<a href=\"https://commons.wikimedia.org/wiki/File:Marco_ctt.jpg\">I, Jsobral</a>, <a href=\"http://creativecommons.org/licenses/by-sa/3.0/\">CC BY-SA 3.0</a>, via Wikimedia Commons"
+  },
+  {
+    "alpha-3": "QAT",
+    "alpha-2": "QA",
+    "name": "Qatar",
+    "traduction": "",
+    "color_name": "",
+    "color": "",
+    "image": "",
+    "attribution": ""
+  },
+  {
+    "alpha-3": "REU",
+    "alpha-2": "RE",
+    "name": "La Réunion",
+    "traduction": "",
+    "color_name": "",
+    "color": "",
+    "image": "",
+    "attribution": ""
+  },
+  {
+    "alpha-3": "ROU",
+    "alpha-2": "RO",
+    "name": "Roumanie",
+    "traduction": "Cutie poștală",
+    "color_name": "Rouge",
+    "color": "#A80019",
+    "image": "https://live.staticflickr.com/3258/3129008391_ec4eedb3fe_b.jpg",
+    "attribution": "<a href=\"https://flic.kr/p/5LuZbx\">Keresztúr street scene - post box & bicycle</a> by <a href=\"https://www.flickr.com/photos/rmattlage/\">Rimager</a>, sur Flickr"
+  },
+  {
+    "alpha-3": "GBR",
+    "alpha-2": "GB",
+    "name": "Royaume-Uni",
+    "traduction": "Post box",
+    "color_name": "Rouge",
+    "color": "#DC0000",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/c/c3/King-Edward-VII-type-C-post-box-John-Street-London.jpg",
+    "attribution": "<a href=\"https://commons.wikimedia.org/wiki/File:King-Edward-VII-type-C-post-box-John-Street-London.jpg\">Acediscovery</a>, <a href=\"https://creativecommons.org/licenses/by/4.0\">CC BY 4.0</a>, via Wikimedia Commons"
+  },
+  {
+    "alpha-3": "RUS",
+    "alpha-2": "RU",
+    "name": "Russie",
+    "traduction": "Почтовый ящик",
+    "color_name": "Bleu",
+    "color": "#0F2AAF",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/7/7a/Blue_post_box_in_Moscow.jpg",
+    "attribution": "<a href=\"https://commons.wikimedia.org/wiki/File:Blue_post_box_in_Moscow.jpg\">Dickelbers</a>, <a href=\"https://creativecommons.org/licenses/by-sa/4.0\">CC BY-SA 4.0</a>, via Wikimedia Commons"
+  },
+  {
+    "alpha-3": "RWA",
+    "alpha-2": "RW",
+    "name": "Rwanda",
+    "traduction": "Poštansko sanduče",
+    "color_name": "Jaune",
+    "color": "#BCB55B",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/4/4c/PO_Serb_Novi_Sad.jpg",
+    "attribution": "<a href=\"https://commons.wikimedia.org/wiki/File:PO_Serb_Novi_Sad.jpg\">I, Neizham</a>, <a href=\"http://creativecommons.org/licenses/by-sa/3.0/\">CC BY-SA 3.0</a>, via Wikimedia Commons"
+  },
+  {
+    "alpha-3": "ESH",
+    "alpha-2": "EH",
+    "name": "République arabe sahraouie démocratique",
+    "traduction": "",
+    "color_name": "",
+    "color": "",
+    "image": "",
+    "attribution": ""
+  },
+  {
+    "alpha-3": "BLM",
+    "alpha-2": "BL",
+    "name": "Saint-Barthélemy",
+    "traduction": "",
+    "color_name": "",
+    "color": "",
+    "image": "",
+    "attribution": ""
+  },
+  {
+    "alpha-3": "KNA",
+    "alpha-2": "KN",
+    "name": "Saint-Christophe-et-Niévès",
+    "traduction": "",
+    "color_name": "",
+    "color": "",
+    "image": "",
+    "attribution": ""
+  },
+  {
+    "alpha-3": "SMR",
+    "alpha-2": "SM",
+    "name": "Saint-Marin",
+    "traduction": "",
+    "color_name": "",
+    "color": "",
+    "image": "",
+    "attribution": ""
+  },
+  {
+    "alpha-3": "MAF",
+    "alpha-2": "MF",
+    "name": "Saint-Martin",
+    "traduction": "",
+    "color_name": "",
+    "color": "",
+    "image": "",
+    "attribution": ""
+  },
+  {
+    "alpha-3": "SXM",
+    "alpha-2": "SX",
+    "name": "Saint-Martin",
+    "traduction": "",
+    "color_name": "",
+    "color": "",
+    "image": "",
+    "attribution": ""
+  },
+  {
+    "alpha-3": "SPM",
+    "alpha-2": "PM",
+    "name": "Saint-Pierre-et-Miquelon",
+    "traduction": "",
+    "color_name": "",
+    "color": "",
+    "image": "",
+    "attribution": ""
+  },
+  {
+    "alpha-3": "VAT",
+    "alpha-2": "VA",
+    "name": "Saint-Siège (État de la Cité du Vatican)",
+    "traduction": "",
+    "color_name": "",
+    "color": "",
+    "image": "",
+    "attribution": ""
+  },
+  {
+    "alpha-3": "VCT",
+    "alpha-2": "VC",
+    "name": "Saint-Vincent-et-les-Grenadines",
+    "traduction": "",
+    "color_name": "",
+    "color": "",
+    "image": "",
+    "attribution": ""
+  },
+  {
+    "alpha-3": "SHN",
+    "alpha-2": "SH",
+    "name": "Sainte-Hélène, Ascension et Tristan da Cunha",
+    "traduction": "",
+    "color_name": "",
+    "color": "",
+    "image": "",
+    "attribution": ""
+  },
+  {
+    "alpha-3": "LCA",
+    "alpha-2": "LC",
+    "name": "Sainte-Lucie",
+    "traduction": "",
+    "color_name": "",
+    "color": "",
+    "image": "",
+    "attribution": ""
+  },
+  {
+    "alpha-3": "SLB",
+    "alpha-2": "SB",
+    "name": "Îles Salomon",
+    "traduction": "",
+    "color_name": "",
+    "color": "",
+    "image": "",
+    "attribution": ""
+  },
+  {
+    "alpha-3": "SLV",
+    "alpha-2": "SV",
+    "name": "Salvador",
+    "traduction": "",
+    "color_name": "",
+    "color": "",
+    "image": "",
+    "attribution": ""
+  },
+  {
+    "alpha-3": "WSM",
+    "alpha-2": "WS",
+    "name": "Samoa",
+    "traduction": "",
+    "color_name": "",
+    "color": "",
+    "image": "",
+    "attribution": ""
+  },
+  {
+    "alpha-3": "ASM",
+    "alpha-2": "AS",
+    "name": "Samoa américaines",
+    "traduction": "",
+    "color_name": "",
+    "color": "",
+    "image": "",
+    "attribution": ""
+  },
+  {
+    "alpha-3": "STP",
+    "alpha-2": "ST",
+    "name": "Sao Tomé-et-Principe",
+    "traduction": "",
+    "color_name": "",
+    "color": "",
+    "image": "",
+    "attribution": ""
+  },
+  {
+    "alpha-3": "SEN",
+    "alpha-2": "SN",
+    "name": "Sénégal",
+    "traduction": "",
+    "color_name": "",
+    "color": "",
+    "image": "",
+    "attribution": ""
+  },
+  {
+    "alpha-3": "SRB",
+    "alpha-2": "RS",
+    "name": "Serbie",
+    "traduction": "",
+    "color_name": "",
+    "color": "",
+    "image": "",
+    "attribution": ""
+  },
+  {
+    "alpha-3": "SYC",
+    "alpha-2": "SC",
+    "name": "Seychelles",
+    "traduction": "",
+    "color_name": "",
+    "color": "",
+    "image": "",
+    "attribution": ""
+  },
+  {
+    "alpha-3": "SLE",
+    "alpha-2": "SL",
+    "name": "Sierra Leone",
+    "traduction": "",
+    "color_name": "",
+    "color": "",
+    "image": "",
+    "attribution": ""
+  },
+  {
+    "alpha-3": "SGP",
+    "alpha-2": "SG",
+    "name": "Singapour",
+    "traduction": "Post box",
+    "color_name": "Rouge",
+    "color": "",
+    "image": "",
+    "attribution": ""
+  },
+  {
+    "alpha-3": "SVK",
+    "alpha-2": "SK",
+    "name": "Slovaquie",
+    "traduction": "Poštová schránka",
+    "color_name": "Orange",
+    "color": "#C47B0C",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/3/35/Slovak_postbox_in_Bratislava.jpg",
+    "attribution": "<a href=\"https://commons.wikimedia.org/wiki/File:Slovak_postbox_in_Bratislava.jpg\">Filias</a>, CC0, via Wikimedia Commons"
+  },
+  {
+    "alpha-3": "SVN",
+    "alpha-2": "SI",
+    "name": "Slovénie",
+    "traduction": "Poštni nabiralnik",
+    "color_name": "Jaune",
+    "color": "#ECB416",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/f/f1/Slovenian_Sign_43.JPG",
+    "attribution": "<a href=\"https://commons.wikimedia.org/wiki/File:Slovenian_Sign_43.JPG\">MZaplotnik</a>, <a href=\"https://creativecommons.org/licenses/by-sa/3.0\">CC BY-SA 3.0</a>, via Wikimedia Commons"
+  },
+  {
+    "alpha-3": "SOM",
+    "alpha-2": "SO",
+    "name": "Somalie",
+    "traduction": "",
+    "color_name": "",
+    "color": "",
+    "image": "",
+    "attribution": ""
+  },
+  {
+    "alpha-3": "SDN",
+    "alpha-2": "SD",
+    "name": "Soudan",
+    "traduction": "",
+    "color_name": "",
+    "color": "",
+    "image": "",
+    "attribution": ""
+  },
+  {
+    "alpha-3": "SSD",
+    "alpha-2": "SS",
+    "name": "Soudan du Sud",
+    "traduction": "",
+    "color_name": "",
+    "color": "",
+    "image": "",
+    "attribution": ""
+  },
+  {
+    "alpha-3": "LKA",
+    "alpha-2": "LK",
+    "name": "Sri Lanka",
+    "traduction": "",
+    "color_name": "",
+    "color": "",
+    "image": "",
+    "attribution": ""
+  },
+  {
+    "alpha-3": "SWE",
+    "alpha-2": "SE",
+    "name": "Suède",
+    "traduction": "Brevlåda",
+    "color_name": "Jaune",
+    "color": "#EDC959",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/e/ed/Yellow_post_box%2C_Stockholm%2C_2009.jpg",
+    "attribution": "<a href=\"https://commons.wikimedia.org/wiki/File:Yellow_post_box,_Stockholm,_2009.jpg\">mandoft from El Campello (Alicante), Spain</a>, <a href=\"https://creativecommons.org/licenses/by-sa/2.0\">CC BY-SA 2.0</a>, via Wikimedia Commons"
+  },
+  {
+    "alpha-3": "CHE",
+    "alpha-2": "CH",
+    "name": "Suisse",
+    "traduction": "Briefkasten",
+    "color_name": "Jaune",
+    "color": "#F6DD4C",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/e/ea/Swiss_post_box%2C_Basle.jpg",
+    "attribution": "<a href=\"https://commons.wikimedia.org/wiki/File:Swiss_post_box,_Basle.jpg\">kitmasterbloke</a>, <a href=\"https://creativecommons.org/licenses/by/2.0\">CC BY 2.0</a>, via Wikimedia Commons"
+  },
+  {
+    "alpha-3": "SUR",
+    "alpha-2": "SR",
+    "name": "Suriname",
+    "traduction": "",
+    "color_name": "",
+    "color": "",
+    "image": "",
+    "attribution": ""
+  },
+  {
+    "alpha-3": "SJM",
+    "alpha-2": "SJ",
+    "name": "Svalbard et île Jan Mayen",
+    "traduction": "",
+    "color_name": "",
+    "color": "",
+    "image": "",
+    "attribution": ""
+  },
+  {
+    "alpha-3": "SWZ",
+    "alpha-2": "SZ",
+    "name": "Eswatini",
+    "traduction": "",
+    "color_name": "",
+    "color": "",
+    "image": "",
+    "attribution": ""
+  },
+  {
+    "alpha-3": "SYR",
+    "alpha-2": "SY",
+    "name": "Syrie",
+    "traduction": "",
+    "color_name": "",
+    "color": "",
+    "image": "",
+    "attribution": ""
+  },
+  {
+    "alpha-3": "TJK",
+    "alpha-2": "TJ",
+    "name": "Tadjikistan",
+    "traduction": "",
+    "color_name": "",
+    "color": "",
+    "image": "",
+    "attribution": ""
+  },
+  {
+    "alpha-3": "TWN",
+    "alpha-2": "TW",
+    "name": "Taïwan (République de Chine)",
+    "traduction": "",
+    "color_name": "",
+    "color": "",
+    "image": "",
+    "attribution": ""
+  },
+  {
+    "alpha-3": "TZA",
+    "alpha-2": "TZ",
+    "name": "Tanzanie",
+    "traduction": "",
+    "color_name": "",
+    "color": "",
+    "image": "",
+    "attribution": ""
+  },
+  {
+    "alpha-3": "TCD",
+    "alpha-2": "TD",
+    "name": "Tchad",
+    "traduction": "",
+    "color_name": "",
+    "color": "",
+    "image": "",
+    "attribution": ""
+  },
+  {
+    "alpha-3": "CZE",
+    "alpha-2": "CZ",
+    "name": "Tchéquie",
+    "traduction": "Poštovní schránka",
+    "color_name": "Orange",
+    "color": "#FE7435",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/8/8f/Postovni_schranky.jpg",
+    "attribution": "<a href=\"https://commons.wikimedia.org/wiki/File:Postovni_schranky.jpg\">Ludek</a>, <a href=\"http://creativecommons.org/licenses/by-sa/3.0/\">CC BY-SA 3.0</a>, via Wikimedia Commons"
+  },
+  {
+    "alpha-3": "ATF",
+    "alpha-2": "TF",
+    "name": "Terres australes et antarctiques françaises",
+    "traduction": "",
+    "color_name": "",
+    "color": "",
+    "image": "",
+    "attribution": ""
+  },
+  {
+    "alpha-3": "THA",
+    "alpha-2": "TH",
+    "name": "Thaïlande",
+    "traduction": "ตู้ไปรษณีย์",
+    "color_name": "Rouge",
+    "color": "#C53632",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/a/a4/Thai_mailboxes.jpg",
+    "attribution": "<a href=\"https://commons.wikimedia.org/wiki/File:Thai_mailboxes.jpg\">Lerdsuwa</a>, <a href=\"http://creativecommons.org/licenses/by-sa/3.0/\">CC BY-SA 3.0</a>, via Wikimedia Commons"
+  },
+  {
+    "alpha-3": "TLS",
+    "alpha-2": "TL",
+    "name": "Timor oriental",
+    "traduction": "",
+    "color_name": "",
+    "color": "",
+    "image": "",
+    "attribution": ""
+  },
+  {
+    "alpha-3": "TGO",
+    "alpha-2": "TG",
+    "name": "Togo",
+    "traduction": "",
+    "color_name": "",
+    "color": "",
+    "image": "",
+    "attribution": ""
+  },
+  {
+    "alpha-3": "TKL",
+    "alpha-2": "TK",
+    "name": "Tokelau",
+    "traduction": "",
+    "color_name": "",
+    "color": "",
+    "image": "",
+    "attribution": ""
+  },
+  {
+    "alpha-3": "TON",
+    "alpha-2": "TO",
+    "name": "Tonga",
+    "traduction": "",
+    "color_name": "",
+    "color": "",
+    "image": "",
+    "attribution": ""
+  },
+  {
+    "alpha-3": "TTO",
+    "alpha-2": "TT",
+    "name": "Trinité-et-Tobago",
+    "traduction": "",
+    "color_name": "",
+    "color": "",
+    "image": "",
+    "attribution": ""
+  },
+  {
+    "alpha-3": "TUN",
+    "alpha-2": "TN",
+    "name": "Tunisie",
+    "traduction": "صندوق البريد",
+    "color_name": "Jaune",
+    "color": "#EABD1C",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/7/7a/Bo%C3%AEte_postale%2C_Sayada%2C_Tunisie_2019.jpg",
+    "attribution": "<a href=\"https://commons.wikimedia.org/wiki/File:Bo%C3%AEte_postale,_Sayada,_Tunisie_2019.jpg\">Habib M&#039;henni</a>, <a href=\"https://creativecommons.org/licenses/by-sa/4.0\">CC BY-SA 4.0</a>, via Wikimedia Commons"
+  },
+  {
+    "alpha-3": "TKM",
+    "alpha-2": "TM",
+    "name": "Turkménistan",
+    "traduction": "",
+    "color_name": "",
+    "color": "",
+    "image": "",
+    "attribution": ""
+  },
+  {
+    "alpha-3": "TCA",
+    "alpha-2": "TC",
+    "name": "Îles Turques-et-Caïques",
+    "traduction": "",
+    "color_name": "",
+    "color": "",
+    "image": "",
+    "attribution": ""
+  },
+  {
+    "alpha-3": "TUR",
+    "alpha-2": "TR",
+    "name": "Turquie",
+    "traduction": "Posta kutusu",
+    "color_name": "Jaune",
+    "color": "#E6CB3E",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/6/6a/Istanbul_PTT_Briefkasten.jpg",
+    "attribution": "<a href=\"https://commons.wikimedia.org/wiki/File:Istanbul_PTT_Briefkasten.jpg\">Reise Reise</a>, <a href=\"https://creativecommons.org/licenses/by-sa/3.0\">CC BY-SA 3.0</a>, via Wikimedia Commons"
+  },
+  {
+    "alpha-3": "TUV",
+    "alpha-2": "TV",
+    "name": "Tuvalu",
+    "traduction": "",
+    "color_name": "",
+    "color": "",
+    "image": "",
+    "attribution": ""
+  },
+  {
+    "alpha-3": "UKR",
+    "alpha-2": "UA",
+    "name": "Ukraine",
+    "traduction": "Поштова скринька",
+    "color_name": "Jaune",
+    "color": "#FAD42B",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/c/cb/Simferopol_-_mail_box.jpg",
+    "attribution": "<a href=\"https://commons.wikimedia.org/wiki/File:Simferopol_-_mail_box.jpg\">Tiia Monto</a>, <a href=\"https://creativecommons.org/licenses/by-sa/3.0\">CC BY-SA 3.0</a>, via Wikimedia Commons"
+  },
+  {
+    "alpha-3": "URY",
+    "alpha-2": "UY",
+    "name": "Uruguay",
+    "traduction": "",
+    "color_name": "",
+    "color": "",
+    "image": "",
+    "attribution": ""
+  },
+  {
+    "alpha-3": "VUT",
+    "alpha-2": "VU",
+    "name": "Vanuatu",
+    "traduction": "",
+    "color_name": "",
+    "color": "",
+    "image": "",
+    "attribution": ""
+  },
+  {
+    "alpha-3": "VEN",
+    "alpha-2": "VE",
+    "name": "Venezuela",
+    "traduction": "",
+    "color_name": "",
+    "color": "",
+    "image": "",
+    "attribution": ""
+  },
+  {
+    "alpha-3": "VGB",
+    "alpha-2": "VG",
+    "name": "Îles Vierges britanniques",
+    "traduction": "",
+    "color_name": "",
+    "color": "",
+    "image": "",
+    "attribution": ""
+  },
+  {
+    "alpha-3": "VIR",
+    "alpha-2": "VI",
+    "name": "Îles Vierges des États-Unis",
+    "traduction": "",
+    "color_name": "",
+    "color": "",
+    "image": "",
+    "attribution": ""
+  },
+  {
+    "alpha-3": "VNM",
+    "alpha-2": "VN",
+    "name": "Viêt Nam",
+    "traduction": "Hộp thư",
+    "color_name": "Jaune",
+    "color": "#E1BC10",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/4/48/Vietnam_Post_Box_in_Ho_Chi_Minh_City01.jpg",
+    "attribution": "<a href=\"https://commons.wikimedia.org/wiki/File:Vietnam_Post_Box_in_Ho_Chi_Minh_City01.jpg\">On-chan</a>, <a href=\"https://creativecommons.org/licenses/by-sa/3.0\">CC BY-SA 3.0</a>, via Wikimedia Commons"
+  },
+  {
+    "alpha-3": "WLF",
+    "alpha-2": "WF",
+    "name": "Wallis-et-Futuna",
+    "traduction": "",
+    "color_name": "",
+    "color": "",
+    "image": "",
+    "attribution": ""
+  },
+  {
+    "alpha-3": "YEM",
+    "alpha-2": "YE",
+    "name": "Yémen",
+    "traduction": "",
+    "color_name": "",
+    "color": "",
+    "image": "",
+    "attribution": ""
+  },
+  {
+    "alpha-3": "ZMB",
+    "alpha-2": "ZM",
+    "name": "Zambie",
+    "traduction": "",
+    "color_name": "",
+    "color": "",
+    "image": "",
+    "attribution": ""
+  },
+  {
+    "alpha-3": "ZWE",
+    "alpha-2": "ZW",
+    "name": "Zimbabwe",
+    "traduction": "",
+    "color_name": "",
+    "color": "",
+    "image": "",
+    "attribution": ""
+  }
+]
