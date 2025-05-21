@@ -404,7 +404,7 @@
     "alpha-2": "CM",
     "name": "Cameroun",
     "traduction": "Boite postale",
-    "color_name": "Blanc",
+    "color_name": "Gris",
     "color": "#83796F",
     "image": "https://upload.wikimedia.org/wikipedia/commons/6/60/Boite_postale.jpg",
     "attribution": "<a href=\"https://commons.wikimedia.org/wiki/File:Boite_postale.jpg\">Suzanne Zang</a>, <a href=\"https://creativecommons.org/licenses/by-sa/4.0\">CC BY-SA 4.0</a>, via Wikimedia Commons"
@@ -546,7 +546,7 @@
     "traduction": "우체통",
     "color_name": "Rouge",
     "color": "#FD5E37",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/2/27/Korea_post-box.jpgg",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/2/27/Korea_post-box.jpg",
     "attribution": "<a href=\"https://commons.wikimedia.org/wiki/File:Korea_post-box.jpg\">날개</a>, <a href=\"https://creativecommons.org/licenses/by-sa/3.0\">CC BY-SA 3.0</a>, via Wikimedia Commons"
   },
   {
@@ -575,7 +575,7 @@
     "name": "Côte d'Ivoire",
     "traduction": "Boîte aux lettres",
     "color_name": "Blanc",
-    "color": "#BBB9B3",
+    "color": "#eeeeee",
     "image": "https://ichef.bbci.co.uk/ace/standard/976/cpsprodpb/229C/production/_92906880_gettyimages-181919559.jpg.webp",
     "attribution": "<a href=\"https://www.bbc.com/news/world-africa-38262877\">Ivory Coast post office adopts three-word system</a>, AFP"
   },
@@ -765,7 +765,7 @@
     "name": "Finlande",
     "traduction": "Kirjelaatikko",
     "color_name": "Orange",
-    "color": "#B46A07",
+    "color": "#C9810F",
     "image": "https://upload.wikimedia.org/wikipedia/commons/f/f7/Jyv%C3%A4skyl%C3%A4_mailbox.jpg",
     "attribution": "<a href=\"https://commons.wikimedia.org/wiki/File:Jyv%C3%A4skyl%C3%A4_mailbox.jpg\">Tiia Monto</a>, <a href=\"https://creativecommons.org/licenses/by-sa/3.0\">CC BY-SA 3.0</a>, via Wikimedia Commons"
   },
@@ -1034,8 +1034,8 @@
     "alpha-2": "ID",
     "name": "Indonésie",
     "traduction": "Bis surat",
-    "color_name": "Rouge",
-    "color": "#DF5E4B",
+    "color_name": "Orange",
+    "color": "#D56A3A",
     "image": "https://upload.wikimedia.org/wikipedia/commons/5/5e/Sejarah_bis_surat_pt.pos_indonesia.jpg",
     "attribution": "<a href=\"https://commons.wikimedia.org/wiki/File:Sejarah_bis_surat_pt.pos_indonesia.jpg\">SBudiMasdar</a>, <a href=\"https://creativecommons.org/licenses/by-sa/4.0\">CC BY-SA 4.0</a>, via Wikimedia Commons"
   },
@@ -1066,7 +1066,7 @@
     "traduction": "Post box",
     "color_name": "Vert",
     "color": "#3F983A",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/b/be/Post_box_Dublin.jpgg",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/b/be/Post_box_Dublin.jpg",
     "attribution": "<a href=\"https://commons.wikimedia.org/wiki/File:Post_box_Dublin.jpg\">Acediscovery</a>, <a href=\"https://creativecommons.org/licenses/by/4.0\">CC BY 4.0</a>, via Wikimedia Commons"
   },
   {
@@ -1103,11 +1103,11 @@
     "alpha-3": "JAM",
     "alpha-2": "JM",
     "name": "Jamaïque",
-    "traduction": "",
-    "color_name": "",
-    "color": "",
-    "image": "",
-    "attribution": ""
+    "traduction": "Post Box",
+    "color_name": "Vert",
+    "color": "#B0D3B5",
+    "image": "/data/couleurs-boites-aux-lettres/jamaique.jpg",
+    "attribution": "<a href=\"https://www.facebook.com/JamaicaPost/photos/get-your-private-letter-box-at-your-nearest-post-office-repost-from-sweetjamaica/1204756769638093/?_rdr\">Jamaica Post</a>"
   },
   {
     "alpha-3": "JPN",
@@ -1133,41 +1133,41 @@
     "alpha-3": "JOR",
     "alpha-2": "JO",
     "name": "Jordanie",
-    "traduction": "",
-    "color_name": "",
-    "color": "",
-    "image": "",
-    "attribution": ""
+    "traduction": "صندوق البريد",
+    "color_name": "Blanc",
+    "color": "#FFFCFF",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/b/ba/Post_box_in_Jordan.JPG",
+    "attribution": "<a href=\"https://commons.wikimedia.org/wiki/File:Post_box_in_Jordan.JPG\">High Contrast</a>, <a href=\"https://creativecommons.org/licenses/by/3.0/de/deed.en\">CC BY 3.0 DE</a>, via Wikimedia Commons"
   },
   {
     "alpha-3": "KAZ",
     "alpha-2": "KZ",
     "name": "Kazakhstan",
-    "traduction": "",
-    "color_name": "",
-    "color": "",
-    "image": "",
-    "attribution": ""
+    "traduction": "Пошта жәшігі",
+    "color_name": "Jaune",
+    "color": "#D1C232",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/2/29/KazPost_mailbox.JPG",
+    "attribution": "<a href=\"https://commons.wikimedia.org/wiki/File:KazPost_mailbox.JPG\">User:Wassily</a>, <a href=\"http://creativecommons.org/licenses/by-sa/3.0/\">CC BY-SA 3.0</a>, via Wikimedia Commons"
   },
   {
     "alpha-3": "KEN",
     "alpha-2": "KE",
     "name": "Kenya",
-    "traduction": "",
-    "color_name": "",
-    "color": "",
-    "image": "",
-    "attribution": ""
+    "traduction": "Sanduku la posta",
+    "color_name": "Rouge",
+    "color": "#DA3644",
+    "image": "https://businesstimes.co.ke/wp-content/uploads/2018/10/Posta.jpg",
+    "attribution": "<a href=\"https://businesstimes.co.ke/posta-kenya-launches-cargo-hub-digitisation-plans/\">Posta Kenya Launches Cargo Hub In Its Digitisation Plan</a>, Business Time"
   },
   {
     "alpha-3": "KGZ",
     "alpha-2": "KG",
     "name": "Kirghizistan",
-    "traduction": "",
-    "color_name": "",
-    "color": "",
-    "image": "",
-    "attribution": ""
+    "traduction": "Почта кутусу",
+    "color_name": "Bleu",
+    "color": "#0064EE",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/0/0c/Bishkek_03-2016_img37_post_box.jpg",
+    "attribution": "<a href=\"https://commons.wikimedia.org/wiki/File:Bishkek_03-2016_img37_post_box.jpg\">A.Savin</a>, FAL, via Wikimedia Commons"
   },
   {
     "alpha-3": "KIR",
@@ -1180,54 +1180,64 @@
     "attribution": ""
   },
   {
+    "alpha-3": "CS-KM",
+    "alpha-2": "CS-KM",
+    "name": "Kosovo",
+    "traduction": "Kuti postare (Albanais), Поштански сандучић (Serbe)",
+    "color_name": "Jaune",
+    "color": "#B3951F",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/e/e0/Pristina_postbox_2.JPG",
+    "attribution": "<a href=\"https://commons.wikimedia.org/wiki/File:Pristina_postbox_2.JPG\">Andy Mabbett</a>, <a href=\"https://creativecommons.org/licenses/by-sa/3.0\">CC BY-SA 3.0</a>, via Wikimedia Commons"
+  },
+  {
     "alpha-3": "KWT",
     "alpha-2": "KW",
     "name": "Koweït",
-    "traduction": "",
-    "color_name": "",
-    "color": "",
-    "image": "",
-    "attribution": ""
+    "traduction": "صندوق البريد",
+    "color_name": "Bleu",
+    "color": "#0370B5",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/1/1b/Post_box_from_kuwait_by_irvin_calicut.jpg",
+    "attribution": "<a href=\"https://commons.wikimedia.org/wiki/File:Post_box_from_kuwait_by_irvin_calicut.jpg\">Irvin calicut</a>, <a href=\"https://creativecommons.org/licenses/by-sa/3.0\">CC BY-SA 3.0</a>, via Wikimedia Commons"
   },
   {
     "alpha-3": "LAO",
     "alpha-2": "LA",
     "name": "Laos",
-    "traduction": "",
-    "color_name": "",
-    "color": "",
-    "image": "",
-    "attribution": ""
+    "traduction": "ຕູ້ໄປສະນີ",
+    "color_name": "Jaune",
+    "color": "#FED001",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/4/47/Post_box_in_Vientiane.jpg",
+    "attribution": "<a href=\"https://commons.wikimedia.org/wiki/File:Post_box_in_Vientiane.jpg\">Mx. Granger</a>, CC0, via Wikimedia Commons"
   },
   {
     "alpha-3": "LSO",
     "alpha-2": "LS",
     "name": "Lesotho",
-    "traduction": "",
-    "color_name": "",
-    "color": "",
-    "image": "",
-    "attribution": ""
+    "traduction": "Lebokose la poso",
+    "color_name": "Vert",
+    "color": "#4FA285",
+    "image": "/data/couleurs-boites-aux-lettres/lesotho.jpg",
+    "attribution": "<a href=\"https://www.facebook.com/photo?fbid=946999534279590&set=a.233470928965791\">Lesotho Post</a>"
   },
   {
     "alpha-3": "LVA",
     "alpha-2": "LV",
     "name": "Lettonie",
-    "traduction": "",
-    "color_name": "",
-    "color": "",
-    "image": "",
-    "attribution": ""
+    "traduction": "Pastkastīte",
+    "color_name": "Jaune",
+    "color": "#EAB12F",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/1/1a/Riga_%2813.08.2011%29_071.JPG",
+    "attribution": "<a href=\"https://commons.wikimedia.org/wiki/File:Riga_(13.08.2011)_071.JPG\">Anastasiya Lvova</a>, <a href=\"https://creativecommons.org/licenses/by-sa/3.0\">CC BY-SA 3.0</a>, via Wikimedia Commons"
   },
   {
     "alpha-3": "LBN",
     "alpha-2": "LB",
     "name": "Liban",
-    "traduction": "",
-    "color_name": "",
-    "color": "",
-    "image": "",
-    "attribution": ""
+    "traduction": "صندوق البريد",
+    "color_name": "Jaune",
+    "color": "#F8D84A",
+    "image": "https://grainsofsand.blog/wp-content/uploads/2019/02/img_1686-1.jpg?w=512",
+    "attribution": "<a href=\"https://grainsofsand.blog/tag/garage664/\">Humanity in Beirut, 100,000 Grains of Sand</a>"
   },
   {
     "alpha-3": "LBR",
@@ -1243,21 +1253,21 @@
     "alpha-3": "LBY",
     "alpha-2": "LY",
     "name": "Libye",
-    "traduction": "",
-    "color_name": "",
-    "color": "",
-    "image": "",
-    "attribution": ""
+    "traduction": "صندوق بريد",
+    "color_name": "Jaune",
+    "color": "#CEA04A",
+    "image": "https://www.tema.ru/eng/travel/libya/IMG_4158.jpg",
+    "attribution": "<a href=\"https://www.tema.ru/eng/travel/libya/\">Artemy Lebedev</a>"
   },
   {
     "alpha-3": "LIE",
     "alpha-2": "LI",
     "name": "Liechtenstein",
-    "traduction": "",
-    "color_name": "",
-    "color": "",
-    "image": "",
-    "attribution": ""
+    "traduction": "Briefkasten",
+    "color_name": "Jaune",
+    "color": "#D5A418",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/1/1e/Liechtenstein_Vaduz_Post_Box.jpg",
+    "attribution": "<a href=\"https://commons.wikimedia.org/wiki/File:Liechtenstein_Vaduz_Post_Box.jpg\">Medullaoblongata Projekt</a>, <a href=\"https://creativecommons.org/licenses/by-sa/4.0\">CC BY-SA 4.0</a>, via Wikimedia Commons"
   },
   {
     "alpha-3": "LTU",
@@ -1273,11 +1283,11 @@
     "alpha-3": "LUX",
     "alpha-2": "LU",
     "name": "Luxembourg",
-    "traduction": "",
+    "traduction": "Boîte aux lettres",
     "color_name": "Jaune",
-    "color": "",
-    "image": "",
-    "attribution": ""
+    "color": "#EFC966",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/1/14/Post_boxes_in_Luxembourg_02.jpg",
+    "attribution": "<a href=\"https://commons.wikimedia.org/wiki/File:Post_boxes_in_Luxembourg_02.jpg\">Dickelbers</a>, <a href=\"https://creativecommons.org/licenses/by-sa/4.0\">CC BY-SA 4.0</a>, via Wikimedia Commons"
   },
   {
     "alpha-3": "MAC",
@@ -1293,19 +1303,19 @@
     "alpha-3": "MKD",
     "alpha-2": "MK",
     "name": "Macédoine du Nord",
-    "traduction": "",
-    "color_name": "",
-    "color": "",
-    "image": "",
-    "attribution": ""
+    "traduction": "Поштенско сандаче",
+    "color_name": "Jaune",
+    "color": "#FEDF00",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/1/11/Post_box_in_Macedonia.jpg",
+    "attribution": "<a href=\"https://commons.wikimedia.org/wiki/File:Post_box_in_Macedonia.jpg\">Dickelbers</a>, <a href=\"https://creativecommons.org/licenses/by-sa/4.0\">CC BY-SA 4.0</a>, via Wikimedia Commons"
   },
   {
     "alpha-3": "MDG",
     "alpha-2": "MG",
     "name": "Madagascar",
-    "traduction": "",
-    "color_name": "",
-    "color": "",
+    "traduction": "Boaty paositra",
+    "color_name": "Jaune",
+    "color": "#FFD600",
     "image": "",
     "attribution": ""
   },
@@ -1343,21 +1353,21 @@
     "alpha-3": "MLI",
     "alpha-2": "ML",
     "name": "Mali",
-    "traduction": "",
-    "color_name": "",
-    "color": "",
-    "image": "",
-    "attribution": ""
+    "traduction": "Poste kɛsu",
+    "color_name": "Jaune",
+    "color": "#D4BB47",
+    "image": "https://www.tema.ru/eng/travel/mali-1/4F2C8265.jpg",
+    "attribution": "<a href=\"https://www.tema.ru/eng/travel/mali-1/\">Artemy Lebedev</a>"
   },
   {
     "alpha-3": "MLT",
     "alpha-2": "MT",
     "name": "Malte",
-    "traduction": "",
-    "color_name": "",
-    "color": "",
-    "image": "",
-    "attribution": ""
+    "traduction": "Kaxxa tal-posta",
+    "color_name": "Rouge",
+    "color": "#FE3229",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/3/3d/Vittorioso._EVIIR_Edwardian_Post_Box.%2CMalta_-_Flickr_-_sludgegulper.jpg",
+    "attribution": "<a href=\"https://commons.wikimedia.org/wiki/File:Vittorioso._EVIIR_Edwardian_Post_Box.,Malta_-_Flickr_-_sludgegulper.jpg\">Felix O</a>, <a href=\"https://creativecommons.org/licenses/by-sa/2.0\">CC BY-SA 2.0</a>, via Wikimedia Commons"
   },
   {
     "alpha-3": "IMN",
@@ -1423,11 +1433,11 @@
     "alpha-3": "MRT",
     "alpha-2": "MR",
     "name": "Mauritanie",
-    "traduction": "",
-    "color_name": "",
-    "color": "",
-    "image": "",
-    "attribution": ""
+    "traduction": "صندوق البريد",
+    "color_name": "Jaune",
+    "color": "#FDC726",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/5/57/Adrar_%2817%29.jpg",
+    "attribution": "<a href=\"https://commons.wikimedia.org/wiki/File:Adrar_(17).jpg\">Ji-Elle</a>, <a href=\"https://creativecommons.org/licenses/by-sa/3.0\">CC BY-SA 3.0</a>, via Wikimedia Commons"
   },
   {
     "alpha-3": "MYT",
@@ -1463,11 +1473,11 @@
     "alpha-3": "MDA",
     "alpha-2": "MD",
     "name": "Moldavie",
-    "traduction": "",
-    "color_name": "",
-    "color": "",
-    "image": "",
-    "attribution": ""
+    "traduction": "Cutie poștală",
+    "color_name": "Jaune",
+    "color": "#EBC000",
+    "image": "/data/couleurs-boites-aux-lettres/moldavie.jpg",
+    "attribution": "<a href=\"https://www.facebook.com/Posta.Moldovei/posts/armenia-canada-georgia-%C8%99i-uzbekistan-se-al%C4%83tur%C4%83-celor-51-de-destina%C8%9Bii-pentru-ca/2971286219655310/\">Poșta Moldovei</a>"
   },
   {
     "alpha-3": "MCO",
@@ -1483,11 +1493,11 @@
     "alpha-3": "MNG",
     "alpha-2": "MN",
     "name": "Mongolie",
-    "traduction": "",
-    "color_name": "",
-    "color": "",
-    "image": "",
-    "attribution": ""
+    "traduction": "Шуудангийн хайрцаг",
+    "color_name": "Bleu",
+    "color": "#5AA7D1",
+    "image": "/data/couleurs-boites-aux-lettres/mongolie.webp",
+    "attribution": "ID <a href=\"https://www.dreamstime.com/royalty-free-stock-photography-old-blue-mailbox-image19834827\">19834827</a> @ <a href=\"https://www.dreamstime.com/merial_info\">Zbynek Burival</a> | <a href=\"https://www.dreamstime.com/\">Dreamstime.com</a>"
   },
   {
     "alpha-3": "MNE",
@@ -1513,31 +1523,31 @@
     "alpha-3": "MOZ",
     "alpha-2": "MZ",
     "name": "Mozambique",
-    "traduction": "",
-    "color_name": "",
-    "color": "",
-    "image": "",
-    "attribution": ""
+    "traduction": "Caixa de correio",
+    "color_name": "Rouge",
+    "color": "#AE2626",
+    "image": "https://www.tema.ru/eng/travel/mozambique/IMG_9607.jpg",
+    "attribution": "<a href=\"https://www.tema.ru/eng/travel/mozambique/\">Artemy Lebedev</a>"
   },
   {
     "alpha-3": "MMR",
     "alpha-2": "MM",
     "name": "Birmanie",
     "traduction": "",
-    "color_name": "",
-    "color": "",
-    "image": "",
-    "attribution": ""
+    "color_name": "Rouge",
+    "color": "#C1251B",
+    "image": "https://live.staticflickr.com/5596/14850095492_8ebb983f7a.jpg",
+    "attribution": "<a href=\"https://flic.kr/p/oCfC2b\">Yes, the Post Office Box still exists in Myanmar</a> by <a href=\"https://www.flickr.com/photos/dcmetroblogger/\">Wayan Vota</a>, sur Flickr"
   },
   {
     "alpha-3": "NAM",
     "alpha-2": "NA",
     "name": "Namibie",
-    "traduction": "",
-    "color_name": "",
-    "color": "",
-    "image": "",
-    "attribution": ""
+    "traduction": "Posbus (Afrikaan)",
+    "color_name": "Rouge",
+    "color": "#D02A09",
+    "image": "https://www.tema.ru/eng/travel/namibia/4F2C7166.jpg",
+    "attribution": "<a href=\"https://www.tema.ru/eng/travel/namibia/\">Artemy Lebedev</a>"
   },
   {
     "alpha-3": "NRU",
@@ -1554,10 +1564,10 @@
     "alpha-2": "NP",
     "name": "Népal",
     "traduction": "",
-    "color_name": "",
-    "color": "",
-    "image": "",
-    "attribution": ""
+    "color_name": "Rouge",
+    "color": "#FD4634",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/b/b5/A_postbox_of_Nepal_Post_at_Tribhuvan_International_Airport%2C_Kathmandu%2C_Nepal.jpg",
+    "attribution": "<a href=\"https://commons.wikimedia.org/wiki/File:A_postbox_of_Nepal_Post_at_Tribhuvan_International_Airport,_Kathmandu,_Nepal.jpg\">Subhashish Panigrahi</a>, <a href=\"https://creativecommons.org/licenses/by-sa/4.0\">CC BY-SA 4.0</a>, via Wikimedia Commons"
   },
   {
     "alpha-3": "NIC",
@@ -1673,21 +1683,21 @@
     "alpha-3": "UZB",
     "alpha-2": "UZ",
     "name": "Ouzbékistan",
-    "traduction": "",
-    "color_name": "",
-    "color": "",
-    "image": "",
-    "attribution": ""
+    "traduction": "Pochta qutisi",
+    "color_name": "Bleu",
+    "color": "#4C8EFF",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/e/ef/Postbox_Uzbekistan_01.jpg",
+    "attribution": "<a href=\"https://commons.wikimedia.org/wiki/File:Postbox_Uzbekistan_01.jpg\">Dickelbers</a>, <a href=\"https://creativecommons.org/licenses/by/4.0\">CC BY 4.0</a>, via Wikimedia Commons"
   },
   {
     "alpha-3": "PAK",
     "alpha-2": "PK",
     "name": "Pakistan",
-    "traduction": "",
-    "color_name": "",
-    "color": "",
-    "image": "",
-    "attribution": ""
+    "traduction": "(Pachto) پوسټ بکس",
+    "color_name": "Rouge",
+    "color": "#D4242E",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/6/64/Mailboxes_-1_to_-4_%40_GPO_%40_Mall_Road_%40_Lahore_%2815508207157%29.jpg",
+    "attribution": "<a href=\"https://commons.wikimedia.org/wiki/File:Mailboxes_-1_to_-4_@_GPO_@_Mall_Road_@_Lahore_(15508207157).jpg\">Guilhem Vellut from Annecy, France</a>, <a href=\"https://creativecommons.org/licenses/by/2.0\">CC BY 2.0</a>, via Wikimedia Commons"
   },
   {
     "alpha-3": "PLW",
@@ -2053,11 +2063,11 @@
     "alpha-3": "SRB",
     "alpha-2": "RS",
     "name": "Serbie",
-    "traduction": "",
-    "color_name": "",
-    "color": "",
-    "image": "",
-    "attribution": ""
+    "traduction": "Poštansko sanduče",
+    "color_name": "Jaune",
+    "color": "#D1B928",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/0/0f/Serbia_postbox_Palic.JPG",
+    "attribution": "<a href=\"https://commons.wikimedia.org/wiki/File:Serbia_postbox_Palic.JPG\">Dickelbers</a>, <a href=\"https://creativecommons.org/licenses/by-sa/3.0\">CC BY-SA 3.0</a>, via Wikimedia Commons"
   },
   {
     "alpha-3": "SYC",
@@ -2113,11 +2123,11 @@
     "alpha-3": "SOM",
     "alpha-2": "SO",
     "name": "Somalie",
-    "traduction": "",
-    "color_name": "",
-    "color": "",
-    "image": "",
-    "attribution": ""
+    "traduction": "Sanduuqa boostada",
+    "color_name": "Bleu",
+    "color": "#3DA7DD",
+    "image": "https://www.posta.so/wp-content/uploads/2023/10/IMG_2773-2-1536x771.jpg",
+    "attribution": "<a href=\"https://www.posta.so/po-box/\">Posta Somalia, PO Box</a>"
   },
   {
     "alpha-3": "SDN",
@@ -2233,11 +2243,11 @@
     "alpha-3": "TZA",
     "alpha-2": "TZ",
     "name": "Tanzanie",
-    "traduction": "",
-    "color_name": "",
-    "color": "",
-    "image": "",
-    "attribution": ""
+    "traduction": "Sanduku la posta (Swahili)",
+    "color_name": "Rouge",
+    "color": "#F56648",
+    "image": "https://www.tema.ru/eng/travel/tanzania/IMG_6802.jpg",
+    "attribution": "<a href=\"https://www.tema.ru/eng/travel/tanzania/\">Artemy Lebedev</a>"
   },
   {
     "alpha-3": "TCD",
@@ -2483,10 +2493,10 @@
     "alpha-3": "ZWE",
     "alpha-2": "ZW",
     "name": "Zimbabwe",
-    "traduction": "",
-    "color_name": "",
-    "color": "",
-    "image": "",
-    "attribution": ""
+    "traduction": "Bhokisi rekutumira",
+    "color_name": "Rouge",
+    "color": "#CE5B3C",
+    "image": "https://www.tema.ru/eng/travel/zimbabwe/IMG_0699.jpg",
+    "attribution": "<a href=\"https://www.tema.ru/eng/travel/zimbabwe/\">Artemy Lebedev</a>"
   }
 ]
