@@ -54,8 +54,15 @@ import MapLayout from "../../layouts/MapLayout.astro";
         </div>
     </div>
     <div id="map" class="h-[60vh] lg:h-full lg:w-2/3 relative border lg:border-none">
-        <div id="tooltip" class="absolute left-0 top-0 z-20 bg-[#fffaea] border p-2 pointer-events-none max-w-sm" style="display: none;">
-            <h3 class="font-[600] border-b mb-1" id="feature-name"></h3>
+        <div id="tooltip" class="absolute left-0 top-0 z-20 bg-[#fffaea] border p-2 md:pointer-events-none w-[97%] md:w-auto md:max-w-sm" style="display: none;">
+            <div class="border-b mb-1 flex justify-between items-center" x-data="{}">
+                <h3 class="font-[600]" id="feature-name"></h3>
+                <div class="w-5 h-5 bg-black hover flex justify-center items-center md:hidden" @click="document.getElementById('tooltip').style = 'display: none;'">
+                    <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M5.29289 5.29289C5.68342 4.90237 6.31658 4.90237 6.70711 5.29289L12 10.5858L17.2929 5.29289C17.6834 4.90237 18.3166 4.90237 18.7071 5.29289C19.0976 5.68342 19.0976 6.31658 18.7071 6.70711L13.4142 12L18.7071 17.2929C19.0976 17.6834 19.0976 18.3166 18.7071 18.7071C18.3166 19.0976 17.6834 19.0976 17.2929 18.7071L12 13.4142L6.70711 18.7071C6.31658 19.0976 5.68342 19.0976 5.29289 18.7071C4.90237 18.3166 4.90237 17.6834 5.29289 17.2929L10.5858 12L5.29289 6.70711C4.90237 6.31658 4.90237 5.68342 5.29289 5.29289Z" fill="white"/>
+                    </svg>
+                </div>
+            </div>
             <span class="italic" id="traduction"></span>
             <div class="flex gap-2 items-center">
                 <div class="w-4 h-4 border" id="color"></div> <span id="color-name"></span>
@@ -166,7 +173,20 @@ import MapLayout from "../../layouts/MapLayout.astro";
         let colorNameElem = document.getElementById('color-name');
         let imageElem = document.getElementById('image');
         let attributionElem = document.getElementById('attribution');
+        let mapElement = document.getElementById('map');
+
         map.on('pointermove', function (evt) {
+            if (evt.dragging) {
+                return;
+            }
+            updateTooltip(evt);
+        });
+
+        map.on('click', function (evt) {
+            updateTooltip(evt);
+        });
+
+        function updateTooltip(evt) {
             countriesLayers.getFeatures(evt.pixel).then((features) => {
                 let feature = features.pop();
                 if (state.hoveredFeature) {
@@ -180,29 +200,60 @@ import MapLayout from "../../layouts/MapLayout.astro";
                     let featureStyle: Style = getFeatureStyle(feature);
                     featureStyle.getStroke().setWidth(2);
                     feature.setStyle(featureStyle.clone());
+
+                    if (getCurrentBreakpoint() === 'xs') {
+                        tooltipElem.style.top = '5px';
+                        tooltipElem.style.left = '5px';
+                    } else {
+                        if (evt.pixel[0] + 288 < mapElement.clientWidth) {
+                            tooltipElem.style.left = evt.pixel[0] + 10 + 'px';
+                        } else {
+                            tooltipElem.style.left = evt.pixel[0] - 288 - 10 + 'px';
+                        }
+
+                        if (evt.pixel[1] + 288 < mapElement.clientHeight) {
+                            tooltipElem.style.top = evt.pixel[1] + 10 + 'px';
+                        } else {
+                            tooltipElem.style.top = evt.pixel[1] - 288 - 10 + 'px';
+                        }
+                    }
+
+                    tooltipElem.style.display = 'block';
+
+                    let countryData = countriesData.get(state.hoveredFeature.getId() as string);
+                    featureNameElem.innerText = countryData.name;
+                    colorElem.style = 'background-color: ' + countryData.color;
+                    colorNameElem.innerText = countryData.color_name;
+                    traductionElement.innerText = countryData.traduction;
+                    imageElem.setAttribute('src', countryData.image);
+                    attributionElem.innerHTML = countryData.attribution;
+
+                    if (!countryData.color) {
+                        colorElem.style = 'display: none';
+                        traductionElement.innerText = 'Aucune donnée disponible.'
+                    }
                 }
             });
 
-            if (state.hoveredFeature) {
-                tooltipElem.style.left = evt.pixel[0] + 10 + 'px';
-                tooltipElem.style.top = evt.pixel[1] + 10 + 'px';
-                tooltipElem.style.display = 'block';
-
-                let countryData = countriesData.get(state.hoveredFeature.getId() as string);
-                featureNameElem.innerText = countryData.name;
-                colorElem.style = 'background-color: ' + countryData.color;
-                colorNameElem.innerText = countryData.color_name;
-                traductionElement.innerText = countryData.traduction;
-                imageElem.setAttribute('src', countryData.image);
-                attributionElem.innerHTML = countryData.attribution;
-
-                if (!countryData.color) {
-                    colorElem.style = 'display: none';
-                    traductionElement.innerText = 'Aucune donnée disponible.'
-                }
-            } else {
+            if (!state.hoveredFeature) {
                 tooltipElem.style.display = 'none';
             }
-        });
+        }
+    }
+
+    const breakpoints = {
+        xs: '(max-width: 639px)',
+        sm: '(min-width: 640px) and (max-width: 767px)',
+        md: '(min-width: 768px) and (max-width: 1023px)',
+        lg: '(min-width: 1024px) and (max-width: 1279px)',
+        xl: '(min-width: 1280px)'
+    };
+
+    function getCurrentBreakpoint() {
+        for (const [breakpoint, query] of Object.entries(breakpoints)) {
+            if (window.matchMedia(query).matches) {
+                return breakpoint;
+            }
+        }
     }
 </script>
