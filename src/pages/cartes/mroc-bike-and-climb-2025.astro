@@ -55,7 +55,7 @@ import BlocList from "../../components/mroc-bike-and-climb-2025/BlocList.astro";
                         <h3 class="font-semibold">Mroc Laennec</h3>
                         <span>&nbsp;- 15h32</span>
                     </div>
-                    <div class="p-1 bg-black group-hover:bg-white">
+                    <div class="p-1 bg-black group-hover:bg-white" :class="{ 'bg-white': openedTab == 2 }">
                         <template x-if="openedTab == 2">
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-up-icon lucide-chevron-up stroke-black"><path d="m18 15-6-6-6 6"/></svg>
                         </template>
@@ -74,7 +74,7 @@ import BlocList from "../../components/mroc-bike-and-climb-2025/BlocList.astro";
                         <h3 class="font-semibold">Mroc Villeurbanne</h3>
                         <span>&nbsp;- 16h58</span>
                     </div>
-                    <div class="p-1 bg-black group-hover:bg-white">
+                    <div class="p-1 bg-black group-hover:bg-white" :class="{ 'bg-white': openedTab == 3 }">
                         <template x-if="openedTab == 3">
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-up-icon lucide-chevron-up stroke-black"><path d="m18 15-6-6-6 6"/></svg>
                         </template>
