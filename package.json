@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@astrojs/alpinejs": "^0.4.7",
+    "@panoramax/web-viewer": "^4.0.3",
     "@tailwindcss/vite": "^4.1.4",
     "@turf/distance": "^7.2.0",
     "@types/alpinejs": "^3.13.11",

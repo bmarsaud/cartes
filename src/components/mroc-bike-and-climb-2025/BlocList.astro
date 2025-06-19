@@ -1,0 +1,79 @@
+---
+const { blocs } = Astro.props;
+const zoneAmount = blocs.filter((bloc) => !bloc.done && bloc.zone).length;
+---
+<div class="p-2 border-t">
+    <div class="grid grid-cols-4">
+        <div class="border border-r-0 p-1 text-center"><span class="bg-black text-white px-1">{ blocs.filter((bloc) => bloc.done).length + zoneAmount / 2 }</span> / { blocs.length } blocs</div>
+        <div class="border border-r-0 p-1 text-center" x-data="{ tooltip: false }"  @mouseenter="tooltip = true" @mouseleave="tooltip = false">
+            <div x-show="tooltip" class="absolute bg-black text-white text-xs px-2 py-1 mt-7 -ml-16 whitespace-nowrap z-20">
+                Les points sont dégressifs : plus le nombre de personnes<br />
+                qui ont réussi le bloc est grand, moins le bloc rapport de points
+            </div>
+            <span class="bg-black text-white px-1">{ blocs.reduce((acc, elem) => acc + elem.points, 0) }</span> points
+        </div>
+        <div class="border border-r-0 p-1 text-center" x-data="{ tooltip: false }"  @mouseenter="tooltip = true" @mouseleave="tooltip = false">
+            <div x-show="tooltip" class="absolute bg-black text-white text-xs px-2 py-1 mt-7 -ml-16 whitespace-nowrap z-20">
+                Flash : bloc réussi au premier essai
+            </div>
+            <span class="bg-black text-white px-1.5">{ blocs.filter((bloc) => bloc.flash).length }</span> flashs
+        </div>
+        <div class="border p-1 text-center" x-data="{ tooltip: false }"  @mouseenter="tooltip = true" @mouseleave="tooltip = false">
+            <div x-show="tooltip" class="absolute bg-black text-white text-xs px-2 py-1 mt-7 -ml-16 whitespace-nowrap z-20">
+                Zone : la moitié du bloc a été atteinte
+            </div>
+            <span class="bg-black text-white px-1.5">{ zoneAmount }</span> zone{ zoneAmount > 1 ? 's' : '' }
+        </div>
+    </div>
+    <div class="grid grid-cols-3 gap-2 mt-4">
+        { blocs.map((bloc) =>
+                <div class="border relative">
+                    <div class="absolute top-1 right-1 border bg-[#fffaea] p-1 text-xs">
+                        { bloc.zone && !bloc.done ? <span>1 Zone</span> : <span>{ bloc.points } points</span> }
+                    </div>
+                    <img src={`/data/mroc-bike-and-climb-2025/blocs/${bloc.id}.jpg`} alt={`Bloc ${bloc.id}`} />
+                    <div class="border-t text-sm p-1 flex justify-between items-center">
+                        <div class="flex gap-2 items-center">
+                            <div class="rounded-full w-4 h-4" class:list={[
+                                {'bg-green-500': bloc.color === 'green'},
+                                {'bg-blue-500': bloc.color === 'blue'},
+                                {'bg-purple-500': bloc.color === 'purple'},
+                                {'bg-red-500': bloc.color === 'red'},
+                                {'bg-black': bloc.color === 'black'}
+                            ]}></div>
+                            <span>#{ bloc.id }</span>
+                        </div>
+                        <div class="flex gap-1">
+                            { bloc.flash &&
+                                    <div class="w-4 h-4 bg-black text-white flex justify-center items-center" x-data="{ tooltip: false }"
+                                         @mouseenter="tooltip = true" @mouseleave="tooltip = false">
+                                        <div x-show="tooltip" class="absolute bg-black text-white text-xs px-2 py-1 -mt-8 -ml-16 whitespace-nowrap z-20">
+                                            Flash : bloc réussi au premier essai
+                                        </div>
+                                        F
+                                    </div>
+                            }
+                            { bloc.done &&
+                                    <div class="w-4 h-4" x-data="{ tooltip: false }"
+                                         @mouseenter="tooltip = true" @mouseleave="tooltip = false">
+                                        <div x-show="tooltip" class="absolute bg-black text-white text-xs px-2 py-1 -mt-8 -ml-16 whitespace-nowrap z-20">
+                                            Bloc réussi
+                                        </div>
+                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-circle-check-big-icon lucide-circle-check-big"><path d="M21.801 10A10 10 0 1 1 17 3.335"/><path d="m9 11 3 3L22 4"/></svg>
+                                    </div>
+                            }
+                            { bloc.zone && !bloc.done &&
+                                    <div class="w-4 h-4 bg-black text-white flex justify-center items-center" x-data="{ tooltip: false }"
+                                         @mouseenter="tooltip = true" @mouseleave="tooltip = false">
+                                        <div x-show="tooltip" class="absolute bg-black text-white text-xs px-2 py-1 -mt-12 -ml-52 whitespace-nowrap z-20">
+                                            Zone : la moitié du bloc a été atteinte
+                                        </div>
+                                        Z
+                                    </div>
+                            }
+                        </div>
+                    </div>
+                </div>
+        ) }
+    </div>
+</div>

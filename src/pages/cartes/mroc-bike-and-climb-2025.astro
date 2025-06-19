@@ -1,0 +1,316 @@
+---
+import Tabs from "../../components/Tabs.astro";
+const map = {
+    "title": "Mroc Bike & Climb 2025",
+    "abstract": "Le Mroc Bike & Climb 2025 est une compétition d'escalade de bloc répartie sur 3 lieux où les participants doivent se déplacer à vélo.",
+    "description": "Le 24 mai 2025 j'ai participé au Mroc Bike & Climb : une compétition d'escalade de bloc répartie en 3 lieux et où les participants doivent se déplacer à vélo ou en mobilité douce. J'ai alors enfourché mon vélo pour essayer de faire le plus de blocs possibles. Blessé au genou par une (petite) entorse j'ai surtout essayé de ne pas me surblesser et j'ai grimpé le plus tranquille possible, ce qui m'a quand même permis d'accrocher une belle place de 46 eme / 110 !",
+    "date": "2025-06-19"
+};
+
+import MapLayout from "../../layouts/MapLayout.astro";
+
+import blocs from "../../../public/data/mroc-bike-and-climb-2025/blocs/blocs.json";
+import BlocList from "../../components/mroc-bike-and-climb-2025/BlocList.astro";
+---
+<MapLayout {...map}>
+    <div class="lg:w-1/3 border lg:border-0 lg:border-r flex flex-col p-2 pr-1 overflow-hidden">
+        <h2 class="text-2xl font-bold">Résultat</h2>
+        <div class="grid grid-cols-3">
+            <div class="border border-r-0 p-1 flex justify-center items-center"><span class="bg-black text-white px-1">46</span><sup>&nbsp;eme</sup>&nbsp;/ 110</div>
+            <div class="border border-r-0 p-1 flex justify-center items-center"><span class="bg-black text-white px-1">232</span>&nbsp;points</div>
+            <div class="border p-1 flex flex-col justify-center items-center">
+                <p>
+                    <span class="bg-black text-white px-1">{blocs.filter((bloc) => bloc.done).length + blocs.filter((bloc) => !bloc.done && bloc.zone).length / 2 }</span>&nbsp;/ 30 blocs
+                </p>
+                <p class="text-xs">
+                    ({blocs.filter((bloc) => bloc.done).length}V
+                    {blocs.filter((bloc) => bloc.flash).length}F
+                    {blocs.filter((bloc) => bloc.zone && !bloc.done).length}Z)
+                </p>
+            </div>
+        </div>
+        <div x-data={`{ openedTab: 1, toggleTab: function(id) { this.openedTab = this.openedTab === id ? null : id } }`} class="mt-4 flex flex-col overflow-y-auto custom-scrollbar">
+            <div class="border">
+                <div class="flex justify-between p-2 group hover:bg-black hover:text-white cursor-pointer" :class="{ 'bg-black text-white': openedTab == 1 }" @click="toggleTab(1)">
+                    <div class="flex gap">
+                        <h3 class="font-semibold">Mroc Part Dieu</h3>
+                        <span>&nbsp;- 14h02</span>
+                    </div>
+                    <div class="p-1 bg-black group-hover:bg-white" :class="{ 'bg-white': openedTab == 1 }">
+                        <template x-if="openedTab == 1">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-up-icon lucide-chevron-up stroke-black"><path d="m18 15-6-6-6 6"/></svg>
+                        </template>
+                        <template x-if="openedTab != 1">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-down-icon lucide-chevron-down stroke-white group-hover:stroke-black"><path d="m6 9 6 6 6-6"/></svg>
+                        </template>
+                    </div>
+                </div>
+                <template x-if="openedTab == 1">
+                    <BlocList blocs={ blocs.filter((bloc) => bloc.id > 10 && bloc.id <= 20) }></BlocList>
+                </template>
+            </div>
+            <div class="border border-t-0">
+                <div class="flex justify-between p-2 group hover:bg-black hover:text-white cursor-pointer" :class="{ 'bg-black text-white': openedTab == 2 }" @click="toggleTab(2)">
+                    <div class="flex gap">
+                        <h3 class="font-semibold">Mroc Laennec</h3>
+                        <span>&nbsp;- 15h32</span>
+                    </div>
+                    <div class="p-1 bg-black group-hover:bg-white">
+                        <template x-if="openedTab == 2">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-up-icon lucide-chevron-up stroke-black"><path d="m18 15-6-6-6 6"/></svg>
+                        </template>
+                        <template x-if="openedTab != 2">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-down-icon lucide-chevron-down stroke-white group-hover:stroke-black"><path d="m6 9 6 6 6-6"/></svg>
+                        </template>
+                    </div>
+                </div>
+                <template x-if="openedTab == 2">
+                    <BlocList blocs={ blocs.filter((bloc) => bloc.id > 0 && bloc.id <= 10) }></BlocList>
+                </template>
+            </div>
+            <div class="border border-t-0">
+                <div class="flex justify-between p-2 group hover:bg-black hover:text-white cursor-pointer" :class="{ 'bg-black text-white': openedTab == 3 }" @click="toggleTab(3)">
+                    <div class="flex gap">
+                        <h3 class="font-semibold">Mroc Villeurbanne</h3>
+                        <span>&nbsp;- 16h58</span>
+                    </div>
+                    <div class="p-1 bg-black group-hover:bg-white">
+                        <template x-if="openedTab == 3">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-up-icon lucide-chevron-up stroke-black"><path d="m18 15-6-6-6 6"/></svg>
+                        </template>
+                        <template x-if="openedTab != 3">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-down-icon lucide-chevron-down stroke-white group-hover:stroke-black"><path d="m6 9 6 6 6-6"/></svg>
+                        </template>
+                    </div>
+                </div>
+                <template x-if="openedTab == 3">
+                    <BlocList blocs={ blocs.filter((bloc) => bloc.id > 20 && bloc.id <= 30) }></BlocList>
+                </template>
+            </div>
+        </div>
+    </div>
+    <div id="map" class="h-[60vh] lg:h-full lg:w-2/3 relative border lg:border-none">
+        <div class="absolute top-0 right-0 p-2 z-20 flex flex-col items-end gap-2 font-serif text-xs sm:text-base">
+            <div class="z-20 bg-[#fffaea] border p-2 flex gap-4 md:gap-6">
+                <div class="flex items-center gap-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-clock-icon lucide-clock"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                    <span id="time">09:55</span>
+                </div>
+                <div class="flex items-center gap-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-heart-icon lucide-heart"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg>
+                    <span id="hr">0 bpm</span>
+                </div>
+                <div class="flex items-center gap-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-mountain-snow-icon lucide-mountain-snow"><path d="m8 3 4 8 5-5 5 15H2L8 3z"/><path d="M4.14 15.08c2.62-1.57 5.24-1.43 7.86.42 2.74 1.94 5.49 2 8.23.19"/></svg>
+                    <span id="elevation"> 200 m</span>
+                </div>
+                <div class="flex items-center gap-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-gauge-icon lucide-gauge"><path d="m12 14 4-4"/><path d="M3.34 19a10 10 0 1 1 17.32 0"/></svg>
+                    <span id="speed">0 km/h</span>
+                </div>
+            </div>
+            <div class=" w-fit z-20 bg-[#fffaea] border p-2" x-data="{}" @tab-selected="window.selectBasemap($event.detail.value)">
+                <Tabs elements={["Photographies aériennes", "Carte OSM"]} initialValue="Photographies aériennes" class="text-xs"></Tabs>
+            </div>
+        </div>
+        <div class="absolute bottom-0 md:bottom-10 right-0 w-full sm:w-1/2 md:w-1/3 h-1/3 border z-20">
+            <pnx-photo-viewer id="photo-viewer" class="w-full h-full" endpoint="https://api.panoramax.xyz/api" picture="25b3b4b8-5318-4c98-9dbe-bf749e95aaa8" widgets="false" url-parameters="false" />
+        </div>
+    </div>
+</MapLayout>
+<script>
+    import {Map} from 'maplibre-gl';
+    import Panoramax from '@panoramax/web-viewer';
+    import '@panoramax/web-viewer/build/index.css';
+    import distance from "@turf/distance";
+
+    let photoViewer = document.getElementById('photo-viewer');
+
+    const map = new Map({
+        container: 'map',
+        zoom: 14,
+        pitch: 45,
+        style: {
+            version: 8,
+            sources: {
+                osm: {
+                    type: 'raster',
+                    tiles: ['https://a.tile.openstreetmap.org/{z}/{x}/{y}.png'],
+                    tileSize: 256,
+                    attribution: '&copy; OpenStreetMap Contributors',
+                    maxzoom: 19
+                },
+                ortho: {
+                    type: 'raster',
+                    tiles: ['https://data.geopf.fr/tms/1.0.0/HR.ORTHOIMAGERY.ORTHOPHOTOS/{z}/{x}/{y}.jpeg'],
+                    tileSize: 256,
+                    attribution: 'IGN Orthophotos',
+                    maxzoom: 19
+                },
+                terrainSource: {
+                    type: 'raster-dem',
+                    url: '/data/via-rhona-mai-2025/terrain-tiles.json',
+                    tileSize: 512
+                },
+                mrocs: {
+                    type: 'geojson',
+                    data: {
+                        type: 'FeatureCollection',
+                        features: [
+                            {
+                                type: 'Feature',
+                                properties: { name: 'MROC Part Dieu' },
+                                geometry: {
+                                    type: 'Point',
+                                    coordinates: [4.8584576, 45.7549443,]
+                                }
+                            },
+                            {
+                                type: 'Feature',
+                                properties: { name: 'MROC Laennec' },
+                                geometry: {
+                                    type: 'Point',
+                                    coordinates: [4.8796885, 45.7369511]
+                                }
+                            },
+                            {
+                                type: 'Feature',
+                                properties: { name: 'MROC Villeurbanne' },
+                                geometry: {
+                                    type: 'Point',
+                                    coordinates: [4.8759771, 45.7748969]
+                                }
+                            }
+                        ]
+                    }
+                }
+            },
+            layers: [
+                {
+                    id: 'osm',
+                    type: 'raster',
+                    source: 'osm',
+                    layout: {
+                        visibility: 'none'
+                    },
+                },
+                {
+                    id: 'ortho',
+                    type: 'raster',
+                    source: 'ortho'
+                }
+            ],
+            terrain: {
+                source: 'terrainSource',
+                exaggeration: 1.5
+            },
+            sky: {}
+        },
+        maxPitch: 85,
+        center: [4.845041194930673, 45.772657161578536]
+    });
+
+    async function loadMap() {
+        // data
+        let data = await fetch('/data/mroc-bike-and-climb-2025/trace.json').then(res => res.json());
+
+        const line = {
+            type: 'Feature',
+            properties: {},
+            geometry: {
+                type: 'LineString',
+                coordinates: [data.features[0].geometry.coordinates]
+            }
+        };
+
+        map.addSource('trace', { type: 'geojson', data: line });
+        map.addLayer({
+            'id': 'trace',
+            'type': 'line',
+            'source': 'trace',
+            'paint': {
+                'line-color': 'blue',
+                'line-opacity': 0.75,
+                'line-width': 5
+            }
+        });
+
+        map.loadImage('/data/mroc-bike-and-climb-2025/logo_mroc.png').then((response) => {
+            map.addImage('mroc-logo', response.data);
+
+            map.addLayer({
+                'id': 'mrocs',
+                'type': 'symbol',
+                'source': 'mrocs',
+                'layout': {
+                    'icon-image': 'mroc-logo',
+                    'icon-size': 0.15,
+                }
+            });
+        });
+
+        map.jumpTo({ 'center': line.geometry.coordinates[0] });
+
+        let speedSamples: any[] = [];
+        let i = 0;
+        const timer = setInterval(() => {
+            if (i < data.features.length) {
+                let feature = data.features[i];
+
+                line.geometry.coordinates.push(feature.geometry.coordinates);
+
+                map.getSource('trace').setData(line);
+                map.panTo(feature.geometry.coordinates);
+
+                if (i % 20 === 0) {
+                    photoViewer.psv.goToPosition(feature.geometry.coordinates[1], feature.geometry.coordinates[0]);
+                    photoViewer.psv.setXYZ(0, 0, 30);
+                }
+
+                let date = new Date(feature.properties.time);
+                document.getElementById('time').innerText = date.toLocaleDateString('fr-FR', {hour: '2-digit', minute: '2-digit'}).split(' ')[1];
+                document.getElementById('hr').innerText = feature.properties.heart_rate + ' bpm';
+                document.getElementById('elevation').innerText = feature.properties.ele.toFixed(0) + ' m';
+
+
+                if (speedSamples.length > 5) {
+                    speedSamples.shift();
+                }
+                speedSamples.push(feature);
+
+                if (speedSamples.length > 1) {
+                    let speed = 0;
+                    for (let j = 0; j < speedSamples.length - 1; j++) {
+                        speed += distanceBetweenFeatures(speedSamples[j], speedSamples[j + 1]) / (timeBetweenFeatures(speedSamples[j], speedSamples[j + 1]) / 60 / 60);
+                    }
+                    document.getElementById('speed').innerText = (speed / (speedSamples.length - 1)).toFixed(2) + ' km/h';
+                }
+
+
+                i++;
+            } else {
+                window.clearInterval(timer);
+            }
+        }, 100);
+    }
+
+    function distanceBetweenFeatures(feature1, feature2) {
+        return distance(feature1.geometry.coordinates, feature2.geometry.coordinates);
+    }
+
+    function timeBetweenFeatures(feature1, feature2) {
+        return (new Date(feature2.properties.time).getTime() - new Date(feature1.properties.time).getTime()) / 1000;
+    }
+
+    window.selectBasemap = function(baseMap) {
+        if (baseMap === 'Photographies aériennes') {
+            map.setLayoutProperty('osm', 'visibility', 'none');
+            map.setLayoutProperty('ortho', 'visibility', 'visible');
+        } else {
+            map.setLayoutProperty('osm', 'visibility', 'visible');
+            map.setLayoutProperty('ortho', 'visibility', 'none');
+        }
+    }
+
+    loadMap();
+</script>
