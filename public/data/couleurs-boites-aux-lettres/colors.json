@@ -46,7 +46,7 @@
     "traduction": "صندوق بريد",
     "color_name": "Jaune",
     "color": "#F6C930",
-    "image": "https://scontent-mrs2-1.xx.fbcdn.net/v/t39.30808-6/468959224_10162535767069228_6015723575804252148_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=127cfc&_nc_ohc=YX1wqL1DNPkQ7kNvwFBEE89&_nc_oc=Admdvnw3iwfo5KUBghKhzw00N8eziCDtK2P1-NnPU9gjMDMCKozkDGLgvMrFQV4AzIGW8Y2DrnkWVhWwUA9vbB_A&_nc_zt=23&_nc_ht=scontent-mrs2-1.xx&_nc_gid=0FcbbEVLNWb1XQXUd_l59A&oh=00_AfLI9wvpMMQwT0sqJs7iypXDSXZSbCdluPN96mn52oq0ug&oe=682F9EB9",
+    "image": "/data/couleurs-boites-aux-lettres/algérie.jpg",
     "attribution": "<a href=\"https://www.facebook.com/permalink.php?id=149860099227&story_fbid=10153180667804228\">Musée de La Poste</a>"
   },
   {
@@ -2094,10 +2094,10 @@
     "alpha-2": "SG",
     "name": "Singapour",
     "traduction": "Post box",
-    "color_name": "Rouge",
-    "color": "",
-    "image": "",
-    "attribution": ""
+    "color_name": "Blanc",
+    "color": "#C5BFC2",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/8/84/Singpost_postal_box_2%2C_Singapore.jpg",
+    "attribution": "<a href=\"https://commons.wikimedia.org/wiki/File:Singpost_postal_box_2,_Singapore.jpg\">ProjectManhattan</a>, <a href=\"https://creativecommons.org/licenses/by-sa/3.0\">CC BY-SA 3.0</a>, via Wikimedia Commons"
   },
   {
     "alpha-3": "SVK",
