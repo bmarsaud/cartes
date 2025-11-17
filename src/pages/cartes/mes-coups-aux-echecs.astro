@@ -3,7 +3,7 @@ import Tabs from "../../components/Tabs.astro";
 const map = {
     "title": "Mes coups aux échecs",
     "abstract": "Pour le thème « Out of this world » du #30DayMapChallenge je vous propose de plonger dans le monde fascinant des échecs avec une cartographie des coups joués dans mes parties.",
-    "description": "À l'occasion du thème « Out of this world » du <a href='https://30daymapchallenge.com/' target='_blank' class='underline cursor-pointer '>#30DayMapChallenge</a>, je vous propose d'explorer le monde fascinant des échecs avec cette visualisation du nombre de coups que j'ai joué par case de l'échiquier, couleur et pièce durant mes quelque 2300 parties sur <span class='italic'>Chess.com</span>. On voit bien que je suis un joueur de <span class='italic'>d4</span>.",
+    "description": "À l'occasion du thème « Out of this world » du <a href='https://30daymapchallenge.com/' target='_blank' class='underline cursor-pointer '>#30DayMapChallenge</a>, je vous propose d'explorer le monde fascinant des échecs avec cette visualisation du nombre de coups que j'ai joué par case de l'échiquier, couleur et pièce durant mes quelque 2300 parties sur <span class='italic'>Chess.com</span>. On voit bien, notamment, que je suis un joueur de <span class='italic'>d4</span> ;)",
     "date": "2025-11-18"
 };
 
@@ -182,12 +182,22 @@ import MapLayout from "../../layouts/MapLayout.astro";
         let tooltipElem = document.getElementById('tooltip')!;
         let squareElem = document.getElementById('square')!;
         let piecesCountElem = document.getElementById('pieces-count')!;
+        let mapElement = document.getElementById('map')!;
 
         map.on('pointermove', function (evt) {
             if (evt.dragging) {
+                state.hoveredFeature = null;
+                tooltipElem.style.display = 'none';
                 return;
             }
             updateTooltip(evt);
+        });
+
+        map.getViewport().addEventListener('mouseleave', function () {
+            if (state.hoveredFeature) {
+                state.hoveredFeature = null;
+                tooltipElem.style.display = 'none';
+            }
         });
 
         map.on('click', function (evt) {
@@ -208,17 +218,25 @@ import MapLayout from "../../layouts/MapLayout.astro";
                 if (feature) {
                     state.hoveredFeature = feature;
 
-                    tooltipElem.style.left = evt.pixel[0] + 12 + 'px';
-                    tooltipElem.style.top = evt.pixel[1] + 12 + 'px';
                     tooltipElem.style.display = 'block';
-
                     squareElem.innerText = feature.get('col') + feature.get('row');
-
                     let piecesCountHtml = '';
                     for (let piece of PIECES_FILTER[state.pieces]) {
                         piecesCountHtml += `<div class="">${PIECES_ICON[piece]} ${getHeatmapValue(feature.get('col') + feature.get('row'), COLORS_FILTER[state.color], [piece])}</div>`
                     }
                     piecesCountElem.innerHTML = piecesCountHtml;
+
+                    if (evt.pixel[0] + tooltipElem.clientWidth + 12 < mapElement.clientWidth) {
+                        tooltipElem.style.left = evt.pixel[0] + 12 + 'px';
+                    } else {
+                        tooltipElem.style.left = evt.pixel[0] - tooltipElem.clientWidth - 12 + 'px';
+                    }
+
+                    if (evt.pixel[1] + tooltipElem.clientHeight + 12 < mapElement.clientHeight) {
+                        tooltipElem.style.top = evt.pixel[1] + 12 + 'px';
+                    } else {
+                        tooltipElem.style.top = evt.pixel[1] - tooltipElem.clientHeight - 12 + 'px';
+                    }
                 }
             });
 
