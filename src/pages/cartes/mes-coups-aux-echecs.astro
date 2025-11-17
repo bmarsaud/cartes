@@ -23,7 +23,7 @@ import MapLayout from "../../layouts/MapLayout.astro";
                 </div>
             </div>
         </div>
-        <div id="tooltip" class="absolute left-0 top-0 z-20 bg-[#fffaea] border p-2 md:pointer-events-none w-[97%] md:w-auto md:max-w-sm min-w-24" style="display: none;">
+        <div id="tooltip" class="absolute left-0 top-0 z-20 bg-[#fffaea] border p-2 md:pointer-events-none min-w-24" style="display: none;">
             <div class="border-b mb-1 flex justify-between items-center" x-data="{}">
                 <h3 class="font-[600]" id="square"></h3>
             </div>
@@ -191,6 +191,10 @@ import MapLayout from "../../layouts/MapLayout.astro";
         });
 
         map.on('click', function (evt) {
+            if (state.hoveredFeature) {
+                state.hoveredFeature = null;
+                tooltipElem.style.display = 'none';
+            }
             updateTooltip(evt);
         });
 
