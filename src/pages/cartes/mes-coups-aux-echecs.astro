@@ -1,4 +1,5 @@
 ---
+import Tabs from "../../components/Tabs.astro";
 const map = {
     "title": "Mes coups aux échecs",
     "abstract": "Pour le thème « Out of this world » du #30DayMapChallenge je vous propose de plonger dans le monde fascinant des échecs avec une cartographie des coups joués dans mes parties.",
@@ -9,7 +10,20 @@ const map = {
 import MapLayout from "../../layouts/MapLayout.astro";
 ---
 <MapLayout {...map}>
-    <div id="map" class="h-[60vh] lg:h-full w-full relative"></div>
+    <div id="map" class="h-[60vh] lg:h-full w-full relative">
+        <div class="absolute top-0 right-0 p-2 z-20 flex flex-col items-end gap-2 font-serif text-xs sm:text-base">
+            <div class="z-20 bg-[#fffaea] border p-2 pt-1 flex flex-wrap gap-2 md:gap-4" x-data="{}">
+                <div @tab-selected="window.updateState('color', $event.detail.value)">
+                    <h3 class="font-semibold">Couleur</h3>
+                    <Tabs elements={["N&B", "Noirs", "Blancs"]} initialValue="N&B"></Tabs>
+                </div>
+                <div @tab-selected="window.updateState('pieces', $event.detail.value)">
+                    <h3 class="font-semibold">Pièces</h3>
+                    <Tabs elements={["Toutes", "♟", "♞", "♝", "♜", "♛", "♚"]} initialValue="Toutes"></Tabs>
+                </div>
+            </div>
+        </div>
+    </div>
 </MapLayout>
 
 <script>
@@ -20,51 +34,81 @@ import MapLayout from "../../layouts/MapLayout.astro";
     import VectorSource from 'ol/source/Vector';
     import GeoJSON from 'ol/format/GeoJSON';
     import {Fill, Stroke, Style, Text} from "ol/style";
-    import {type FeatureLike} from "ol/Feature";
     import {interpolateReds} from "d3-scale-chromatic";
+
+    const COLORS_FILTER: Record<string, string[]> = {
+        'N&B': [ 'b', 'w' ],
+        'Blancs': [ 'w' ],
+        'Noirs': [ 'b' ]
+    }
+
+    const PIECES_FILTER: Record<string, string[]> = {
+        'Toutes': [ 'p', 'n', 'b', 'r', 'q', 'k' ],
+        "♟": ["p"],
+        "♞": ["n"],
+        "♝": ["b"],
+        "♜": ["r"],
+        "♛": ["q"],
+        "♚": ["k"]
+    }
 
     loadMap();
     async function loadMap() {
+        // data
         const heatmap = await fetch('/data/mes-coups-aux-echecs/chess-heatmap.json').then(res => res.json());
-
         const boardSource = new VectorSource({
             url: '/data/mes-coups-aux-echecs/board.geo.json',
             format: new GeoJSON(),
         });
 
-        function getFeatureStyle (feature: FeatureLike, resolution: number) {
-            let square = feature.get('col') + feature.get('row');
-            let count = 0;
-            for (let color of ['b', 'w']) {
-                for (let pieceCount of Object.values(heatmap[square][color])) {
-                    count += pieceCount as number;
+        // state
+        let piecesState = 'Toutes';
+        let colorState = 'N&B';
+        let maxValue = getMaxValue();
+
+        function getHeatmapValue(square: string): number {
+            let value = 0;
+            for (let color of COLORS_FILTER[colorState]) {
+                for (let piece of PIECES_FILTER[piecesState]) {
+                    value += heatmap[square][color][piece] ?? 0;
                 }
             }
+            return value;
+        }
 
-            let text;
-            if (feature.get('col') === 'a') {
-                text = new Text({
-                    text: feature.get('row'),
-                    font: '500 18px "Source Serif 4"',
-                    fill: new Fill({
-                        color: '#000000'
-                    }),
-                    offsetX: - 1 / resolution,
-                })
+        function getMaxValue() {
+            let max = 0;
+            for (let square of Object.keys(heatmap)) {
+                max = Math.max(max, getHeatmapValue(square));
             }
-
-            return new Style({
-                stroke: new Stroke(),
-                fill: new Fill({
-                    color: interpolateReds(count / 3000),
-                }),
-                text
-            })
+            return max;
         }
 
         const boardLayer = new VectorLayer({
             source: boardSource,
-            style: getFeatureStyle,
+            style: (feature, resolution) => {
+                let square = feature.get('col') + feature.get('row');
+
+                let text;
+                if (feature.get('col') === 'a') {
+                    text = new Text({
+                        text: feature.get('row'),
+                        font: '500 18px "Source Serif 4"',
+                        fill: new Fill({
+                            color: '#000000'
+                        }),
+                        offsetX: - 1 / resolution,
+                    })
+                }
+
+                return new Style({
+                    stroke: new Stroke(),
+                    fill: new Fill({
+                        color: interpolateReds(getHeatmapValue(square) / maxValue),
+                    }),
+                    text
+                });
+            }
         });
 
         // We use a dedicated layer for column labels to avoid automatic label decluttering that could hide the 1 row label
@@ -103,5 +147,15 @@ import MapLayout from "../../layouts/MapLayout.astro";
         boardSource.on('featuresloadend', function() {
             map.getView().fit(boardSource.getExtent(), { padding: [80, 80, 80, 80] });
         });
+
+        (window as any).updateState = (key: string, value: string) => {
+            if (key === 'pieces') {
+                piecesState = value;
+            } else if (key === 'color') {
+                colorState = value;
+            }
+            maxValue = getMaxValue();
+            boardSource.changed();
+        }
     }
 </script>
