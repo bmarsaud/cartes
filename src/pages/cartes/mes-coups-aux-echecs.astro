@@ -10,8 +10,8 @@ const map = {
 import MapLayout from "../../layouts/MapLayout.astro";
 ---
 <MapLayout {...map}>
-    <div id="map" class="h-[60vh] lg:h-full w-full relative">
-        <div class="absolute top-0 right-0 p-2 z-20 flex flex-col items-end gap-2 font-serif text-xs sm:text-base">
+    <div id="map" class="h-[50vh] lg:h-full w-full relative">
+        <div class="absolute top-0 right-0 p-2 z-20 flex-col items-end gap-2 font-serif text-xs sm:text-base hidden md:flex">
             <div class="z-20 bg-[#fffaea] border p-2 pt-1 flex flex-wrap gap-2 md:gap-4" x-data="{}">
                 <div @tab-selected="window.updateState('color', $event.detail.value)">
                     <h3 class="font-semibold">Couleur</h3>
@@ -28,6 +28,24 @@ import MapLayout from "../../layouts/MapLayout.astro";
                 <h3 class="font-[600]" id="square"></h3>
             </div>
             <div class="text-sm" id="pieces-count"></div>
+        </div>
+        <div class="absolute bottom-2 right-2 z-20 bg-[#fffaea] border p-2 text-xs hidden lg:block">
+            Propulsé par <a href="https://polygonia.fr" target="_blank" class="underline font-medium">Polygonia</a>, le web-SIG IA-natif
+        </div>
+    </div>
+    <div class="z-20 bg-[#fffaea] border p-2 pt-1 flex flex-wrap gap-2 md:gap-4 md:hidden text-sm" x-data="{}">
+        <div @tab-selected="window.updateState('color', $event.detail.value)">
+            <h3 class="font-semibold">Couleur</h3>
+            <Tabs elements={["N&B", "Noirs", "Blancs"]} initialValue="N&B"></Tabs>
+        </div>
+        <div @tab-selected="window.updateState('pieces', $event.detail.value)">
+            <h3 class="font-semibold">Pièces</h3>
+            <Tabs elements={["Toutes", "♟", "♞", "♝", "♜", "♛", "♚"]} initialValue="Toutes"></Tabs>
+        </div>
+    </div>
+    <div class="absolute bottom-2 pr-3 w-full flex justify-center lg:hidden">
+        <div class="bg-[#fffaea] border p-2 text-[10px]">
+            Propulsé par <a href="https://polygonia.fr" target="_blank" class="underline font-medium">Polygonia</a>, le web-SIG IA-natif
         </div>
     </div>
 </MapLayout>
@@ -166,10 +184,13 @@ import MapLayout from "../../layouts/MapLayout.astro";
                 center: [4, 4],
                 zoom: 7,
             }),
+            controls: []
         });
 
         boardSource.on('featuresloadend', function() {
-            map.getView().fit(boardSource.getExtent(), { padding: [80, 80, 80, 80] });
+            let oneUnit = 1 / map.getView().getResolution()!;
+            console.log(oneUnit);
+            map.getView().fit(boardSource.getExtent(), { padding: [window.screen.width < 639 ? 0.25 * oneUnit : 1.2 * oneUnit, 0.5 * oneUnit, 1.2 * oneUnit, 0.5 * oneUnit] });
         });
 
         (window as any).updateState = (key: 'color' | 'pieces', value: string) => {
