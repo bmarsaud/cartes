@@ -23,6 +23,12 @@ import MapLayout from "../../layouts/MapLayout.astro";
                 </div>
             </div>
         </div>
+        <div id="tooltip" class="absolute left-0 top-0 z-20 bg-[#fffaea] border p-2 md:pointer-events-none w-[97%] md:w-auto md:max-w-sm min-w-24" style="display: none;">
+            <div class="border-b mb-1 flex justify-between items-center" x-data="{}">
+                <h3 class="font-[600]" id="square"></h3>
+            </div>
+            <div class="text-sm" id="pieces-count"></div>
+        </div>
     </div>
 </MapLayout>
 
@@ -35,6 +41,7 @@ import MapLayout from "../../layouts/MapLayout.astro";
     import GeoJSON from 'ol/format/GeoJSON';
     import {Fill, Stroke, Style, Text} from "ol/style";
     import {interpolateReds} from "d3-scale-chromatic";
+    import type {FeatureLike} from "ol/Feature";
 
     const COLORS_FILTER: Record<string, string[]> = {
         'N&B': [ 'b', 'w' ],
@@ -52,6 +59,15 @@ import MapLayout from "../../layouts/MapLayout.astro";
         "♚": ["k"]
     }
 
+    const PIECES_ICON: Record<string, string> = {
+        "p": "♟",
+        "n": "♞",
+        "b": "♝",
+        "r": "♜",
+        "q": "♛",
+        "k": "♚"
+    }
+
     loadMap();
     async function loadMap() {
         // data
@@ -62,24 +78,32 @@ import MapLayout from "../../layouts/MapLayout.astro";
         });
 
         // state
-        let piecesState = 'Toutes';
-        let colorState = 'N&B';
-        let maxValue = getMaxValue();
+        const state = {
+            color: 'N&B',
+            pieces: 'Toutes',
+            maxValue: 0,
+            hoveredFeature: null as FeatureLike | null
+        };
+        state.maxValue = getMaxValue();
 
-        function getHeatmapValue(square: string): number {
+        function getHeatmapValue(square: string, colors: string[], pieces: string[]): number {
             let value = 0;
-            for (let color of COLORS_FILTER[colorState]) {
-                for (let piece of PIECES_FILTER[piecesState]) {
+            for (let color of colors) {
+                for (let piece of pieces) {
                     value += heatmap[square][color][piece] ?? 0;
                 }
             }
             return value;
         }
 
+        function getCurrentHeatmapValue(square: string) {
+            return getHeatmapValue(square, COLORS_FILTER[state.color], PIECES_FILTER[state.pieces]);
+        }
+
         function getMaxValue() {
             let max = 0;
             for (let square of Object.keys(heatmap)) {
-                max = Math.max(max, getHeatmapValue(square));
+                max = Math.max(max, getCurrentHeatmapValue(square));
             }
             return max;
         }
@@ -104,7 +128,7 @@ import MapLayout from "../../layouts/MapLayout.astro";
                 return new Style({
                     stroke: new Stroke(),
                     fill: new Fill({
-                        color: interpolateReds(getHeatmapValue(square) / maxValue),
+                        color: interpolateReds(getCurrentHeatmapValue(square) / state.maxValue),
                     }),
                     text
                 });
@@ -148,14 +172,55 @@ import MapLayout from "../../layouts/MapLayout.astro";
             map.getView().fit(boardSource.getExtent(), { padding: [80, 80, 80, 80] });
         });
 
-        (window as any).updateState = (key: string, value: string) => {
-            if (key === 'pieces') {
-                piecesState = value;
-            } else if (key === 'color') {
-                colorState = value;
-            }
-            maxValue = getMaxValue();
+        (window as any).updateState = (key: 'color' | 'pieces', value: string) => {
+            state[key] = value;
+            state.maxValue = getMaxValue();
             boardSource.changed();
+        }
+
+        // map hover
+        let tooltipElem = document.getElementById('tooltip')!;
+        let squareElem = document.getElementById('square')!;
+        let piecesCountElem = document.getElementById('pieces-count')!;
+
+        map.on('pointermove', function (evt) {
+            if (evt.dragging) {
+                return;
+            }
+            updateTooltip(evt);
+        });
+
+        map.on('click', function (evt) {
+            updateTooltip(evt);
+        });
+
+        function updateTooltip(evt: any) {
+            boardLayer.getFeatures(evt.pixel).then((features) => {
+                let feature = features.pop();
+                if (state.hoveredFeature) {
+                    state.hoveredFeature = null;
+                }
+
+                if (feature) {
+                    state.hoveredFeature = feature;
+
+                    tooltipElem.style.left = evt.pixel[0] + 12 + 'px';
+                    tooltipElem.style.top = evt.pixel[1] + 12 + 'px';
+                    tooltipElem.style.display = 'block';
+
+                    squareElem.innerText = feature.get('col') + feature.get('row');
+
+                    let piecesCountHtml = '';
+                    for (let piece of PIECES_FILTER[state.pieces]) {
+                        piecesCountHtml += `<div class="">${PIECES_ICON[piece]} ${getHeatmapValue(feature.get('col') + feature.get('row'), COLORS_FILTER[state.color], [piece])}</div>`
+                    }
+                    piecesCountElem.innerHTML = piecesCountHtml;
+                }
+            });
+
+            if (!state.hoveredFeature) {
+                tooltipElem.style.display = 'none';
+            }
         }
     }
 </script>
