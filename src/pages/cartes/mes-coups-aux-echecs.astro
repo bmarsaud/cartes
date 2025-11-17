@@ -1,0 +1,107 @@
+---
+const map = {
+    "title": "Mes coups aux échecs",
+    "abstract": "Pour le thème « Out of this world » du #30DayMapChallenge je vous propose de plonger dans le monde fascinant des échecs avec une cartographie des coups joués dans mes parties.",
+    "description": "À l'occasion du thème « Out of this world » du <a href='https://30daymapchallenge.com/' target='_blank' class='underline cursor-pointer '>#30DayMapChallenge</a>, je vous propose d'explorer le monde fascinant des échecs avec cette visualisation du nombre de coups que j'ai joué par case de l'échiquier, couleur et pièce durant mes quelque 2300 parties sur <span class='italic'>Chess.com</span>. On voit bien que je suis un joueur de <span class='italic'>d4</span>.",
+    "date": "2025-11-18"
+};
+
+import MapLayout from "../../layouts/MapLayout.astro";
+---
+<MapLayout {...map}>
+    <div id="map" class="h-[60vh] lg:h-full w-full relative"></div>
+</MapLayout>
+
+<script>
+    import 'ol/ol.css';
+    import {default as OlMap} from 'ol/Map';
+    import View from 'ol/View';
+    import VectorLayer from 'ol/layer/Vector';
+    import VectorSource from 'ol/source/Vector';
+    import GeoJSON from 'ol/format/GeoJSON';
+    import {Fill, Stroke, Style, Text} from "ol/style";
+    import {type FeatureLike} from "ol/Feature";
+    import {interpolateReds} from "d3-scale-chromatic";
+
+    loadMap();
+    async function loadMap() {
+        const heatmap = await fetch('/data/mes-coups-aux-echecs/chess-heatmap.json').then(res => res.json());
+
+        const boardSource = new VectorSource({
+            url: '/data/mes-coups-aux-echecs/board.geo.json',
+            format: new GeoJSON(),
+        });
+
+        function getFeatureStyle (feature: FeatureLike, resolution: number) {
+            let square = feature.get('col') + feature.get('row');
+            let count = 0;
+            for (let color of ['b', 'w']) {
+                for (let pieceCount of Object.values(heatmap[square][color])) {
+                    count += pieceCount as number;
+                }
+            }
+
+            let text;
+            if (feature.get('col') === 'a') {
+                text = new Text({
+                    text: feature.get('row'),
+                    font: '500 18px "Source Serif 4"',
+                    fill: new Fill({
+                        color: '#000000'
+                    }),
+                    offsetX: - 1 / resolution,
+                })
+            }
+
+            return new Style({
+                stroke: new Stroke(),
+                fill: new Fill({
+                    color: interpolateReds(count / 3000),
+                }),
+                text
+            })
+        }
+
+        const boardLayer = new VectorLayer({
+            source: boardSource,
+            style: getFeatureStyle,
+        });
+
+        // We use a dedicated layer for column labels to avoid automatic label decluttering that could hide the 1 row label
+        const columnsLayer = new VectorLayer({
+            source: boardSource,
+            style: (feature, resolution) => {
+                let text;
+                if (feature.get('row') === 1) {
+                    text = new Text({
+                        text: feature.get('col'),
+                        font: '500 18px "Source Serif 4"',
+                        fill: new Fill({
+                            color: '#000000'
+                        }),
+                        offsetY: 1 / resolution,
+                    })
+                }
+
+                return new Style({text})
+            },
+        })
+
+        const map = new OlMap({
+            target: 'map',
+            layers: [
+                boardLayer,
+                columnsLayer
+            ],
+            view: new View({
+                projection: 'EPSG:4326',
+                center: [4, 4],
+                zoom: 7,
+            }),
+        });
+
+        boardSource.on('featuresloadend', function() {
+            map.getView().fit(boardSource.getExtent(), { padding: [80, 80, 80, 80] });
+        });
+    }
+</script>

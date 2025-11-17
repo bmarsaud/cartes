@@ -13,11 +13,11 @@
     "@panoramax/web-viewer": "^4.0.3",
     "@tailwindcss/vite": "^4.1.4",
     "@turf/distance": "^7.2.0",
-    "@types/alpinejs": "^3.13.11",
     "alpinejs": "^3.14.9",
     "astro": "^5.7.9",
     "chart.js": "^4.4.9",
     "d3-interpolate": "^3.0.1",
+    "d3-scale-chromatic": "^3.1.0",
     "i18n-iso-countries": "^7.14.0",
     "maplibre-gl": "^5.5.0",
     "ol": "^10.5.0",
@@ -25,6 +25,9 @@
     "tailwindcss": "^4.1.4"
   },
   "devDependencies": {
+    "@types/alpinejs": "^3.13.11",
+    "@types/d3-interpolate": "^3.0.4",
+    "@types/d3-scale-chromatic": "^3.1.0",
     "@types/geojson": "^7946.0.16"
   }
 }

@@ -17,5 +17,5 @@ const { id, title, date, description } = Astro.props;
             </span>
         </p>
     </div>
-    <p>{ description }</p>
+    <p set:html={ description }></p>
 </div>
