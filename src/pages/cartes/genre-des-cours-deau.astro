@@ -1,0 +1,170 @@
+---
+const map = {
+    "title": "Le genre des cours d'eau",
+    "abstract": "En français on genre tout, y compris les objets inanimés... et les cours d'eau ! Alors quel est le genre des cours d'eau de France ?",
+    "description": "En français on genre tout : <span class='italic'>UNE</span> table, mais <span class='italic'>UN</span> tabouret; <span class='italic'>UNE</span> télévision, mais <span class='italic'>UN</span> téléviseur; <span class='italic'>LE</span> Rhône, mais <span class='italic'>LA Saône.</span> Dans cette carte j'ai détecté le genre des noms des cours d'eau, et si c'est facile pour les toponymes contenant des noms communs, ce n'est pas évident pour ceux qui sont des noms propres. On est sauvé par l'article pour <span class='italic'>le</span> Lot ou <span class='italic'>la</span> Seine, mais pas pour l'Yonne ou l'Ain.",
+    "date": "2026-01-22"
+};
+
+import MapLayout from "../../layouts/MapLayout.astro";
+---
+<MapLayout {...map}>
+    <div id="map" class="h-[50vh] lg:h-full w-full relative">
+        <div id="tooltip" class="absolute left-0 top-0 z-20 bg-[#fffaea] border p-2 md:pointer-events-none min-w-24" style="display: none;">
+            <div class="border-b mb-1 flex justify-between items-center" x-data="{}">
+                <h3 class="font-[600]" id="waterway-name"></h3>
+            </div>
+            <div class="text-sm italic" id="waterway-gender"></div>
+            <div class="text-sm" id="waterway-length"></div>
+        </div>
+        <div class="absolute bottom-2 right-2 z-20 bg-[#fffaea] border p-2 text-xs hidden lg:block">
+            Propulsé par <a href="https://polygonia.fr" target="_blank" class="underline font-medium">Polygonia</a>, le web-SIG IA-natif
+        </div>
+    </div>
+    <div class="absolute bottom-2 pr-3 w-full flex justify-center lg:hidden">
+        <div class="bg-[#fffaea] border p-2 text-[10px]">
+            Propulsé par <a href="https://polygonia.fr" target="_blank" class="underline font-medium">Polygonia</a>, le web-SIG IA-natif
+        </div>
+    </div>
+</MapLayout>
+
+<script>
+    import 'ol/ol.css';
+    import {default as OlMap} from 'ol/Map';
+    import View from 'ol/View';
+    import VectorLayer from 'ol/layer/Vector';
+    import VectorSource from 'ol/source/Vector';
+    import GeoJSON from 'ol/format/GeoJSON';
+    import {Stroke, Style} from "ol/style";
+    import proj4 from 'proj4';
+    import {register} from 'ol/proj/proj4';
+    import type {FeatureLike} from "ol/Feature";
+
+
+    proj4.defs("EPSG:2154","+proj=lcc +lat_0=46.5 +lon_0=3 +lat_1=49 +lat_2=44 +x_0=700000 +y_0=6600000 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs +type=crs");
+    register(proj4);
+
+    loadMap();
+    async function loadMap() {
+        // data
+        const metropoleSource = new VectorSource({
+            url: 'https://raw.githubusercontent.com/gregoiredavid/france-geojson/refs/heads/master/metropole.geojson',
+            format: new GeoJSON(),
+        });
+        const waterwaySource = new VectorSource({
+            url: '/data/genre-des-cours-deau/cours_deau.geo.json',
+            format: new GeoJSON({
+                dataProjection: 'EPSG:2154',
+            }),
+        });
+
+        // state
+        const state = {
+            hoveredFeature: null as FeatureLike | null
+        };
+
+        const waterwaysLayer = new VectorLayer({
+            source: waterwaySource,
+            style: (feature, resolution) => {
+                let color = '#B4B4B4';
+                if (feature.get('gender') === 'masc') {
+                    color = '#3661EF'
+                } else if (feature.get('gender') === 'fem') {
+                    color = '#CB1C71';
+                } else if (feature.get('gender') === 'neutral') {
+                    color = '#33C100';
+                }
+
+                return new Style({
+                    stroke: new Stroke({
+                        color,
+                        width: 2
+                    }),
+                });
+            }
+        });
+
+        const map = new OlMap({
+            target: 'map',
+            layers: [
+                waterwaysLayer,
+                new VectorLayer({
+                    source: metropoleSource,
+                    style: new Style({
+                        stroke: new Stroke({
+                            width: 2
+                        }),
+                    })
+                })
+            ],
+            view: new View({
+                projection: 'EPSG:2154',
+                center: [682171, 6604861],
+                zoom: 7,
+            }),
+            controls: []
+        });
+
+        waterwaySource.on('featuresloadend', function() {
+            map.getView().fit(waterwaySource.getExtent(), { padding: [25, 25, 50, 25] });
+        });
+
+        // map hover
+        let tooltipElem = document.getElementById('tooltip')!;
+        let waterwayName = document.getElementById('waterway-name')!;
+        let waterwayGender = document.getElementById('waterway-gender')!;
+        let waterwayLength = document.getElementById('waterway-length')!;
+        let mapElement = document.getElementById('map')!;
+
+        map.on('pointermove', function (evt) {
+            if (evt.dragging) {
+                state.hoveredFeature = null;
+                tooltipElem.style.display = 'none';
+                return;
+            }
+            updateTooltip(evt);
+        });
+
+        function updateTooltip(evt: any) {
+            let features = map.getFeaturesAtPixel(evt.pixel, { hitTolerance: 3 });
+            if (features.length > 0) {
+                let feature = features.pop();
+                if (state.hoveredFeature) {
+                    state.hoveredFeature = null;
+                }
+
+                if (feature) {
+                    state.hoveredFeature = feature;
+
+                    tooltipElem.style.display = 'block';
+                    waterwayName.innerText = feature.get('name');
+                    let gender = 'Inconnu';
+                    if (feature.get('gender') === 'fem') {
+                        gender = 'Féminin'
+                    } else if (feature.get('gender') === 'masc') {
+                        gender = 'Masculin';
+                    } else if (feature.get('gender') === 'neutral') {
+                        gender = 'Neutre';
+                    }
+                    waterwayGender.innerText = gender;
+                    waterwayLength.innerText = (feature.get('length') / 1000).toFixed(0) + ' km';
+
+                    if (evt.pixel[0] + tooltipElem.clientWidth + 12 < mapElement.clientWidth) {
+                        tooltipElem.style.left = evt.pixel[0] + 12 + 'px';
+                    } else {
+                        tooltipElem.style.left = evt.pixel[0] - tooltipElem.clientWidth - 12 + 'px';
+                    }
+
+                    if (evt.pixel[1] + tooltipElem.clientHeight + 12 < mapElement.clientHeight) {
+                        tooltipElem.style.top = evt.pixel[1] + 12 + 'px';
+                    } else {
+                        tooltipElem.style.top = evt.pixel[1] - tooltipElem.clientHeight - 12 + 'px';
+                    }
+                }
+            } else {
+                state.hoveredFeature = null;
+                tooltipElem.style.display = 'none';
+            }
+        }
+    }
+</script>
